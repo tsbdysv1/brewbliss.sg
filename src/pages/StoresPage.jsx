@@ -3,7 +3,7 @@ import SiteHeader from '../components/SiteHeader'
 import { siteConfig } from '../data/site'
 import { stores } from '../data/stores'
 import { usePageSeo } from '../hooks/usePageSeo'
-import { buildMapsLink, buildPhoneHref } from '../utils/commerce'
+import { buildPhoneHref } from '../utils/commerce'
 
 function StoresPage() {
   const activeStore = stores[0]
@@ -41,7 +41,7 @@ function StoresPage() {
             <strong>{activeStore.address}</strong>
             <p>{activeStore.hoursLabel}</p>
             <div className="menu-card-actions">
-              <a href={buildMapsLink(activeStore.mapQuery)} target="_blank" rel="noreferrer" className="solid-button">
+              <a href={activeStore.mapLink} target="_blank" rel="noreferrer" className="solid-button">
                 Mở Google Maps
               </a>
               <a href={buildPhoneHref(activeStore.phoneNumber)} className="outline-button">
