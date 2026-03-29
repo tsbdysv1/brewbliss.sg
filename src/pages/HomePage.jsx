@@ -4,7 +4,7 @@ import SiteHeader from '../components/SiteHeader'
 import { menuCategories, menuExtras } from '../data/menu'
 import { categories, siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
-import { buildMapsLink, buildPhoneHref } from '../utils/commerce'
+import { buildPhoneHref } from '../utils/commerce'
 
 function HomePage() {
   const featuredCategory = menuCategories.find((category) => category.slug === 'featured')
@@ -32,7 +32,7 @@ function HomePage() {
               <a href="#menu" className="solid-button">
                 Xem menu
               </a>
-              <a href={buildMapsLink(siteConfig.mapQuery)} target="_blank" rel="noreferrer" className="outline-button">
+              <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="outline-button">
                 Mở Google Maps
               </a>
             </div>
@@ -130,7 +130,7 @@ function HomePage() {
                 <a href="/cua-hang" className="solid-button">
                   Xem trang cửa hàng
                 </a>
-                <a href={buildMapsLink(siteConfig.mapQuery)} target="_blank" rel="noreferrer" className="outline-button">
+                <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="outline-button">
                   Mở Maps
                 </a>
               </div>
@@ -154,7 +154,7 @@ function HomePage() {
                 <strong>{siteConfig.phoneNumber}</strong>
               </a>
               <a
-                href={buildMapsLink(siteConfig.mapQuery)}
+                href={siteConfig.mapLink}
                 target="_blank"
                 rel="noreferrer"
                 className="contact-action-card"

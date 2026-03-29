@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../data/site'
-import { buildMapsLink, buildPhoneHref } from '../utils/commerce'
+import { buildPhoneHref } from '../utils/commerce'
 
 function SiteFooter() {
   return (
@@ -18,7 +18,7 @@ function SiteFooter() {
           <p className="footer-title">Ghé quán</p>
           <p className="footer-text">{siteConfig.address}</p>
           <p className="footer-text">{siteConfig.hoursLabel}</p>
-          <a href={buildMapsLink(siteConfig.mapQuery)} target="_blank" rel="noreferrer" className="footer-link">
+          <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="footer-link">
             Mở Google Maps
           </a>
         </div>

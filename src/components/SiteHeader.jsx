@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../data/site'
-import { buildMapsLink, buildPhoneHref } from '../utils/commerce'
+import { buildPhoneHref } from '../utils/commerce'
 
 function SiteHeader() {
   return (
@@ -21,7 +21,7 @@ function SiteHeader() {
         <Link to="/cua-hang" className="nav-link">
           Cửa Hàng
         </Link>
-        <a href={buildMapsLink(siteConfig.mapQuery)} target="_blank" rel="noreferrer" className="nav-link">
+        <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="nav-link">
           Map
         </a>
       </nav>
@@ -31,7 +31,7 @@ function SiteHeader() {
           Gọi quán
         </a>
         <a
-          href={buildMapsLink(siteConfig.mapQuery)}
+          href={siteConfig.mapLink}
           target="_blank"
           rel="noreferrer"
           className="solid-button compact-button"
