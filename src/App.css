@@ -435,13 +435,17 @@ h3 {
   padding: 0;
 }
 
+.detail-language-block {
+  margin-top: 22px;
+}
+
 .detail-language-block + .detail-language-block {
-  margin-top: 24px;
+  margin-top: 28px;
 }
 
 .detail-language-block h3 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .prose-block p {
