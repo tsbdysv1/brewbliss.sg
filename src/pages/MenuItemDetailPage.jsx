@@ -1,6 +1,8 @@
 import { Navigate, useParams } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
 import RelatedMenuItems from '../components/RelatedMenuItems'
+import SiteFooter from '../components/SiteFooter'
+import SiteHeader from '../components/SiteHeader'
 import { buildMenuItemJsonLd, formatMenuPrice, getMenuItemBySlug, getRelatedMenuItems } from '../data/menu'
 import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
@@ -26,6 +28,8 @@ function MenuItemDetailPage() {
 
   return (
     <div className="page-shell product-detail-shell">
+      <SiteHeader />
+
       <Breadcrumbs
         items={[
           { label: 'Trang chủ', to: '/' },
@@ -107,6 +111,8 @@ function MenuItemDetailPage() {
       </section>
 
       <RelatedMenuItems items={relatedItems} />
+
+      <SiteFooter />
     </div>
   )
 }

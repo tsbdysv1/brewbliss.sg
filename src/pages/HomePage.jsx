@@ -1,4 +1,6 @@
 import MenuCategorySection from '../components/MenuCategorySection'
+import SiteFooter from '../components/SiteFooter'
+import SiteHeader from '../components/SiteHeader'
 import { menuCategories, menuExtras } from '../data/menu'
 import { categories, siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
@@ -18,26 +20,9 @@ function HomePage() {
 
   return (
     <div className="page-shell">
+      <SiteHeader />
+
       <header className="hero-section">
-        <nav className="topbar">
-          <div className="brand-lockup">
-            <img src="/brewbliss-wordmark.svg" alt="BrewBliss Coffee" className="brand-logo" />
-            <div>
-              <p className="brand-kicker">{siteConfig.brandName}</p>
-              <h1>{siteConfig.headline}</h1>
-            </div>
-          </div>
-
-          <div className="quick-actions">
-            <a href={buildPhoneHref(siteConfig.phoneNumber)} className="outline-button">
-              Gọi quán
-            </a>
-            <a href={siteConfig.instagramLink} target="_blank" rel="noreferrer" className="solid-button">
-              Instagram
-            </a>
-          </div>
-        </nav>
-
         <div className="hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Coffee shop in Sai Gon</p>
@@ -90,7 +75,7 @@ function HomePage() {
           </div>
         </section>
 
-        {featuredCategory ? <MenuCategorySection category={featuredCategory} /> : null}
+        <div id="mon-noi-bat">{featuredCategory ? <MenuCategorySection category={featuredCategory} /> : null}</div>
 
         <section className="section-block readiness-section">
           <div className="section-heading">
@@ -127,32 +112,47 @@ function HomePage() {
         </section>
 
         <section className="section-block contact-section" id="lien-he">
-          <div className="contact-card">
+          <div className="contact-card contact-card-enhanced">
             <div>
               <p className="eyebrow">Liên hệ & ghé quán</p>
-              <h2>Đã có đủ thông tin cơ bản để khách tìm quán, gọi quán hoặc xem social ngay</h2>
+              <h2>Chọn cách phù hợp nhất để kết nối với BrewBliss</h2>
               <p>
-                Zalo hiện để placeholder theo yêu cầu. Các CTA đang ưu tiên phone, Instagram,
-                Facebook và Google Maps để khách truy cập dễ hành động ngay.
+                Nếu đang ở gần quận 1, mở bản đồ để ghé quán. Nếu cần hỏi nhanh, gọi trực tiếp.
+                Nếu muốn xem vibe và món mới, Instagram và Facebook đang là các kênh rõ ràng nhất.
               </p>
             </div>
-            <div className="contact-actions">
-              <a href={siteConfig.instagramLink} target="_blank" rel="noreferrer" className="solid-button">
-                Instagram
+            <div className="contact-action-grid">
+              <a href={buildPhoneHref(siteConfig.phoneNumber)} className="contact-action-card primary-card">
+                <span className="contact-action-label">Gọi quán</span>
+                <strong>{siteConfig.phoneNumber}</strong>
               </a>
-              <a href={siteConfig.facebookLink} target="_blank" rel="noreferrer" className="outline-button">
-                Facebook
+              <a
+                href={buildMapsLink(siteConfig.mapQuery)}
+                target="_blank"
+                rel="noreferrer"
+                className="contact-action-card"
+              >
+                <span className="contact-action-label">Chỉ đường</span>
+                <strong>Mở Google Maps</strong>
               </a>
-              <a href={buildPhoneHref(siteConfig.phoneNumber)} className="outline-button">
-                {siteConfig.phoneNumber}
+              <a href={siteConfig.instagramLink} target="_blank" rel="noreferrer" className="contact-action-card">
+                <span className="contact-action-label">Instagram</span>
+                <strong>@brewbliss.sg</strong>
               </a>
-              <a href={buildMapsLink(siteConfig.mapQuery)} target="_blank" rel="noreferrer" className="outline-button">
-                Chỉ đường
+              <a href={siteConfig.facebookLink} target="_blank" rel="noreferrer" className="contact-action-card">
+                <span className="contact-action-label">Facebook</span>
+                <strong>BrewBliss Coffee</strong>
               </a>
+              <div className="contact-action-card muted-card">
+                <span className="contact-action-label">Zalo</span>
+                <strong>{siteConfig.zaloLabel}</strong>
+              </div>
             </div>
           </div>
         </section>
       </main>
+
+      <SiteFooter />
     </div>
   )
 }

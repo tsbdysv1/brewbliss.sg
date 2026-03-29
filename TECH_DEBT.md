@@ -23,4 +23,5 @@
 - Add richer gallery section when photos are available
 - Enrich each menu detail page with real tasting notes, ingredient notes, and better photos
 - Add structured data for LocalBusiness/CafeOrCoffeeShop
+- Consider a mobile nav/menu interaction polish pass if the owner wants a more app-like header behavior later
 - Add CMS or database-backed menu workflow later if needed

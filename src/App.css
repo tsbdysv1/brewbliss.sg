@@ -61,11 +61,53 @@ img {
   padding: 28px;
 }
 
+.site-header-bar,
 .topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+}
+
+.site-header-bar {
+  margin-bottom: 18px;
+  padding: 16px 20px;
+  border-radius: 24px;
+  background: rgba(255, 248, 243, 0.9);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.site-nav,
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-link,
+.footer-link,
+.muted-link {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.footer-link:hover {
+  color: var(--primary-strong);
+}
+
+.compact-button {
+  min-height: 40px;
+  padding: 0 14px;
+}
+
+.brand-home-link {
+  display: inline-flex;
+}
+
+.topbar {
   margin-bottom: 36px;
 }
 
@@ -202,7 +244,8 @@ h3 {
 .contact-card,
 .detail-panel,
 .product-detail-media,
-.product-detail-main {
+.product-detail-main,
+.contact-action-card {
   border-radius: 28px;
 }
 
@@ -256,7 +299,8 @@ h3 {
 .menu-card,
 .detail-panel,
 .product-detail-media,
-.product-detail-main {
+.product-detail-main,
+.contact-action-card {
   background: var(--surface-strong);
   border: 1px solid var(--border);
   padding: 24px;
@@ -418,6 +462,75 @@ h3 {
   align-items: center;
 }
 
+.contact-card-enhanced {
+  align-items: stretch;
+}
+
+.contact-action-grid,
+.footer-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-action-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: min(520px, 100%);
+}
+
+.contact-action-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 124px;
+}
+
+.contact-action-label,
+.footer-title {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.primary-card {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: white;
+}
+
+.primary-card .contact-action-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.muted-card {
+  opacity: 0.85;
+}
+
+.site-footer {
+  margin-top: 24px;
+}
+
+.footer-grid {
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-wordmark {
+  width: 220px;
+  max-width: 100%;
+}
+
+.footer-text,
+.footer-link,
+.muted-link {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 @media (max-width: 1024px) {
   .hero-grid,
   .category-grid,
@@ -426,11 +539,14 @@ h3 {
   .contact-card,
   .product-detail-layout,
   .detail-content-grid,
-  .related-grid {
+  .related-grid,
+  .contact-action-grid,
+  .footer-grid {
     grid-template-columns: 1fr;
     display: grid;
   }
 
+  .site-header-bar,
   .topbar {
     flex-direction: column;
     align-items: flex-start;
