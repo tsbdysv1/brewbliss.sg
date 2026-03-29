@@ -46,3 +46,4 @@ This site should feel:
 - The provided BrewBliss wordmark is now integrated into the homepage UI and should be treated as the current primary brand asset until a cleaner export is available.
 - The codebase now has menu item detail routes so future work can enrich individual drinks and pastries without reworking routing again.
 - Header, footer, and contact presentation have been upgraded so the site feels less like a prototype and more like a complete small F&B brand website.
+- Menu detail pages now use inferred bilingual ingredients and explanatory copy based on item names and common drink/pastry composition, which is a better interim state until the shop provides exact recipes.

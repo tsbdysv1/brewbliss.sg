@@ -26,4 +26,5 @@ Website foundation for BrewBliss Coffee in Ho Chi Minh City.
 - The current UI now uses the provided BrewBliss wordmark directly instead of only inferring the brand from color direction.
 - The site now includes route-level detail pages for menu items at `/menu/:slug`.
 - The site now has a fuller header, footer, and clearer contact-action system inspired by how real F&B brands surface navigation and communication options.
+- Menu detail pages now show bilingual ingredient and description blocks (Vietnamese + English) instead of placeholder generic panels.
 - The preferred workflow is the same safe pattern used elsewhere: branch -> PR -> Vercel preview -> merge to main.

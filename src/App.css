@@ -435,6 +435,20 @@ h3 {
   padding: 0;
 }
 
+.detail-language-block + .detail-language-block {
+  margin-top: 24px;
+}
+
+.detail-language-block h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.prose-block p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
 .detail-list li {
   padding: 16px;
   border-radius: 18px;
