@@ -11,6 +11,6 @@ export const stores = [
     phoneNumber: siteConfig.phoneNumber,
     hoursLabel: siteConfig.hoursLabel,
     embedMapUrl:
-      'https://www.google.com/maps?q=21%20Nguy%E1%BB%85n%20Trung%20Tr%E1%BB%B1c%2C%20B%E1%BA%BFn%20Th%C3%A0nh%2C%20Qu%E1%BA%ADn%201%2C%20H%E1%BB%93%20Ch%C3%AD%20Minh%2071009%2C%20Vietnam&z=16&output=embed',
+      'https://maps.google.com/maps?width=100%25&height=600&hl=vi&q=21%20Nguy%E1%BB%85n%20Trung%20Tr%E1%BB%B1c%2C%20B%E1%BA%BFn%20Th%C3%A0nh%2C%20Qu%E1%BA%ADn%201%2C%20H%E1%BB%93%20Ch%C3%AD%20Minh%2071009%2C%20Vietnam&t=&z=18&ie=UTF8&iwloc=B&output=embed',
   },
 ]
