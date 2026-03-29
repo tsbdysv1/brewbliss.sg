@@ -23,4 +23,5 @@ Website foundation for BrewBliss Coffee in Ho Chi Minh City.
 ## Notes
 
 - Some menu items may still use placeholder web images until the shop provides brand-approved photos.
+- The current UI now uses the provided BrewBliss logo directly instead of only inferring the brand from color direction.
 - The preferred workflow is the same safe pattern used elsewhere: branch -> PR -> Vercel preview -> merge to main.

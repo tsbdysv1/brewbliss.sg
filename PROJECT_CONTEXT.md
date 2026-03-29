@@ -43,3 +43,4 @@ This site should feel:
 - Keep this project fully separate from linh-hai-seafood in git, deploys, and context.
 - If using web images for missing product photos, mark them as placeholders and plan to replace them later.
 - Prioritize a menu experience that still works well even before every individual item has a perfect photo.
+- The provided BrewBliss logo has now been integrated directly into the homepage UI and should be treated as the current primary brand asset until a cleaner export is available.

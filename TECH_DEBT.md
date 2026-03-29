@@ -5,6 +5,7 @@
 - Official Zalo link
 - Brand-approved venue photos
 - Brand-approved drink / pastry photos
+- A cleaner logo export (transparent PNG or SVG) if available later
 - Official Google Maps link if preferred over raw address
 - Any additional social links
 - Final brand story / positioning copy

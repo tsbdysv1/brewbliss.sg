@@ -21,11 +21,7 @@ function HomePage() {
       <header className="hero-section">
         <nav className="topbar">
           <div className="brand-lockup">
-            <div className="brand-mark brewbliss-mark" aria-hidden="true">
-              <span className="steam steam-one"></span>
-              <span className="steam steam-two"></span>
-              <span className="cup-base"></span>
-            </div>
+            <img src="/brewbliss-logo.svg" alt="BrewBliss Coffee" className="brand-logo" />
             <div>
               <p className="brand-kicker">{siteConfig.brandName}</p>
               <h1>{siteConfig.headline}</h1>
@@ -70,6 +66,7 @@ function HomePage() {
               chất liệu để trở thành một điểm hẹn vừa chill vừa dễ quay lại ở trung tâm quận 1.
             </p>
             <div className="location-stack">
+              <img src="/brewbliss-logo.svg" alt="BrewBliss logo" className="hero-logo-preview" />
               <strong>{siteConfig.address}</strong>
               <p>{siteConfig.hoursLabel}</p>
             </div>
