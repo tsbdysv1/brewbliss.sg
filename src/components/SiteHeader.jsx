@@ -18,9 +18,9 @@ function SiteHeader() {
         <a href="/#mon-noi-bat" className="nav-link">
           Món nổi bật
         </a>
-        <a href="/#cua-hang" className="nav-link">
+        <Link to="/cua-hang" className="nav-link">
           Cửa Hàng
-        </a>
+        </Link>
         <a href={buildMapsLink(siteConfig.mapQuery)} target="_blank" rel="noreferrer" className="nav-link">
           Map
         </a>

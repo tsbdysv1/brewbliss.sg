@@ -111,13 +111,13 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="section-block store-section" id="cua-hang">
+        <section className="section-block store-section">
           <div className="section-heading">
             <p className="eyebrow">Cửa hàng</p>
-            <h2>Hệ thống cửa hàng hiện tại</h2>
+            <h2>BrewBliss giờ đã có trang cửa hàng riêng</h2>
             <p className="section-supporting-text">
-              BrewBliss hiện đang đón khách tại một địa chỉ duy nhất ở trung tâm quận 1 — đủ gần,
-              đủ dễ tìm và đủ đúng vibe để ghé nhanh hoặc ngồi lại lâu hơn một chút.
+              Nếu bạn muốn xem vị trí theo kiểu rõ ràng hơn, BrewBliss hiện đã có trang Cửa Hàng
+              riêng với map và thông tin địa chỉ tách biệt khỏi homepage.
             </p>
           </div>
 
@@ -127,11 +127,11 @@ function HomePage() {
               <h3>21 Nguyễn Trung Trực, Bến Thành, Quận 1, Hồ Chí Minh</h3>
               <p>{siteConfig.hoursLabel}</p>
               <div className="menu-card-actions">
-                <a href={buildMapsLink(siteConfig.mapQuery)} target="_blank" rel="noreferrer" className="solid-button">
-                  Xem vị trí
+                <a href="/cua-hang" className="solid-button">
+                  Xem trang cửa hàng
                 </a>
-                <a href={buildPhoneHref(siteConfig.phoneNumber)} className="outline-button">
-                  Gọi quán
+                <a href={buildMapsLink(siteConfig.mapQuery)} target="_blank" rel="noreferrer" className="outline-button">
+                  Mở Maps
                 </a>
               </div>
             </article>
