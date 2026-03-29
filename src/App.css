@@ -215,7 +215,8 @@ h3 {
 .menu-grid,
 .readiness-checklist,
 .product-detail-layout,
-.detail-content-grid {
+.detail-content-grid,
+.store-grid {
   display: grid;
   gap: 18px;
 }
@@ -458,6 +459,14 @@ h3 {
 
 .compact-card {
   min-width: 220px;
+}
+
+.store-grid {
+  grid-template-columns: 1fr;
+}
+
+.store-card {
+  max-width: 720px;
 }
 
 .contact-card {

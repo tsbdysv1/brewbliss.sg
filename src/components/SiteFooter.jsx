@@ -45,6 +45,9 @@ function SiteFooter() {
           <a href="/#mon-noi-bat" className="footer-link">
             Món nổi bật
           </a>
+          <a href="/#cua-hang" className="footer-link">
+            Cửa hàng
+          </a>
           <Link to="/menu/salted-caramel" className="footer-link">
             Signature drinks
           </Link>
