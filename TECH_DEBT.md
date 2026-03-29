@@ -16,6 +16,7 @@
 - Add more menu item descriptions where helpful
 - Identify signature drinks the owner wants featured first
 - Replace placeholder web images with real shop photography
+- Validate each placeholder image against the exact presentation/style the shop wants for the corresponding menu item
 
 ## Technical follow-up ideas
 

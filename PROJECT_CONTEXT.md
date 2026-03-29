@@ -36,6 +36,7 @@ This site should feel:
 
 - Owner-provided menu photos with real item names and pricing
 - Owner-provided logo and visual direction (orange-led palette)
+- Placeholder web imagery mapped more narrowly to item types (latte, cappuccino, pain au chocolat, hand drip, etc.) until real shop photos are available
 - Public internet footprint used only to support initial context before owner confirmation
 
 ## Notes for future work

@@ -22,7 +22,7 @@ Website foundation for BrewBliss Coffee in Ho Chi Minh City.
 
 ## Notes
 
-- Some menu items may still use placeholder web images until the shop provides brand-approved photos.
+- Menu images are still placeholders for now, but they have been remapped to more item-specific queries to reduce broken images and obvious mismatches until real photos arrive.
 - The current UI now uses the provided BrewBliss wordmark directly instead of only inferring the brand from color direction.
 - The site now includes route-level detail pages for menu items at `/menu/:slug`.
 - The site now has a fuller header, footer, and clearer contact-action system inspired by how real F&B brands surface navigation and communication options.
