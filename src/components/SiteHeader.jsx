@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../data/site'
-import { buildPhoneHref } from '../utils/commerce'
+import { buildMapsLink, buildPhoneHref } from '../utils/commerce'
 
 function SiteHeader() {
   return (
@@ -18,11 +18,8 @@ function SiteHeader() {
         <a href="/#mon-noi-bat" className="nav-link">
           Món nổi bật
         </a>
-        <a href="/#lien-he" className="nav-link">
-          Liên hệ
-        </a>
-        <a href={siteConfig.instagramLink} target="_blank" rel="noreferrer" className="nav-link">
-          Instagram
+        <a href={buildMapsLink(siteConfig.mapQuery)} target="_blank" rel="noreferrer" className="nav-link">
+          Map
         </a>
       </nav>
 
@@ -30,8 +27,13 @@ function SiteHeader() {
         <a href={buildPhoneHref(siteConfig.phoneNumber)} className="outline-button compact-button">
           Gọi quán
         </a>
-        <a href={siteConfig.facebookLink} target="_blank" rel="noreferrer" className="solid-button compact-button">
-          Facebook
+        <a
+          href={buildMapsLink(siteConfig.mapQuery)}
+          target="_blank"
+          rel="noreferrer"
+          className="solid-button compact-button"
+        >
+          Chỉ đường
         </a>
       </div>
     </header>
