@@ -111,33 +111,6 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="section-block store-section">
-          <div className="section-heading">
-            <p className="eyebrow">Cửa hàng</p>
-            <h2>BrewBliss giờ đã có trang cửa hàng riêng</h2>
-            <p className="section-supporting-text">
-              Nếu bạn muốn xem vị trí theo kiểu rõ ràng hơn, BrewBliss hiện đã có trang Cửa Hàng
-              riêng với map và thông tin địa chỉ tách biệt khỏi homepage.
-            </p>
-          </div>
-
-          <div className="store-grid">
-            <article className="info-card store-card">
-              <p className="card-label">BrewBliss Coffee</p>
-              <h3>21 Nguyễn Trung Trực, Bến Thành, Quận 1, Hồ Chí Minh</h3>
-              <p>{siteConfig.hoursLabel}</p>
-              <div className="menu-card-actions">
-                <a href="/cua-hang" className="solid-button">
-                  Xem trang cửa hàng
-                </a>
-                <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="outline-button">
-                  Mở Maps
-                </a>
-              </div>
-            </article>
-          </div>
-        </section>
-
         <section className="section-block contact-section" id="lien-he">
           <div className="contact-card contact-card-enhanced">
             <div>
