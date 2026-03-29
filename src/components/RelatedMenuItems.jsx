@@ -1,17 +1,20 @@
 import { Link } from 'react-router-dom'
 import { formatMenuPrice } from '../data/menu'
 
-function MenuCategorySection({ category }) {
+function RelatedMenuItems({ items }) {
+  if (!items.length) {
+    return null
+  }
+
   return (
-    <section className="section-block menu-category-section" id={category.slug}>
+    <section className="section-block">
       <div className="section-heading">
-        <p className="eyebrow">Menu category</p>
-        <h2>{category.name}</h2>
-        <p className="section-supporting-text">{category.description}</p>
+        <p className="eyebrow">Có thể bạn cũng thích</p>
+        <h2>Các món liên quan</h2>
       </div>
 
-      <div className="menu-grid">
-        {category.items.map((item) => (
+      <div className="menu-grid related-grid">
+        {items.map((item) => (
           <article key={item.slug} className="menu-card">
             <img src={item.image} alt={item.name} className="menu-card-image" />
             <div className="menu-card-content">
@@ -20,15 +23,6 @@ function MenuCategorySection({ category }) {
                 <strong>{formatMenuPrice(item.priceValue)}</strong>
               </div>
               {item.description ? <p>{item.description}</p> : null}
-              {item.badges?.length ? (
-                <div className="product-badge-row">
-                  {item.badges.map((badge) => (
-                    <span key={badge} className="product-badge">
-                      {badge}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
               <div className="menu-card-actions">
                 <Link to={`/menu/${item.slug}`} className="outline-button">
                   Xem chi tiết
@@ -42,4 +36,4 @@ function MenuCategorySection({ category }) {
   )
 }
 
-export default MenuCategorySection
+export default RelatedMenuItems

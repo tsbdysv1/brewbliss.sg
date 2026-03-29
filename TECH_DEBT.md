@@ -21,5 +21,6 @@
 
 - Add page-level menu category filtering
 - Add richer gallery section when photos are available
+- Enrich each menu detail page with real tasting notes, ingredient notes, and better photos
 - Add structured data for LocalBusiness/CafeOrCoffeeShop
 - Add CMS or database-backed menu workflow later if needed

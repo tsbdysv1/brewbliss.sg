@@ -126,6 +126,9 @@ h3 {
 .contact-actions,
 .product-badge-row,
 .menu-card-topline,
+.menu-card-actions,
+.product-detail-actions,
+.product-detail-meta,
 .extras-grid {
   display: flex;
   gap: 12px;
@@ -163,7 +166,9 @@ h3 {
 .hero-grid,
 .category-grid,
 .menu-grid,
-.readiness-checklist {
+.readiness-checklist,
+.product-detail-layout,
+.detail-content-grid {
   display: grid;
   gap: 18px;
 }
@@ -171,6 +176,15 @@ h3 {
 .hero-grid {
   grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
   gap: 24px;
+}
+
+.product-detail-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.detail-content-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .category-grid {
@@ -185,7 +199,10 @@ h3 {
 .hero-card,
 .info-card,
 .menu-card,
-.contact-card {
+.contact-card,
+.detail-panel,
+.product-detail-media,
+.product-detail-main {
   border-radius: 28px;
 }
 
@@ -236,7 +253,10 @@ h3 {
 .hero-card,
 .info-card,
 .contact-card,
-.menu-card {
+.menu-card,
+.detail-panel,
+.product-detail-media,
+.product-detail-main {
   background: var(--surface-strong);
   border: 1px solid var(--border);
   padding: 24px;
@@ -260,8 +280,40 @@ h3 {
   padding: 32px 28px;
 }
 
-.section-heading {
+.section-heading,
+.breadcrumb-row {
   margin-bottom: 22px;
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(185, 80, 35, 0.22);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.breadcrumb-current,
+.breadcrumb-separator {
+  color: var(--muted);
 }
 
 .menu-card {
@@ -269,13 +321,18 @@ h3 {
   padding: 0;
 }
 
-.menu-card-image {
+.menu-card-image,
+.product-detail-image {
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
 .menu-card-content {
   padding: 18px;
+}
+
+.menu-card-actions {
+  margin-top: 14px;
 }
 
 .menu-card-topline {
@@ -290,6 +347,60 @@ h3 {
 .product-badge {
   padding: 8px 12px;
   font-size: 0.9rem;
+}
+
+.product-detail-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.detail-pill {
+  min-width: 180px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.detail-pill span {
+  display: block;
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+}
+
+.detail-pill strong {
+  color: var(--text);
+}
+
+.detail-list {
+  list-style: none;
+  margin: 18px 0 0;
+  display: grid;
+  gap: 12px;
+  padding: 0;
+}
+
+.detail-list li {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.inline-return-link {
+  width: fit-content;
+}
+
+.related-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.not-found-card {
+  text-align: center;
 }
 
 .readiness-checklist {
@@ -312,7 +423,10 @@ h3 {
   .category-grid,
   .menu-grid,
   .readiness-checklist,
-  .contact-card {
+  .contact-card,
+  .product-detail-layout,
+  .detail-content-grid,
+  .related-grid {
     grid-template-columns: 1fr;
     display: grid;
   }
@@ -351,12 +465,17 @@ h3 {
 
   .quick-actions,
   .hero-cta-row,
-  .contact-actions {
+  .contact-actions,
+  .menu-card-actions,
+  .product-detail-actions,
+  .product-detail-meta {
     flex-direction: column;
   }
 
   .solid-button,
-  .outline-button {
+  .outline-button,
+  .breadcrumb-link,
+  .inline-return-link {
     width: 100%;
   }
 }
