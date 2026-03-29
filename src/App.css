@@ -76,14 +76,14 @@ img {
 }
 
 .brand-logo {
-  width: 130px;
-  max-width: 32vw;
+  width: 240px;
+  max-width: min(42vw, 240px);
   height: auto;
   flex-shrink: 0;
 }
 
 .hero-logo-preview {
-  width: 140px;
+  width: 220px;
   max-width: 100%;
   margin-bottom: 14px;
 }
@@ -341,8 +341,12 @@ h3 {
   }
 
   .brand-logo {
-    width: 96px;
-    max-width: 42vw;
+    width: 180px;
+    max-width: 60vw;
+  }
+
+  .hero-logo-preview {
+    width: 180px;
   }
 
   .quick-actions,
