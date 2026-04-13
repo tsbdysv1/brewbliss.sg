@@ -86,6 +86,14 @@ img {
   flex-wrap: wrap;
 }
 
+.site-nav {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.5fr) repeat(5, minmax(0, 1fr));
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
 .nav-link,
 .footer-link,
 .muted-link {
@@ -94,7 +102,24 @@ img {
 }
 
 .nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  text-align: center;
   font-size: 1.18rem;
+  white-space: nowrap;
+}
+
+.brand-nav-link {
+  justify-content: flex-start;
+}
+
+.contact-nav-link {
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(185, 80, 35, 0.22);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .nav-link:hover,
@@ -123,8 +148,8 @@ img {
 }
 
 .brand-logo {
-  width: 320px;
-  max-width: min(52vw, 320px);
+  width: 220px;
+  max-width: min(100%, 220px);
   height: auto;
   flex-shrink: 0;
 }
@@ -667,6 +692,16 @@ h3 {
     align-items: flex-start;
   }
 
+  .site-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 100%;
+  }
+
+  .brand-nav-link {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
   .trust-points {
     grid-template-columns: 1fr;
   }
@@ -686,7 +721,7 @@ h3 {
   }
 
   .brand-logo {
-    width: 260px;
+    width: 220px;
     max-width: 78vw;
   }
 
@@ -701,6 +736,17 @@ h3 {
   .product-detail-actions,
   .product-detail-meta {
     flex-direction: column;
+  }
+
+  .site-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-link,
+  .brand-nav-link,
+  .contact-nav-link {
+    width: 100%;
+    justify-content: center;
   }
 
   .solid-button,

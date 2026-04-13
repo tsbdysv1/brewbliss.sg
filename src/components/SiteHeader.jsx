@@ -1,17 +1,13 @@
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../data/site'
-import { buildPhoneHref } from '../utils/commerce'
 
 function SiteHeader() {
   return (
     <header className="site-header-bar">
-      <div className="site-header-brand">
-        <Link to="/" className="brand-home-link" aria-label="BrewBliss home">
+      <nav className="site-nav" aria-label="Primary navigation">
+        <Link to="/" className="brand-home-link nav-link brand-nav-link" aria-label="BrewBliss home">
           <img src="/brewbliss-wordmark.svg" alt="BrewBliss Coffee" className="brand-logo" />
         </Link>
-      </div>
-
-      <nav className="site-nav" aria-label="Primary navigation">
         <a href="/#menu" className="nav-link">
           Menu
         </a>
@@ -24,21 +20,10 @@ function SiteHeader() {
         <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="nav-link">
           Map
         </a>
+        <a href="/#lien-he" className="nav-link contact-nav-link">
+          Liên Hệ
+        </a>
       </nav>
-
-      <div className="site-header-actions">
-        <a href={buildPhoneHref(siteConfig.phoneNumber)} className="outline-button compact-button">
-          Gọi quán
-        </a>
-        <a
-          href={siteConfig.mapLink}
-          target="_blank"
-          rel="noreferrer"
-          className="solid-button compact-button"
-        >
-          Chỉ đường
-        </a>
-      </div>
     </header>
   )
 }
