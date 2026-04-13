@@ -38,15 +38,15 @@ function SiteFooter() {
         </div>
 
         <div className="footer-column">
-          <p className="footer-title">Khám phá</p>
-          <Link to="/menu" className="footer-link">
-            Xem toàn bộ menu
+          <p className="footer-title">Explore</p>
+          <Link to="/collection" className="footer-link">
+            Collection
           </Link>
-          <a href="/#mon-noi-bat" className="footer-link">
-            Món nổi bật
-          </a>
+          <Link to="/menu" className="footer-link">
+            Menu
+          </Link>
           <Link to="/cua-hang" className="footer-link">
-            Cửa hàng
+            Store
           </Link>
           <Link to="/menu/salted-caramel" className="footer-link">
             Signature drinks

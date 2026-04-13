@@ -9,8 +9,8 @@ function StoresPage() {
   const activeStore = stores[0]
 
   usePageSeo({
-    title: `Cửa Hàng | ${siteConfig.brandName}`,
-    description: `Tìm cửa hàng ${siteConfig.brandName} và xem địa chỉ, giờ mở cửa, bản đồ để ghé quán nhanh hơn.`,
+    title: `Store | ${siteConfig.brandName}`,
+    description: `Tìm store của ${siteConfig.brandName} và xem địa chỉ, giờ mở cửa, bản đồ để ghé quán nhanh hơn.`,
     jsonLd: siteConfig.defaultJsonLd,
     pathname: '/cua-hang',
     image: siteConfig.seo.defaultImage,
@@ -22,8 +22,8 @@ function StoresPage() {
 
       <section className="section-block store-page-shell">
         <div className="store-page-sidebar">
-          <p className="eyebrow sidebar-eyebrow">Tìm kiếm cửa hàng</p>
-          <h1>Cửa Hàng BrewBliss</h1>
+          <p className="eyebrow sidebar-eyebrow">Store</p>
+          <h1>BrewBliss Store</h1>
           <div className="store-list">
             {stores.map((store) => (
               <article key={store.slug} className="store-list-item active-store-item">

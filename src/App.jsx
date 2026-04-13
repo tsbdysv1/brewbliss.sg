@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
+import CollectionPage from './pages/CollectionPage'
 import HomePage from './pages/HomePage'
 import MenuItemDetailPage from './pages/MenuItemDetailPage'
 import MenuPage from './pages/MenuPage'
@@ -10,6 +11,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/collection" element={<CollectionPage />} />
       <Route path="/menu" element={<MenuPage />} />
       <Route path="/menu/:slug" element={<MenuItemDetailPage />} />
       <Route path="/cua-hang" element={<StoresPage />} />
