@@ -39,9 +39,9 @@ function SiteFooter() {
 
         <div className="footer-column">
           <p className="footer-title">Khám phá</p>
-          <a href="/#menu" className="footer-link">
+          <Link to="/menu" className="footer-link">
             Xem toàn bộ menu
-          </a>
+          </Link>
           <a href="/#mon-noi-bat" className="footer-link">
             Món nổi bật
           </a>

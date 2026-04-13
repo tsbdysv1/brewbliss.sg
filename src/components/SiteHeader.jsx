@@ -8,9 +8,9 @@ function SiteHeader() {
         <Link to="/" className="brand-home-link nav-link brand-nav-link" aria-label="BrewBliss home">
           <img src="/brewbliss-wordmark.svg" alt="BrewBliss Coffee" className="brand-logo" />
         </Link>
-        <a href="/#menu" className="nav-link">
+        <Link to="/menu" className="nav-link">
           Menu
-        </a>
+        </Link>
         <a href="/#mon-noi-bat" className="nav-link">
           Món nổi bật
         </a>
@@ -20,9 +20,9 @@ function SiteHeader() {
         <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="nav-link">
           Map
         </a>
-        <a href="/#lien-he" className="nav-link contact-nav-link">
+        <Link to="/#lien-he" className="nav-link contact-nav-link">
           Liên Hệ
-        </a>
+        </Link>
       </nav>
     </header>
   )

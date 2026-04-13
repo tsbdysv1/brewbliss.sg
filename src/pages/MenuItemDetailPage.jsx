@@ -33,7 +33,7 @@ function MenuItemDetailPage() {
       <Breadcrumbs
         items={[
           { label: 'Trang chủ', to: '/' },
-          { label: 'Menu', to: '/#menu' },
+          { label: 'Menu', to: '/menu' },
           { label: item.name },
         ]}
       />
@@ -80,9 +80,9 @@ function MenuItemDetailPage() {
             </a>
           </div>
 
-          <a href="/#menu" className="outline-button inline-return-link">
+          <Link to="/menu" className="outline-button inline-return-link">
             ← Quay lại menu
-          </a>
+          </Link>
         </div>
       </section>
 
