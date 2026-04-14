@@ -158,21 +158,6 @@ function HomePage() {
             </div>
           </div>
         </section>
-        <section className="section-block">
-          <div className="section-heading">
-            <p className="eyebrow">Vì sao BrewBliss dễ nhớ</p>
-            <h2>Một website cho quán cafe nên giúp người ta vừa cảm vibe, vừa xem menu thật nhanh</h2>
-          </div>
-          <div className="category-grid">
-            {categories.map((item) => (
-              <article key={item.title} className="info-card">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <div id="mon-noi-bat">{featuredCategory ? <MenuCategorySection category={featuredCategory} /> : null}</div>
 
         <section className="section-block readiness-section">
