@@ -32,7 +32,6 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
     <section className={`section-block signature-collection-section ${className}`.trim()} aria-labelledby="signature-collection-title">
       <div className="signature-collection-header">
         <div className="signature-collection-heading-group">
-          <p className="eyebrow">Featured collection</p>
           <HeadingTag id="signature-collection-title">BrewBliss Signature Collection</HeadingTag>
         </div>
 
@@ -63,7 +62,9 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
           onClick={() => scrollGallery(-1)}
           aria-label="Previous signature item"
         >
-          ←
+          <span className="signature-collection-arrow-icon" aria-hidden="true">
+            ◀
+          </span>
         </button>
         <button
           type="button"
@@ -71,7 +72,9 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
           onClick={() => scrollGallery(1)}
           aria-label="Next signature item"
         >
-          →
+          <span className="signature-collection-arrow-icon" aria-hidden="true">
+            ▶
+          </span>
         </button>
       </div>
     </section>
