@@ -54,9 +54,8 @@ export const siteConfig = {
 
 export const heroSlides = [
   {
-    image:
-      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1800&q=80',
-    alt: 'Freshly brewed coffee on a premium cafe counter',
+    image: 'https://drive.google.com/uc?export=view&id=1HFpcW0e9aehtjFvYPGQNzvfHpt7Pvdg9',
+    alt: 'BrewBliss coffee hero image',
   },
   {
     image:
