@@ -1,6 +1,6 @@
 :root {
-  --bg: #fff8f3;
-  --surface: #fff4eb;
+  --bg: #ffffff;
+  --surface: #ffffff;
   --surface-strong: #ffffff;
   --text: #33221b;
   --muted: #7c6155;
@@ -8,7 +8,7 @@
   --primary: #d9672f;
   --primary-strong: #b95023;
   --accent: #f5c29a;
-  --shadow: 0 20px 60px rgba(171, 90, 42, 0.12);
+  --shadow: 0 16px 40px rgba(51, 34, 27, 0.06);
 }
 
 * {
@@ -23,9 +23,7 @@ body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(245, 194, 154, 0.34), transparent 35%),
-    linear-gradient(180deg, #fffaf5 0%, #fff2e8 100%);
+  background: #ffffff;
 }
 
 a {
@@ -38,6 +36,15 @@ img {
   width: 100%;
 }
 
+html,
+body,
+#root,
+main,
+section,
+div {
+  background-color: #ffffff;
+}
+
 #root {
   min-height: 100vh;
 }
@@ -46,14 +53,15 @@ img {
   width: min(1200px, calc(100% - 32px));
   margin: 0 auto;
   padding: 0 0 72px;
+  background: #ffffff;
 }
 
 .hero-section,
 .section-block {
-  background: rgba(255, 248, 243, 0.85);
+  background: #ffffff;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
+  backdrop-filter: none;
 }
 
 .hero-slider-section {
@@ -65,7 +73,7 @@ img {
   margin-right: calc(50% - 50vw);
   margin-bottom: 28px;
   overflow: hidden;
-  background: #f3e6dc;
+  background: #ffffff;
 }
 
 @media (min-width: 1024px) {
@@ -179,10 +187,10 @@ img {
   width: 100vw;
   transform: translateX(-50%) translateY(0);
   transition: transform 0.32s ease, box-shadow 0.32s ease;
-  background: rgba(255, 255, 255, 0.96);
+  background: #ffffff;
   border-bottom: 1px solid rgba(104, 62, 39, 0.08);
   box-shadow: 0 8px 30px rgba(51, 34, 27, 0.04);
-  backdrop-filter: blur(12px);
+  backdrop-filter: none;
 }
 
 .site-header-bar.is-hidden {
@@ -439,7 +447,7 @@ h3 {
 .product-badge {
   padding: 16px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.76);
+  background: #ffffff;
   border: 1px solid var(--border);
   color: var(--muted);
 }
@@ -461,7 +469,7 @@ h3 {
   margin-top: 20px;
   padding: 18px;
   border-radius: 20px;
-  background: linear-gradient(180deg, #fff3ea, #ffffff);
+  background: #ffffff;
 }
 
 .location-stack strong {
@@ -503,7 +511,7 @@ h3 {
   padding: 0 14px;
   border-radius: 999px;
   border: 1px solid rgba(185, 80, 35, 0.22);
-  background: rgba(255, 255, 255, 0.72);
+  background: #ffffff;
 }
 
 .breadcrumb-current,
@@ -555,7 +563,7 @@ h3 {
   min-width: 180px;
   padding: 16px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.76);
+  background: #ffffff;
   border: 1px solid var(--border);
   color: var(--muted);
 }
@@ -599,7 +607,7 @@ h3 {
 .detail-list li {
   padding: 16px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.76);
+  background: #ffffff;
   border: 1px solid var(--border);
   color: var(--muted);
 }
