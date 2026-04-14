@@ -39,7 +39,6 @@ function HomePage() {
           </div>
 
           <Link to="/store" className="editorial-address-box" aria-label="Xem trang cửa hàng BrewBliss">
-            <span className="editorial-address-kicker">BrewBliss Coffee</span>
             <strong>BrewBliss Coffee</strong>
             <p>
               21 Nguyễn Trung Trực
