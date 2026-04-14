@@ -55,17 +55,15 @@ export const siteConfig = {
 export const heroSlides = [
   {
     image: '/hero/hero-slide-1.jpg',
-    alt: 'BrewBliss coffee hero image',
+    alt: 'BrewBliss storefront exterior',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=80',
-    alt: 'Coffee beans and brewing setup in warm light',
+    image: '/hero/hero-slide-2.jpg',
+    alt: 'BrewBliss iced coffee close-up',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1800&q=80',
-    alt: 'Modern coffee shop interior with a warm premium atmosphere',
+    image: '/hero/hero-slide-3.jpg',
+    alt: 'BrewBliss bar and interior atmosphere',
   },
   {
     image:
