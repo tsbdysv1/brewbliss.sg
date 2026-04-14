@@ -236,7 +236,7 @@ div {
   display: block;
   align-self: end;
   justify-self: start;
-  width: min(100%, 320px);
+  width: min(100%, 380px);
   padding: 20px 18px;
   background: #f47c2a;
   color: #ffffff;
