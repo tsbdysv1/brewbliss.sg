@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import HeroSlider from '../components/HeroSlider'
 import MenuCategorySection from '../components/MenuCategorySection'
+import SignatureCollectionSection from '../components/SignatureCollectionSection'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
 import { menuCategories, menuExtras } from '../data/menu'
@@ -69,7 +70,6 @@ const brewblissExperienceTabs = [
 ]
 
 function HomePage() {
-  const featuredCategory = menuCategories.find((category) => category.slug === 'featured')
   const visibleCategories = menuCategories.filter((category) => category.slug !== 'featured')
   const [activeExperienceTab, setActiveExperienceTab] = useState('vietnamese-coffee-bar')
   const activeExperienceContent = useMemo(
@@ -158,7 +158,9 @@ function HomePage() {
             </div>
           </div>
         </section>
-        <div id="mon-noi-bat">{featuredCategory ? <MenuCategorySection category={featuredCategory} /> : null}</div>
+        <div id="mon-noi-bat">
+          <SignatureCollectionSection />
+        </div>
 
         <section className="section-block readiness-section">
           <div className="section-heading">

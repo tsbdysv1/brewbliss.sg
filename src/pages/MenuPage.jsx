@@ -1,5 +1,6 @@
 import Breadcrumbs from '../components/Breadcrumbs'
 import MenuCategorySection from '../components/MenuCategorySection'
+import SignatureCollectionSection from '../components/SignatureCollectionSection'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
 import { menuCategories, menuExtras } from '../data/menu'
@@ -7,7 +8,6 @@ import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 
 function MenuPage() {
-  const featuredCategory = menuCategories.find((category) => category.slug === 'featured')
   const visibleCategories = menuCategories.filter((category) => category.slug !== 'featured')
 
   usePageSeo({
@@ -36,7 +36,9 @@ function MenuPage() {
         </div>
       </section>
 
-      <div id="mon-noi-bat">{featuredCategory ? <MenuCategorySection category={featuredCategory} /> : null}</div>
+      <div id="mon-noi-bat">
+        <SignatureCollectionSection />
+      </div>
 
       {visibleCategories.map((category) => (
         <MenuCategorySection key={category.slug} category={category} />

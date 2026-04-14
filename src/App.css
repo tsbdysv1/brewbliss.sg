@@ -760,6 +760,116 @@ h3 {
   margin-top: 14px;
 }
 
+.signature-collection-section {
+  background: #f7f5f1;
+  border-radius: 32px;
+  padding: clamp(28px, 4vw, 44px);
+}
+
+.signature-collection-page-section {
+  margin-top: 0;
+}
+
+.signature-collection-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.signature-collection-heading-group {
+  display: grid;
+  gap: 10px;
+}
+
+.signature-collection-heading-group h1,
+.signature-collection-heading-group h2 {
+  max-width: 780px;
+  font-size: clamp(2rem, 4.4vw, 3.5rem);
+  line-height: 0.98;
+  color: #2e221d;
+}
+
+.signature-view-all-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(46, 34, 29, 0.16);
+  background: rgba(255, 255, 255, 0.9);
+  color: #2e221d;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.signature-collection-gallery {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(190px, 23vw);
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.signature-collection-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.signature-collection-card {
+  display: block;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #ebe6de;
+  scroll-snap-align: start;
+}
+
+.signature-collection-image {
+  width: 100%;
+  aspect-ratio: 4 / 6;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.signature-collection-card:hover .signature-collection-image,
+.signature-collection-card:focus-visible .signature-collection-image {
+  transform: scale(1.03);
+}
+
+.signature-collection-controls {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.signature-collection-arrow {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(46, 34, 29, 0.16);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #2e221d;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.signature-collection-arrow:hover,
+.signature-collection-arrow:focus-visible {
+  background: #f0ebe3;
+  transform: translateY(-1px);
+}
+
 .menu-card-topline {
   align-items: center;
   justify-content: space-between;
@@ -1059,6 +1169,11 @@ h3 {
   .trust-points {
     grid-template-columns: 1fr;
   }
+
+  .signature-collection-gallery {
+    grid-auto-columns: minmax(170px, 34vw);
+    gap: 18px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -1107,6 +1222,49 @@ h3 {
   .brewbliss-experience-box {
     padding: 14px 20px 24px;
     border-radius: 2px;
+  }
+
+  .signature-collection-section {
+    padding: 24px 20px;
+    border-radius: 24px;
+  }
+
+  .signature-collection-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .signature-collection-heading-group h1,
+  .signature-collection-heading-group h2 {
+    font-size: clamp(1.7rem, 8vw, 2.3rem);
+    line-height: 1.02;
+  }
+
+  .signature-view-all-button {
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 0.94rem;
+  }
+
+  .signature-collection-gallery {
+    grid-auto-columns: 68vw;
+    gap: 14px;
+    padding-bottom: 8px;
+  }
+
+  .signature-collection-card {
+    border-radius: 22px;
+  }
+
+  .signature-collection-controls {
+    margin-top: 18px;
+    gap: 10px;
+  }
+
+  .signature-collection-arrow {
+    width: 44px;
+    height: 44px;
   }
 
   .brewbliss-experience-tabs {

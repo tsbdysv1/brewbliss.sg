@@ -4,6 +4,7 @@ import CollectionPage from './pages/CollectionPage'
 import HomePage from './pages/HomePage'
 import MenuItemDetailPage from './pages/MenuItemDetailPage'
 import MenuPage from './pages/MenuPage'
+import SignatureMenuPage from './pages/SignatureMenuPage'
 import NotFoundPage from './pages/NotFoundPage'
 import StoresPage from './pages/StoresPage'
 
@@ -13,6 +14,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/collection" element={<CollectionPage />} />
       <Route path="/menu" element={<MenuPage />} />
+      <Route path="/menu/signature" element={<SignatureMenuPage />} />
       <Route path="/menu/:slug" element={<MenuItemDetailPage />} />
       <Route path="/store" element={<Navigate to="/cua-hang" replace />} />
       <Route path="/cua-hang" element={<StoresPage />} />
