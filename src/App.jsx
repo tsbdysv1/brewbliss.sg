@@ -14,6 +14,7 @@ function App() {
       <Route path="/collection" element={<CollectionPage />} />
       <Route path="/menu" element={<MenuPage />} />
       <Route path="/menu/:slug" element={<MenuItemDetailPage />} />
+      <Route path="/store" element={<Navigate to="/cua-hang" replace />} />
       <Route path="/cua-hang" element={<StoresPage />} />
       <Route path="/khong-tim-thay" element={<NotFoundPage />} />
       <Route path="*" element={<Navigate to="/khong-tim-thay" replace />} />

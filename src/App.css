@@ -164,6 +164,94 @@ div {
   padding: 28px;
 }
 
+.editorial-hero-section {
+  margin-top: 8px;
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(51, 34, 27, 0.12);
+}
+
+.editorial-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(280px, 1fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+}
+
+.editorial-hero-copy {
+  max-width: 760px;
+}
+
+.editorial-hero-copy h1 {
+  max-width: 10ch;
+  font-size: clamp(2.5rem, 5vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.editorial-hero-body {
+  max-width: 500px;
+  margin-top: 28px;
+  display: grid;
+  gap: 16px;
+}
+
+.editorial-hero-body p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.editorial-address-box {
+  display: block;
+  align-self: stretch;
+  min-height: 100%;
+  padding: 28px;
+  background: #f47c2a;
+  color: #ffffff;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+  box-shadow: 0 12px 28px rgba(244, 124, 42, 0.18);
+}
+
+.editorial-address-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 18px 36px rgba(244, 124, 42, 0.24);
+  filter: brightness(0.98);
+}
+
+.editorial-address-box:focus-visible {
+  outline: 2px solid rgba(244, 124, 42, 0.35);
+  outline-offset: 4px;
+}
+
+.editorial-address-kicker {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.editorial-address-box strong {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.editorial-address-box p {
+  color: inherit;
+  line-height: 1.8;
+}
+
+.editorial-address-box p + p {
+  margin-top: 22px;
+}
+
 .site-header-bar,
 .topbar {
   display: flex;
@@ -807,7 +895,8 @@ h3 {
   .related-grid,
   .contact-action-grid,
   .footer-grid,
-  .store-page-shell {
+  .store-page-shell,
+  .editorial-hero-grid {
     grid-template-columns: 1fr;
     display: grid;
   }
@@ -848,6 +937,25 @@ h3 {
   .section-block {
     padding: 20px;
     border-radius: 22px;
+  }
+
+  .editorial-hero-section {
+    padding: 40px 0;
+  }
+
+  .editorial-hero-body {
+    margin-top: 20px;
+    gap: 14px;
+  }
+
+  .editorial-hero-body p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .editorial-address-box {
+    padding: 24px 20px;
+    border-radius: 10px;
   }
 
   .hero-slider-section {

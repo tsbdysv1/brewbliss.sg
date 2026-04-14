@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import HeroSlider from '../components/HeroSlider'
 import MenuCategorySection from '../components/MenuCategorySection'
 import SiteFooter from '../components/SiteFooter'
@@ -25,42 +26,36 @@ function HomePage() {
 
       <HeroSlider slides={heroSlides} autoPlayMs={5000} />
 
-      <header className="hero-section">
-        <div className="hero-grid">
-          <div className="hero-copy">
-            <p className="eyebrow">Coffee shop in Sai Gon</p>
-            <h2>{siteConfig.heroTitle}</h2>
-            <p className="hero-text">{siteConfig.heroDescription}</p>
-            <div className="hero-cta-row">
-              <a href="#menu" className="solid-button">
-                Xem menu
-              </a>
-              <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="outline-button">
-                Mở Google Maps
-              </a>
+      <section className="editorial-hero-section">
+        <div className="editorial-hero-grid">
+          <div className="editorial-hero-copy">
+            <h1>Chào bạn, hôm nay bạn cảm thấy như thế nào?</h1>
+            <div className="editorial-hero-body">
+              <p>Nếu bạn đang cần một nơi để “chill”, BrewBliss luôn ở đây.</p>
+              <p>Một ly cà phê, một chút âm nhạc, và vài phút nhẹ nhàng giữa nhịp sống vội vã.</p>
+              <p>Dù là lần đầu hay đã quen thuộc, hy vọng bạn sẽ tìm thấy ở đây những cảm xúc thật đẹp.</p>
+              <p>Brew your coffee, brew your happiness.</p>
             </div>
-            <ul className="trust-points">
-              {siteConfig.trustPoints.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
           </div>
 
-          <aside className="hero-card">
-            <p className="card-label">BrewBliss vibe</p>
-            <h3>Cam ấm, cafe hiện đại, menu đủ rộng để đi một mình hay hẹn bạn bè đều hợp</h3>
+          <Link to="/store" className="editorial-address-box" aria-label="Xem trang cửa hàng BrewBliss">
+            <span className="editorial-address-kicker">BrewBliss Coffee</span>
+            <strong>BrewBliss Coffee</strong>
             <p>
-              Từ espresso, cold brew, Vietnamese coffee đến matcha, tea và pastry, BrewBliss có đủ
-              chất liệu để trở thành một điểm hẹn vừa chill vừa dễ quay lại ở trung tâm quận 1.
+              21 Nguyễn Trung Trực
+              <br />
+              Phường Bến Thành
+              <br />
+              Thành Phố Hồ Chí Minh
             </p>
-            <div className="location-stack">
-              <img src="/brewbliss-wordmark.svg" alt="BrewBliss wordmark" className="hero-logo-preview" />
-              <strong>{siteConfig.address}</strong>
-              <p>{siteConfig.hoursLabel}</p>
-            </div>
-          </aside>
+            <p>
+              Open Hours: 7:00AM - 10:00 PM
+              <br />
+              Everyday
+            </p>
+          </Link>
         </div>
-      </header>
+      </section>
 
       <main>
         <section className="section-block">
