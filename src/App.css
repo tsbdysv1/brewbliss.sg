@@ -45,7 +45,7 @@ img {
 .page-shell {
   width: min(1200px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 40px 0 72px;
+  padding: 0 0 72px;
 }
 
 .hero-section,
@@ -73,21 +73,22 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   margin-bottom: 28px;
-  background: rgba(255, 255, 255, 0.96);
+  background: #ffffff;
   border-bottom: 1px solid rgba(104, 62, 39, 0.08);
   box-shadow: 0 8px 30px rgba(51, 34, 27, 0.04);
-  backdrop-filter: blur(8px);
 }
 
 .site-header-inner {
-  width: min(1280px, calc(100% - 40px));
+  width: 100%;
   min-height: 88px;
-  margin: 0 auto;
+  padding: 0 clamp(20px, 3vw, 40px);
   display: grid;
-  grid-template-columns: minmax(220px, 1.4fr) auto;
-  align-items: end;
+  grid-template-columns: minmax(220px, 1fr) auto;
+  align-items: center;
   gap: 32px;
 }
 
@@ -101,10 +102,9 @@ img {
 
 .site-nav {
   justify-content: flex-end;
-  align-items: end;
-  gap: clamp(16px, 2.2vw, 36px);
+  align-items: center;
+  gap: clamp(18px, 2.4vw, 40px);
   min-height: 88px;
-  padding-bottom: 14px;
 }
 
 .nav-link,
@@ -116,10 +116,9 @@ img {
 
 .nav-link {
   display: inline-flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  min-height: 28px;
-  padding-bottom: 2px;
+  min-height: 88px;
   text-align: center;
   font-size: 0.92rem;
   letter-spacing: 0.18em;
@@ -698,7 +697,6 @@ h3 {
   }
 
   .site-header-inner {
-    width: min(100% - 28px, 1280px);
     grid-template-columns: 1fr;
     gap: 0;
     padding-top: 6px;
@@ -708,6 +706,10 @@ h3 {
     justify-content: space-between;
     min-height: auto;
     padding-bottom: 12px;
+  }
+
+  .nav-link {
+    min-height: 44px;
   }
 
   .brand-nav-link {
@@ -723,7 +725,6 @@ h3 {
 @media (max-width: 720px) {
   .page-shell {
     width: min(100% - 20px, 1200px);
-    padding-top: 20px;
     padding-bottom: 48px;
   }
 
@@ -738,8 +739,8 @@ h3 {
   }
 
   .site-header-inner {
-    width: calc(100% - 20px);
     min-height: auto;
+    padding-inline: 20px;
   }
 
   .brand-logo {
@@ -763,7 +764,7 @@ h3 {
 
   .site-nav {
     align-items: center;
-    gap: 14px;
+    gap: 6px;
     padding-bottom: 18px;
   }
 
