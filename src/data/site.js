@@ -52,6 +52,34 @@ export const siteConfig = {
   },
 }
 
+export const heroSlides = [
+  {
+    image:
+      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1800&q=80',
+    alt: 'Freshly brewed coffee on a premium cafe counter',
+  },
+  {
+    image:
+      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=80',
+    alt: 'Coffee beans and brewing setup in warm light',
+  },
+  {
+    image:
+      'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1800&q=80',
+    alt: 'Modern coffee shop interior with a warm premium atmosphere',
+  },
+  {
+    image:
+      'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1800&q=80',
+    alt: 'Barista pouring coffee in a clean modern cafe setting',
+  },
+  {
+    image:
+      'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1800&q=80',
+    alt: 'Signature coffee presentation for a coffee brand homepage banner',
+  },
+]
+
 export const categories = [
   {
     title: 'Espresso bar',

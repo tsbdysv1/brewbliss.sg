@@ -1,8 +1,9 @@
+import HeroSlider from '../components/HeroSlider'
 import MenuCategorySection from '../components/MenuCategorySection'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
 import { menuCategories, menuExtras } from '../data/menu'
-import { categories, siteConfig } from '../data/site'
+import { categories, heroSlides, siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 import { buildPhoneHref } from '../utils/commerce'
 
@@ -21,6 +22,8 @@ function HomePage() {
   return (
     <div className="page-shell">
       <SiteHeader />
+
+      <HeroSlider slides={heroSlides} />
 
       <header className="hero-section">
         <div className="hero-grid">
