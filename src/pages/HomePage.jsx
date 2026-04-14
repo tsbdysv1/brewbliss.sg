@@ -29,7 +29,11 @@ function HomePage() {
       <section className="editorial-hero-section">
         <div className="editorial-hero-grid">
           <div className="editorial-hero-copy">
-            <h1>Chào bạn, hôm nay bạn cảm thấy như thế nào?</h1>
+            <h1>
+              Chào bạn,
+              <br />
+              hôm nay bạn cảm thấy thế nào.
+            </h1>
             <div className="editorial-hero-body">
               <p>Nếu bạn đang cần một nơi để “chill”, BrewBliss luôn ở đây.</p>
               <p>Một ly cà phê, một chút âm nhạc, và vài phút nhẹ nhàng giữa nhịp sống vội vã.</p>
