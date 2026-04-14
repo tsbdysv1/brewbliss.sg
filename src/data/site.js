@@ -66,14 +66,12 @@ export const heroSlides = [
     alt: 'BrewBliss bar and interior atmosphere',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1800&q=80',
-    alt: 'Barista pouring coffee in a clean modern cafe setting',
+    image: '/hero/hero-slide-4.png',
+    alt: 'BrewBliss coffee beans close-up',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1800&q=80',
-    alt: 'Signature coffee presentation for a coffee brand homepage banner',
+    image: '/hero/hero-slide-5.png',
+    alt: 'BrewBliss warm cafe corner interior',
   },
 ]
 
