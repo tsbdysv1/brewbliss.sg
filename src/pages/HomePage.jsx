@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import HeroSlider from '../components/HeroSlider'
 import MenuCategorySection from '../components/MenuCategorySection'
@@ -8,9 +9,74 @@ import { categories, heroSlides, siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 import { buildPhoneHref } from '../utils/commerce'
 
+const brewblissExperienceTabs = [
+  {
+    id: 'espresso-bar',
+    label: 'Espresso Bar',
+    description:
+      'Espresso Bar của BrewBliss được xây để giữ trọn sự gọn gàng và chính xác trong từng shot. Từ espresso nguyên bản đến latte, cappuccino hay các ly signature, mọi thứ đều hướng tới cảm giác cân bằng, hiện đại và dễ quay lại mỗi ngày.',
+    image: '/hero/hero-slide-2.jpg',
+    imageAlt: 'BrewBliss espresso-based drink',
+  },
+  {
+    id: 'vietnamese-coffee-bar',
+    label: 'Vietnamese Coffee Bar',
+    description:
+      'Cà phê Việt Nam tại BrewBliss không chỉ là một thức uống, mà là một phần của văn hoá và cảm xúc. Từ những hạt cà phê được chọn lọc kỹ lưỡng, rang xay đậm đà, chúng tôi mang đến hương vị đặc trưng – mạnh mẽ nhưng vẫn tinh tế, quen thuộc nhưng luôn có chiều sâu.',
+    image: '/hero/hero-slide-1.jpg',
+    imageAlt: 'BrewBliss Vietnamese coffee experience',
+  },
+  {
+    id: 'brew-bar',
+    label: 'Brew Bar',
+    description:
+      'Brew Bar là nơi những món uống mượt, nhẹ và có chiều sâu được thể hiện rõ nhất. Từ cold brew đến các công thức ủ riêng, BrewBliss giữ tinh thần clean, sáng vị và phù hợp cho những ai thích cà phê theo hướng thư thả, tinh gọn hơn.',
+    image: '/hero/hero-slide-4.png',
+    imageAlt: 'BrewBliss brew bar beans and coffee',
+  },
+  {
+    id: 'hand-drip',
+    label: 'Hand Drip',
+    description:
+      'Hand Drip tại BrewBliss tập trung vào trải nghiệm chậm và chỉn chu. Mỗi ly được pha với nhịp vừa đủ để hương thơm, độ ngọt và hậu vị hiện ra rõ ràng, tạo nên một khoảng dừng nhẹ nhàng đúng với tinh thần mà quán muốn mang lại.',
+    image: '/hero/hero-slide-3.jpg',
+    imageAlt: 'BrewBliss hand drip style coffee setting',
+  },
+  {
+    id: 'matcha',
+    label: 'Matcha',
+    description:
+      'Matcha là một mảng rất riêng của BrewBliss: mềm, xanh, tinh tế và đủ nổi bật giữa menu cà phê. Từ matcha latte đến các biến tấu theo mùa, quán giữ cảm giác mượt, thanh và dễ uống nhưng vẫn có điểm nhấn rõ ràng.',
+    image: '/hero/hero-slide-5.png',
+    imageAlt: 'BrewBliss matcha and warm cafe atmosphere',
+  },
+  {
+    id: 'tea',
+    label: 'Tea',
+    description:
+      'Tea được xây như một lựa chọn nhẹ nhàng hơn nhưng vẫn có cá tính riêng. Trà trái cây, trà thanh vị hay các món theo mùa đều hướng tới cảm giác tươi, cân bằng và phù hợp cho cả những buổi hẹn nhanh lẫn lúc cần ngồi lâu một chút.',
+    image: '/hero/hero-slide-1.jpg',
+    imageAlt: 'BrewBliss tea and storefront ambiance',
+  },
+  {
+    id: 'other-drinks',
+    label: 'Other Drinks',
+    description:
+      'Ngoài cà phê và trà, BrewBliss còn có những lựa chọn giúp menu trở nên đầy đặn và dễ chiều nhiều gu hơn. Đó có thể là các món đá xay, tonic, chocolate hay đồ uống theo mùa — tất cả đều giữ cùng một tinh thần gọn, đẹp và dễ nhớ.',
+    image: '/hero/hero-slide-2.jpg',
+    imageAlt: 'BrewBliss other drinks selection',
+  },
+]
+
 function HomePage() {
   const featuredCategory = menuCategories.find((category) => category.slug === 'featured')
   const visibleCategories = menuCategories.filter((category) => category.slug !== 'featured')
+  const [activeExperienceTab, setActiveExperienceTab] = useState('vietnamese-coffee-bar')
+  const activeExperienceContent = useMemo(
+    () =>
+      brewblissExperienceTabs.find((tab) => tab.id === activeExperienceTab) ?? brewblissExperienceTabs[1],
+    [activeExperienceTab],
+  )
 
   usePageSeo({
     title: siteConfig.seo.title,
@@ -62,6 +128,36 @@ function HomePage() {
       </section>
 
       <main>
+        <section className="brewbliss-experience-section" aria-labelledby="brewbliss-experience-title">
+          <div className="brewbliss-experience-box">
+            <h2 id="brewbliss-experience-title">BrewBliss tụi mình có</h2>
+
+            <div className="brewbliss-experience-tabs" role="tablist" aria-label="BrewBliss menu categories">
+              {brewblissExperienceTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={tab.id === activeExperienceTab}
+                  className={`brewbliss-experience-tab${tab.id === activeExperienceTab ? ' is-active' : ''}`}
+                  onClick={() => setActiveExperienceTab(tab.id)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            <div className="brewbliss-experience-content">
+              <div className="brewbliss-experience-copy">
+                <p>{activeExperienceContent.description}</p>
+              </div>
+
+              <div className="brewbliss-experience-media">
+                <img src={activeExperienceContent.image} alt={activeExperienceContent.imageAlt} />
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="section-block">
           <div className="section-heading">
             <p className="eyebrow">Vì sao BrewBliss dễ nhớ</p>
