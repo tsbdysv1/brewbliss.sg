@@ -1,44 +1,103 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 function HeroSlider({ slides = [], autoPlayMs = 5000 }) {
   const safeSlides = useMemo(() => slides.filter(Boolean), [slides])
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(1)
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true)
+  const resetTimeoutRef = useRef(null)
+
+  const slideCount = safeSlides.length
+  const visualSlides = useMemo(() => {
+    if (slideCount <= 1) return safeSlides
+
+    return [safeSlides[slideCount - 1], ...safeSlides, safeSlides[0]]
+  }, [safeSlides, slideCount])
 
   useEffect(() => {
-    if (safeSlides.length <= 1) return undefined
+    if (slideCount <= 1) {
+      setActiveIndex(0)
+      setIsTransitionEnabled(true)
+      return undefined
+    }
+
+    setActiveIndex(1)
+    setIsTransitionEnabled(true)
+
+    return undefined
+  }, [slideCount])
+
+  useEffect(() => {
+    if (slideCount <= 1) return undefined
 
     const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % safeSlides.length)
+      setIsTransitionEnabled(true)
+      setActiveIndex((current) => current + 1)
     }, autoPlayMs)
 
     return () => window.clearInterval(timer)
-  }, [autoPlayMs, safeSlides.length])
+  }, [autoPlayMs, slideCount])
 
   useEffect(() => {
-    setActiveIndex(0)
-  }, [safeSlides.length])
+    return () => {
+      if (resetTimeoutRef.current) {
+        window.clearTimeout(resetTimeoutRef.current)
+      }
+    }
+  }, [])
 
-  if (!safeSlides.length) return null
+  if (!slideCount) return null
+
+  const currentRealIndex = slideCount <= 1 ? 0 : (activeIndex - 1 + slideCount) % slideCount
 
   const goPrev = () => {
-    setActiveIndex((current) => (current - 1 + safeSlides.length) % safeSlides.length)
+    if (slideCount <= 1) return
+    setIsTransitionEnabled(true)
+    setActiveIndex((current) => current - 1)
   }
 
   const goNext = () => {
-    setActiveIndex((current) => (current + 1) % safeSlides.length)
+    if (slideCount <= 1) return
+    setIsTransitionEnabled(true)
+    setActiveIndex((current) => current + 1)
+  }
+
+  const goToSlide = (index) => {
+    if (slideCount <= 1) return
+    setIsTransitionEnabled(true)
+    setActiveIndex(index + 1)
+  }
+
+  const handleTransitionEnd = () => {
+    if (slideCount <= 1) return
+
+    if (activeIndex === slideCount + 1) {
+      setIsTransitionEnabled(false)
+      resetTimeoutRef.current = window.setTimeout(() => {
+        setActiveIndex(1)
+      }, 20)
+    } else if (activeIndex === 0) {
+      setIsTransitionEnabled(false)
+      resetTimeoutRef.current = window.setTimeout(() => {
+        setActiveIndex(slideCount)
+      }, 20)
+    }
   }
 
   return (
     <section className="hero-slider-section" aria-label="BrewBliss hero slider">
-      <div className="hero-slider-track" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-        {safeSlides.map((slide) => (
-          <article key={slide.image} className="hero-slide">
+      <div
+        className={`hero-slider-track${isTransitionEnabled ? '' : ' is-resetting'}`}
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        onTransitionEnd={handleTransitionEnd}
+      >
+        {visualSlides.map((slide, index) => (
+          <article key={`${slide.image}-${index}`} className="hero-slide">
             <img src={slide.image} alt={slide.alt} className="hero-slide-image" />
           </article>
         ))}
       </div>
 
-      {safeSlides.length > 1 ? (
+      {slideCount > 1 ? (
         <>
           <button type="button" className="hero-slider-arrow hero-slider-arrow-left" onClick={goPrev} aria-label="Previous slide">
             ‹
@@ -52,8 +111,8 @@ function HeroSlider({ slides = [], autoPlayMs = 5000 }) {
               <button
                 key={`${slide.image}-${index}`}
                 type="button"
-                className={`hero-slider-dot${index === activeIndex ? ' is-active' : ''}`}
-                onClick={() => setActiveIndex(index)}
+                className={`hero-slider-dot${index === currentRealIndex ? ' is-active' : ''}`}
+                onClick={() => goToSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

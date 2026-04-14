@@ -101,6 +101,10 @@ div {
   will-change: transform;
 }
 
+.hero-slider-track.is-resetting {
+  transition: none;
+}
+
 .hero-slide {
   min-width: 100%;
   height: 100%;
