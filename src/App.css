@@ -282,7 +282,7 @@ div {
 
 .brewbliss-experience-box {
   background: #eaeaea;
-  padding: clamp(28px, 4vw, 42px);
+  padding: clamp(20px, 3.1vw, 34px) clamp(28px, 4vw, 42px) clamp(28px, 4vw, 42px);
   border-radius: 2px;
 }
 
@@ -301,13 +301,15 @@ div {
   font-size: clamp(1.9rem, 3vw, 2.6rem);
   line-height: 1.14;
   font-weight: 700;
+  margin: 0;
+  padding: 0 0 14px;
 }
 
 .brewbliss-experience-tabs {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0;
-  margin-top: 26px;
+  margin-top: 14px;
   padding: 0;
   background: #eaeaea;
   border-top: 1px solid #ffffff;
@@ -354,13 +356,14 @@ div {
 .brewbliss-experience-copy {
   align-self: end;
   max-width: 620px;
+  transform: translateY(-52px);
 }
 
 .brewbliss-experience-copy p {
   margin: 0;
   color: #3b2a24;
-  font-size: 1.08rem;
-  line-height: 1.82;
+  font-size: 1.28rem;
+  line-height: 1.78;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -369,6 +372,7 @@ div {
   width: min(100%, 280px);
   justify-self: end;
   align-self: end;
+  margin-right: 56px;
   overflow: hidden;
   border-radius: 0;
   background: #eaeaea;
@@ -1099,13 +1103,13 @@ h3 {
   }
 
   .brewbliss-experience-box {
-    padding: 24px 20px;
+    padding: 20px 20px 24px;
     border-radius: 2px;
   }
 
   .brewbliss-experience-tabs {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: 22px;
+    margin-top: 18px;
   }
 
   .brewbliss-experience-tab {
@@ -1122,10 +1126,11 @@ h3 {
 
   .brewbliss-experience-copy {
     max-width: 100%;
+    transform: none;
   }
 
   .brewbliss-experience-copy p {
-    font-size: 1rem;
+    font-size: 1.08rem;
     line-height: 1.72;
     text-align: left;
   }
@@ -1133,6 +1138,7 @@ h3 {
   .brewbliss-experience-media {
     width: min(100%, 320px);
     justify-self: start;
+    margin-right: 0;
   }
 
   .brewbliss-experience-media img {
