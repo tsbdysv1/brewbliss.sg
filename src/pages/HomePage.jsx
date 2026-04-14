@@ -23,7 +23,7 @@ function HomePage() {
     <div className="page-shell">
       <SiteHeader />
 
-      <HeroSlider slides={heroSlides} />
+      <HeroSlider slides={heroSlides} autoPlayMs={5000} />
 
       <header className="hero-section">
         <div className="hero-grid">
