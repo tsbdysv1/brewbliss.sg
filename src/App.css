@@ -286,6 +286,16 @@ div {
   border-radius: 2px;
 }
 
+.brewbliss-experience-box,
+.brewbliss-experience-box > div,
+.brewbliss-experience-box > h2,
+.brewbliss-experience-content,
+.brewbliss-experience-copy,
+.brewbliss-experience-copy p,
+.brewbliss-experience-media {
+  background: #eaeaea;
+}
+
 .brewbliss-experience-box h2 {
   color: #3b2a24;
   font-size: clamp(1.9rem, 3vw, 2.6rem);
