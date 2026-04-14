@@ -68,6 +68,24 @@ img {
   background: #f3e6dc;
 }
 
+@media (min-width: 1024px) {
+  .hero-slider-section {
+    aspect-ratio: 21 / 9;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-slider-section {
+    aspect-ratio: 5 / 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slider-section {
+    aspect-ratio: 3 / 4;
+  }
+}
+
 .hero-slider-track {
   display: flex;
   height: 100%;
