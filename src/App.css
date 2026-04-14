@@ -282,7 +282,7 @@ div {
 
 .brewbliss-experience-box {
   background: #eaeaea;
-  padding: clamp(20px, 3.1vw, 34px) clamp(28px, 4vw, 42px) clamp(28px, 4vw, 42px);
+  padding: clamp(10px, 2vw, 22px) clamp(28px, 4vw, 42px) clamp(28px, 4vw, 42px);
   border-radius: 2px;
 }
 
@@ -302,14 +302,14 @@ div {
   line-height: 1.14;
   font-weight: 700;
   margin: 0;
-  padding: 0 0 14px;
+  padding: 0 0 3px;
 }
 
 .brewbliss-experience-tabs {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0;
-  margin-top: 14px;
+  margin-top: 3px;
   padding: 0;
   background: #eaeaea;
   border-top: 1px solid #ffffff;
@@ -329,6 +329,7 @@ div {
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
+  text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.22s ease, color 0.22s ease, opacity 0.22s ease;
 }
@@ -356,6 +357,7 @@ div {
 .brewbliss-experience-copy {
   align-self: end;
   max-width: 620px;
+  margin-left: 38px;
   transform: translateY(-52px);
 }
 
@@ -1103,13 +1105,13 @@ h3 {
   }
 
   .brewbliss-experience-box {
-    padding: 20px 20px 24px;
+    padding: 14px 20px 24px;
     border-radius: 2px;
   }
 
   .brewbliss-experience-tabs {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: 18px;
+    margin-top: 10px;
   }
 
   .brewbliss-experience-tab {
@@ -1126,6 +1128,7 @@ h3 {
 
   .brewbliss-experience-copy {
     max-width: 100%;
+    margin-left: 0;
     transform: none;
   }
 
