@@ -59,6 +59,7 @@ img {
 .hero-slider-section {
   position: relative;
   width: 100vw;
+  margin-top: -28px;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   margin-bottom: 28px;
@@ -87,16 +88,15 @@ img {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 52px;
-  height: 52px;
+  padding: 0;
   border: 0;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.86);
-  color: var(--text);
-  font-size: 2rem;
+  background: transparent;
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 800;
   line-height: 1;
   cursor: pointer;
-  box-shadow: 0 14px 30px rgba(51, 34, 27, 0.12);
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
 }
 
 .hero-slider-arrow-left {
@@ -810,6 +810,7 @@ h3 {
   }
 
   .hero-slider-section {
+    margin-top: -20px;
     margin-bottom: 20px;
   }
 
@@ -819,9 +820,7 @@ h3 {
   }
 
   .hero-slider-arrow {
-    width: 42px;
-    height: 42px;
-    font-size: 1.6rem;
+    font-size: 3rem;
   }
 
   .site-header-bar {
