@@ -30,15 +30,16 @@ function HomePage() {
         <div className="editorial-hero-grid">
           <div className="editorial-hero-copy">
             <h1>
-              Chào bạn,
-              <br />
-              hôm nay bạn cảm thấy thế nào.
+              <span>Chào bạn,</span>
+              <span>hôm nay bạn cảm thấy thế nào?</span>
             </h1>
             <div className="editorial-hero-body">
               <p>Nếu bạn đang cần một nơi để “chill”, BrewBliss luôn ở đây.</p>
-              <p>Một ly cà phê, một chút âm nhạc, và vài phút nhẹ nhàng giữa nhịp sống vội vã.</p>
-              <p>Dù là lần đầu hay đã quen thuộc, hy vọng bạn sẽ tìm thấy ở đây những cảm xúc thật đẹp.</p>
-              <p>Brew your coffee, brew your happiness.</p>
+              <p>
+                Một ly cà phê, một chút âm nhạc, và vài phút nhẹ nhàng giữa nhịp sống vội vã. Dù là
+                lần đầu hay đã quen thuộc, hy vọng bạn sẽ tìm thấy ở đây những cảm xúc thật đẹp.
+              </p>
+              <p>Brew your coffee, brew your happines.</p>
             </div>
           </div>
 
