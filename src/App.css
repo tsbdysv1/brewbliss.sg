@@ -141,22 +141,40 @@ div {
   bottom: 22px;
   transform: translateX(-50%);
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
+  width: auto;
+  white-space: nowrap;
+  background: transparent;
 }
 
 .hero-slider-dot {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  flex: 0 0 auto;
   width: 10px;
+  min-width: 10px;
+  max-width: 10px;
   height: 10px;
+  min-height: 10px;
+  max-height: 10px;
   padding: 0;
   border: 0;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: none;
+  line-height: 0;
   cursor: pointer;
 }
 
 .hero-slider-dot.is-active {
+  width: 18px;
+  min-width: 18px;
+  max-width: 18px;
   background: white;
-  transform: scale(1.25);
+  border-radius: 999px;
 }
 
 .hero-section {
