@@ -299,6 +299,7 @@ div {
   gap: 0;
   margin-top: 26px;
   padding: 0;
+  background: #eaeaea;
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
 }
@@ -337,6 +338,7 @@ div {
   align-items: end;
   margin-top: 34px;
   min-height: 240px;
+  background: #eaeaea;
 }
 
 .brewbliss-experience-copy {
@@ -359,7 +361,7 @@ div {
   align-self: end;
   overflow: hidden;
   border-radius: 0;
-  background: #d9d9d9;
+  background: #eaeaea;
 }
 
 .brewbliss-experience-media img {
