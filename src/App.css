@@ -388,9 +388,9 @@ div {
   margin-top: 22px;
   padding: 0 18px;
   border-radius: 999px;
-  border: 1px solid rgba(31, 31, 31, 0.14);
-  background: #ffffff;
-  color: #1f1f1f;
+  border: 1px solid rgba(59, 42, 36, 0.1);
+  background: #eaeaea;
+  color: #4b3932;
   font-size: 0.98rem;
   font-weight: 600;
   line-height: 1;
@@ -399,9 +399,9 @@ div {
 
 .brewbliss-experience-link:hover,
 .brewbliss-experience-link:focus-visible {
-  background: rgba(255, 255, 255, 0.82);
-  border-color: rgba(31, 31, 31, 0.22);
-  color: #1f1f1f;
+  background: #e1e1e1;
+  border-color: rgba(59, 42, 36, 0.16);
+  color: #3b2a24;
   transform: translateY(-1px);
   outline: none;
 }
@@ -857,7 +857,7 @@ h3 {
   color: #1f1f1f;
   font-size: 0.98rem;
   font-weight: 600;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .signature-collection-gallery-viewport {

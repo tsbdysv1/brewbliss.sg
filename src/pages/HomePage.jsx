@@ -162,7 +162,7 @@ function HomePage() {
                   className="brewbliss-experience-link"
                   aria-label={`Tìm hiểu thêm về ${activeExperienceContent.label} trong menu`}
                 >
-                  Xem thêm
+                  Tìm hiểu
                 </Link>
               </div>
 
