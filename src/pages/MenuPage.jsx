@@ -1,3 +1,5 @@
+import { useEffect, useMemo, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
 import MenuCatalogSection from '../components/MenuCatalogSection'
 import SiteFooter from '../components/SiteFooter'
@@ -7,6 +9,8 @@ import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 
 function MenuPage() {
+  const location = useLocation()
+  const [highlightedSectionId, setHighlightedSectionId] = useState('')
   const menuSectionOrder = [
     'espresso-bar',
     'vietnamese-coffee',
@@ -45,6 +49,35 @@ function MenuPage() {
 
   const signatureItems = getSignatureCollectionItems()
 
+  const validSectionIds = useMemo(
+    () => new Set([...visibleCategories.map((category) => category.slug), 'signature-collection']),
+    [visibleCategories],
+  )
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '')
+    if (!hash || !validSectionIds.has(hash)) return undefined
+
+    const scrollToTarget = () => {
+      const target = document.getElementById(hash)
+      if (!target) return
+
+      const headerOffset = window.innerWidth <= 720 ? 124 : 136
+      const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset
+
+      window.scrollTo({
+        top: Math.max(targetTop, 0),
+        behavior: 'smooth',
+      })
+
+      setHighlightedSectionId(hash)
+      window.setTimeout(() => setHighlightedSectionId((current) => (current === hash ? '' : current)), 1800)
+    }
+
+    const frameId = window.requestAnimationFrame(scrollToTarget)
+    return () => window.cancelAnimationFrame(frameId)
+  }, [location.hash, validSectionIds])
+
   usePageSeo({
     title: `Menu | ${siteConfig.brandName}`,
     description:
@@ -67,6 +100,8 @@ function MenuPage() {
             sectionId={category.slug}
             title={sectionTitleMap[category.slug] ?? category.name}
             items={category.items}
+            isHighlighted={highlightedSectionId === category.slug}
+            isActive={location.hash === `#${category.slug}`}
           />
         ))}
 
@@ -74,6 +109,8 @@ function MenuPage() {
           sectionId="signature-collection"
           title="BrewBliss Signature Collection"
           items={signatureItems}
+          isHighlighted={highlightedSectionId === 'signature-collection'}
+          isActive={location.hash === '#signature-collection'}
         />
       </main>
 

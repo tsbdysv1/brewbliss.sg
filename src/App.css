@@ -376,6 +376,31 @@ div {
   text-justify: inter-word;
 }
 
+.brewbliss-experience-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin-top: 22px;
+  padding: 0 16px;
+  border: 1px solid rgba(59, 42, 36, 0.16);
+  background: rgba(255, 255, 255, 0.42);
+  color: #3b2a24;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.brewbliss-experience-link:hover,
+.brewbliss-experience-link:focus-visible {
+  background: rgba(255, 255, 255, 0.68);
+  border-color: rgba(59, 42, 36, 0.3);
+  transform: translateY(-1px);
+  outline: none;
+}
+
 .brewbliss-experience-media {
   width: min(100%, 280px);
   justify-self: end;
@@ -933,8 +958,21 @@ h3 {
   margin-top: 28px;
 }
 
+.menu-catalog-section {
+  scroll-margin-top: 148px;
+  transition: background-color 0.55s ease, box-shadow 0.55s ease, opacity 0.55s ease;
+}
+
 .menu-catalog-section + .menu-catalog-section {
   margin-top: clamp(56px, 8vw, 92px);
+}
+
+.menu-catalog-section.is-highlighted {
+  background: linear-gradient(180deg, rgba(233, 226, 218, 0.72), rgba(233, 226, 218, 0));
+}
+
+.menu-catalog-section.is-active-target .menu-catalog-section-heading h2 {
+  color: #b95023;
 }
 
 .menu-catalog-section-heading {
@@ -1559,6 +1597,10 @@ h3 {
     gap: 20px 14px;
   }
 
+  .menu-catalog-section {
+    scroll-margin-top: 132px;
+  }
+
   .signature-collection-card {
     border-radius: 0;
   }
@@ -1603,6 +1645,13 @@ h3 {
     font-size: 1.08rem;
     line-height: 1.72;
     text-align: left;
+  }
+
+  .brewbliss-experience-link {
+    min-height: 38px;
+    margin-top: 18px;
+    padding: 0 14px;
+    font-size: 0.9rem;
   }
 
   .brewbliss-experience-media {

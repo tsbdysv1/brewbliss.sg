@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom'
 import { formatMenuPrice, getMenuItemHref } from '../data/menu'
 
-function MenuCatalogSection({ title, items, sectionId }) {
+function MenuCatalogSection({ title, items, sectionId, isHighlighted = false, isActive = false }) {
   if (!items?.length) return null
 
   return (
-    <section className="menu-catalog-section" id={sectionId} aria-labelledby={`${sectionId}-title`}>
+    <section
+      className={`menu-catalog-section${isHighlighted ? ' is-highlighted' : ''}${isActive ? ' is-active-target' : ''}`}
+      id={sectionId}
+      aria-labelledby={`${sectionId}-title`}
+    >
       <div className="menu-catalog-section-heading">
         <h2 id={`${sectionId}-title`}>{title}</h2>
       </div>
