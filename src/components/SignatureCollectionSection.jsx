@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getMenuItemHref, getSignatureCollectionItems } from '../data/menu'
+import { formatMenuPrice, getMenuItemHref, getSignatureCollectionItems } from '../data/menu'
 
 function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', className = '' }) {
   const trackRef = useRef(null)
@@ -106,6 +106,12 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
                   aria-label={`Xem chi tiết ${item.name}`}
                 >
                   <img src={item.image} alt={item.name} className="signature-collection-image" />
+                  <div className="signature-collection-card-overlay">
+                    <div className="signature-collection-card-copy">
+                      <h3>{item.name}</h3>
+                      <p>{formatMenuPrice(item.priceValue)}</p>
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>

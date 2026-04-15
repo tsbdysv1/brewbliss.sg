@@ -499,14 +499,14 @@ const MENU_ITEM_SLUG_ALIASES = new Map([
 ])
 
 const SIGNATURE_COLLECTION_ITEM_SLUGS = [
-  'salted-caramel',
-  'cold-brew-mo',
-  'lemon-honey-matcha',
-  'pain-au-chocolat',
   'orange-espresso-tonic',
-  'cafe-dua',
-  'matcha-latte',
+  'creamy-bliss',
+  'cafe-muoi',
+  'cold-brew-cam-buoi',
+  'cold-brew-mo',
   'strawberry-matcha-latte',
+  'tra-cam-buoi',
+  'tra-me',
 ]
 
 function getSimilarityScore(currentItem, candidate) {
