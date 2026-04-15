@@ -1,6 +1,5 @@
 import Breadcrumbs from '../components/Breadcrumbs'
-import MenuGallerySection from '../components/MenuGallerySection'
-import SignatureCollectionSection from '../components/SignatureCollectionSection'
+import MenuCatalogSection from '../components/MenuCatalogSection'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
 import { menuCategories, menuExtras } from '../data/menu'
@@ -17,6 +16,7 @@ function MenuPage() {
     'tea',
     'other-drinks',
     'juice',
+    'pastries',
   ]
 
   const sectionTitleMap = {
@@ -28,6 +28,7 @@ function MenuPage() {
     tea: 'Tea',
     'other-drinks': 'Other Drinks',
     juice: 'Juice',
+    pastries: 'Pastry',
   }
 
   const visibleCategories = menuSectionOrder
@@ -60,18 +61,30 @@ function MenuPage() {
         </div>
       </section>
 
-      <div id="mon-noi-bat">
-        <SignatureCollectionSection />
-      </div>
+      <section className="section-block menu-catalog-shell">
+        <div className="menu-catalog-layout">
+          <div className="menu-catalog-main">
+            {visibleCategories.map((category) => (
+              <MenuCatalogSection
+                key={category.slug}
+                sectionId={category.slug}
+                title={sectionTitleMap[category.slug] ?? category.name}
+                items={category.items}
+              />
+            ))}
+          </div>
 
-      {visibleCategories.map((category) => (
-        <MenuGallerySection
-          key={category.slug}
-          sectionId={category.slug}
-          title={sectionTitleMap[category.slug] ?? category.name}
-          items={category.items}
-        />
-      ))}
+          <aside className="menu-catalog-sidebar" aria-label="Editorial menu image">
+            <div className="menu-catalog-sticky-media">
+              <img
+                src="/images/signature-collection/04.png"
+                alt="BrewBliss editorial pastry presentation"
+                className="menu-catalog-sidebar-image"
+              />
+            </div>
+          </aside>
+        </div>
+      </section>
 
       <section className="section-block extras-section">
         <div className="section-heading">
