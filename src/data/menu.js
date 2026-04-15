@@ -18,7 +18,7 @@ const imageLibrary = {
   coldBrewChanhVang: '/images/signature-collection/uploads-apr15/cold-brew-chanh-vang.png',
   fruitColdBrew: '/images/signature-collection/02.png',
   coldBrewMo: '/images/signature-collection/uploads-apr15/cold-brew-mo.png',
-  handDrip: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80',
+  handDrip: '/images/signature-collection/uploads-apr15/ca-phe-thu-cong.png',
   matcha: '/images/signature-collection/07.png',
   strawberryMatcha: '/images/signature-collection/uploads-apr15/strawberry-matcha-latte.png',
   saltedCreamMatcha: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=1200&q=80',
@@ -420,7 +420,7 @@ export const menuCategories = [
           name: 'Cà Phê Thủ Công',
           priceValue: 75000,
           category: 'Hand Drip',
-          image: imageLibrary.espresso,
+          image: imageLibrary.handDrip,
           description: 'Món dành cho khách muốn đi sâu hơn vào trải nghiệm cà phê thủ công.',
         },
         {
