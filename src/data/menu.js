@@ -22,7 +22,7 @@ const imageLibrary = {
   matcha: '/images/signature-collection/07.png',
   strawberryMatcha: '/images/signature-collection/uploads-apr15/strawberry-matcha-latte.png',
   saltedCreamMatcha: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=1200&q=80',
-  lemonHoneyMatcha: '/images/signature-collection/03.png',
+  lemonHoneyMatcha: '/images/signature-collection/uploads-apr15/lemon-honey-matcha.png',
   cocoMatcha: '/images/signature-collection/uploads-apr15/coco-matcha.png',
   fruitTea: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1200&q=80',
   traCamBuoi: '/images/signature-collection/uploads-apr15/tra-cam-buoi.png',
