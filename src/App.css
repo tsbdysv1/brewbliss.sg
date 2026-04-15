@@ -780,6 +780,11 @@ h3 {
   margin: 0 auto;
 }
 
+.signature-collection-grid-lockup {
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .signature-collection-header {
   display: flex;
   align-items: flex-start;
@@ -819,6 +824,12 @@ h3 {
   text-transform: lowercase;
 }
 
+.signature-collection-gallery-viewport {
+  width: calc((100vw - (max(2cm, 24px) * 2) - 72px));
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 .signature-collection-gallery-bleed {
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -831,9 +842,10 @@ h3 {
   grid-auto-columns: calc((100vw - (max(2cm, 24px) * 2) - 72px) / 4);
   gap: 24px;
   overflow-x: auto;
+  overflow-y: hidden;
   padding: 0 max(2cm, 24px) 12px;
   scroll-padding-inline: max(2cm, 24px);
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: none;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -1215,6 +1227,10 @@ h3 {
     width: min(1200px, calc(100% - 32px));
   }
 
+  .signature-collection-gallery-viewport {
+    width: calc((100vw - (max(2cm, 18px) * 2) - 36px));
+  }
+
   .signature-collection-gallery {
     grid-auto-columns: calc((100vw - (max(2cm, 18px) * 2) - 36px) / 3);
     gap: 18px;
@@ -1280,6 +1296,11 @@ h3 {
     width: min(100% - 20px, 1200px);
   }
 
+  .signature-collection-grid-lockup {
+    width: auto;
+    margin: 0;
+  }
+
   .signature-collection-header {
     align-items: center;
     margin-bottom: 18px;
@@ -1295,6 +1316,10 @@ h3 {
     min-height: 38px;
     padding: 0 15px;
     font-size: 0.92rem;
+  }
+
+  .signature-collection-gallery-viewport {
+    width: calc(100vw - 40px);
   }
 
   .signature-collection-gallery {
