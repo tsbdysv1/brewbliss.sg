@@ -15,6 +15,12 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 520px) {
+  .menu-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -923,58 +929,30 @@ h3 {
   transform: translateY(-1px);
 }
 
-.menu-catalog-shell {
-  padding: clamp(28px, 4vw, 44px);
-}
-
-.menu-catalog-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(240px, 1fr);
-  gap: clamp(28px, 3.2vw, 44px);
-  align-items: start;
-}
-
-.menu-catalog-main {
-  min-width: 0;
-}
-
-.menu-catalog-sidebar {
-  min-width: 0;
-}
-
-.menu-catalog-sticky-media {
-  position: sticky;
-  top: 32px;
-}
-
-.menu-catalog-sidebar-image {
-  width: 100%;
-  aspect-ratio: 4 / 6;
-  object-fit: cover;
-  display: block;
-  border-radius: 0;
+.menu-page-content {
+  margin-top: 28px;
 }
 
 .menu-catalog-section + .menu-catalog-section {
-  margin-top: clamp(52px, 7vw, 88px);
+  margin-top: clamp(56px, 8vw, 92px);
 }
 
 .menu-catalog-section-heading {
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .menu-catalog-section-heading h2 {
   margin: 0;
-  font-size: clamp(2.05rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 3.4vw, 3.15rem);
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.045em;
   color: #1f1f1f;
 }
 
 .menu-catalog-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px 24px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px 22px;
 }
 
 .menu-catalog-card {
@@ -1443,11 +1421,6 @@ h3 {
     gap: 18px;
   }
 
-  .menu-catalog-layout {
-    grid-template-columns: minmax(0, 3fr) minmax(210px, 1fr);
-    gap: 24px;
-  }
-
   .menu-catalog-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px 18px;
@@ -1514,8 +1487,8 @@ h3 {
     border-radius: 0;
   }
 
-  .menu-catalog-shell {
-    padding: 24px 20px;
+  .menu-page-content {
+    margin-top: 20px;
   }
 
   .signature-collection-inner {
@@ -1539,21 +1512,13 @@ h3 {
     line-height: 1;
   }
 
-  .menu-catalog-layout {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .menu-catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 16px;
   }
 
-  .menu-catalog-sidebar {
-    order: -1;
-  }
-
-  .menu-catalog-sticky-media {
-    position: static;
-  }
-
-  .menu-catalog-sidebar-image {
-    aspect-ratio: 5 / 4;
+  .menu-catalog-section-heading {
+    margin-bottom: 18px;
   }
 
   .editorial-product-detail-layout,
@@ -1590,8 +1555,8 @@ h3 {
   }
 
   .menu-catalog-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 14px;
   }
 
   .signature-collection-card {
