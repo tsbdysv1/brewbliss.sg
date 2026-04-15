@@ -1,8 +1,8 @@
 import { formatCurrencyVnd } from '../utils/commerce'
 
 const imageLibrary = {
-  plainCroissant: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80',
-  lavaCroissant: 'https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?auto=format&fit=crop&w=1200&q=80',
+  plainCroissant: '/images/signature-collection/uploads-apr15/croissant-shared.png',
+  lavaCroissant: '/images/signature-collection/uploads-apr15/croissant-shared.png',
   painAuChocolat: '/images/signature-collection/uploads-apr15/pain-au-chocolat.png',
   cinnamonRoll: '/images/signature-collection/uploads-apr15/cinnamon-roll.png',
   espresso: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1fcef?auto=format&fit=crop&w=1200&q=80',
