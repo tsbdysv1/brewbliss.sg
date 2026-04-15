@@ -477,23 +477,63 @@ export const menuExtras = [
   { label: 'Oat milk', priceValue: 10000 },
 ]
 
-const allMenuItems = menuCategories.flatMap((category) => category.items)
+const navigableMenuCategories = menuCategories.filter((category) => category.slug !== 'featured')
+
+const categoryBySlug = new Map(navigableMenuCategories.map((category) => [category.slug, category]))
+
+const allMenuItems = navigableMenuCategories.flatMap((category) =>
+  category.items.map((item) => ({ ...item, categorySlug: category.slug, categoryName: category.name })),
+)
+
+const SIMILAR_CATEGORY_GROUPS = [
+  ['espresso-bar', 'vietnamese-coffee', 'brew-bar', 'hand-drip'],
+  ['matcha', 'tea', 'other-drinks', 'juice'],
+  ['pastries'],
+]
+
+function getSimilarityScore(currentItem, candidate) {
+  if (candidate.categorySlug === currentItem.categorySlug) return 3
+
+  const sharedGroup = SIMILAR_CATEGORY_GROUPS.find(
+    (group) => group.includes(currentItem.categorySlug) && group.includes(candidate.categorySlug),
+  )
+
+  if (sharedGroup) return 2
+  if (candidate.category === currentItem.category) return 1
+  return 0
+}
 
 export function formatMenuPrice(value) {
   return `${formatCurrencyVnd(value)}đ`
+}
+
+export function getMenuCategoryBySlug(slug) {
+  return categoryBySlug.get(slug)
 }
 
 export function getMenuItemBySlug(slug) {
   return allMenuItems.find((item) => item.slug === slug)
 }
 
-export function getRelatedMenuItems(currentItem, limit = 3) {
+export function getMenuItemByCategoryAndSlug(categorySlug, itemSlug) {
+  const category = getMenuCategoryBySlug(categorySlug)
+  if (!category) return null
+
+  const item = category.items.find((entry) => entry.slug === itemSlug)
+  return item ? { ...item, categorySlug: category.slug, categoryName: category.name } : null
+}
+
+export function getMenuItemHref(item) {
+  return `/menu/${item.categorySlug}/${item.slug}`
+}
+
+export function getRelatedMenuItems(currentItem, limit = 4) {
   return allMenuItems
     .filter((item) => item.slug !== currentItem.slug)
     .sort((left, right) => {
-      const leftScore = left.category === currentItem.category ? 1 : 0
-      const rightScore = right.category === currentItem.category ? 1 : 0
-      return rightScore - leftScore
+      const scoreDelta = getSimilarityScore(currentItem, right) - getSimilarityScore(currentItem, left)
+      if (scoreDelta !== 0) return scoreDelta
+      return left.name.localeCompare(right.name)
     })
     .slice(0, limit)
 }

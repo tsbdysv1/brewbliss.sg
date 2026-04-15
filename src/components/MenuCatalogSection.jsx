@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { formatMenuPrice } from '../data/menu'
+import { formatMenuPrice, getMenuItemHref } from '../data/menu'
 
 function MenuCatalogSection({ title, items, sectionId }) {
   if (!items?.length) return null
@@ -14,7 +14,7 @@ function MenuCatalogSection({ title, items, sectionId }) {
         {items.map((item) => (
           <Link
             key={item.slug}
-            to={`/menu/${item.slug}`}
+            to={getMenuItemHref(item)}
             className="menu-catalog-card"
             aria-label={`Xem chi tiết ${item.name}`}
           >

@@ -15,6 +15,7 @@ function App() {
       <Route path="/collection" element={<CollectionPage />} />
       <Route path="/menu" element={<MenuPage />} />
       <Route path="/menu/signature" element={<SignatureMenuPage />} />
+      <Route path="/menu/:categorySlug/:slug" element={<MenuItemDetailPage />} />
       <Route path="/menu/:slug" element={<MenuItemDetailPage />} />
       <Route path="/store" element={<Navigate to="/cua-hang" replace />} />
       <Route path="/cua-hang" element={<StoresPage />} />

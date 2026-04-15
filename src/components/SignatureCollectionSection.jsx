@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getMenuItemBySlug } from '../data/menu'
+import { getMenuItemBySlug, getMenuItemHref } from '../data/menu'
 import { signatureCollectionSlugs } from '../data/signatureCollection'
 
 function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', className = '' }) {
@@ -105,7 +105,7 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
               {signatureItems.map((item) => (
                 <Link
                   key={item.slug}
-                  to={`/menu/${item.slug}`}
+                  to={getMenuItemHref(item)}
                   className="signature-collection-card"
                   aria-label={`Xem chi tiết ${item.name}`}
                 >

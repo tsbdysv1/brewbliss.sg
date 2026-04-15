@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { formatMenuPrice } from '../data/menu'
+import { formatMenuPrice, getMenuItemHref } from '../data/menu'
 
 function MenuGallerySection({ title, items, sectionId }) {
   const trackRef = useRef(null)
@@ -91,7 +91,7 @@ function MenuGallerySection({ title, items, sectionId }) {
             {items.map((item) => (
               <Link
                 key={item.slug}
-                to={`/menu/${item.slug}`}
+                to={getMenuItemHref(item)}
                 className="menu-gallery-card"
                 aria-label={`Xem chi tiết ${item.name}`}
               >

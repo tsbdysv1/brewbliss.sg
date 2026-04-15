@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { formatMenuPrice } from '../data/menu'
+import { formatMenuPrice, getMenuItemHref } from '../data/menu'
 
 function MenuCategorySection({ category }) {
   return (
@@ -30,7 +30,7 @@ function MenuCategorySection({ category }) {
                 </div>
               ) : null}
               <div className="menu-card-actions">
-                <Link to={`/menu/${item.slug}`} className="outline-button">
+                <Link to={getMenuItemHref(item)} className="outline-button">
                   Xem chi tiết
                 </Link>
               </div>

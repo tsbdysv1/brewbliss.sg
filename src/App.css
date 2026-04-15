@@ -1034,6 +1034,111 @@ h3 {
   color: var(--primary-strong);
 }
 
+.editorial-product-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: clamp(28px, 4vw, 48px);
+  align-items: start;
+}
+
+.editorial-product-detail-media {
+  min-width: 0;
+}
+
+.editorial-product-detail-image {
+  width: 100%;
+  aspect-ratio: 4 / 5.2;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+.editorial-product-detail-main {
+  min-width: 0;
+  gap: 20px;
+  padding-top: 6px;
+}
+
+.editorial-product-detail-main h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.product-detail-price-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-detail-price {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.product-detail-description {
+  margin: 0;
+  color: #5c5c5c;
+  line-height: 1.8;
+  max-width: 52ch;
+}
+
+.editorial-product-detail-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.editorial-detail-content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.editorial-detail-panel {
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.editorial-detail-panel h2 {
+  margin-bottom: 0;
+}
+
+.compact-detail-list {
+  margin-top: 16px;
+}
+
+.editorial-prose-block {
+  margin-top: 16px;
+}
+
+.editorial-prose-block p {
+  margin: 0;
+}
+
+.related-products-heading {
+  margin-bottom: 24px;
+}
+
+.related-products-heading h2 {
+  margin: 0;
+}
+
+.related-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.related-product-card {
+  min-width: 0;
+}
+
 .product-badge {
   padding: 8px 12px;
   font-size: 0.9rem;
@@ -1347,6 +1452,13 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px 18px;
   }
+
+  .editorial-product-detail-layout,
+  .editorial-detail-content-grid,
+  .editorial-product-detail-meta,
+  .related-products-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 720px) {
@@ -1442,6 +1554,22 @@ h3 {
 
   .menu-catalog-sidebar-image {
     aspect-ratio: 5 / 4;
+  }
+
+  .editorial-product-detail-layout,
+  .editorial-detail-content-grid,
+  .editorial-product-detail-meta,
+  .related-products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-product-detail-main h1 {
+    font-size: clamp(1.85rem, 9vw, 2.5rem);
+  }
+
+  .editorial-detail-panel {
+    padding: 18px;
+    border-radius: 20px;
   }
 
   .signature-view-all-button {
