@@ -1,11 +1,10 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import HeroSlider from '../components/HeroSlider'
-import MenuCategorySection from '../components/MenuCategorySection'
 import SignatureCollectionSection from '../components/SignatureCollectionSection'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
-import { menuCategories, menuExtras } from '../data/menu'
+import { menuExtras } from '../data/menu'
 import { categories, heroSlides, siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 import { buildPhoneHref } from '../utils/commerce'
@@ -77,7 +76,6 @@ const brewblissExperienceTabs = [
 ]
 
 function HomePage() {
-  const visibleCategories = menuCategories.filter((category) => category.slug !== 'featured')
   const [activeExperienceTab, setActiveExperienceTab] = useState('vietnamese-coffee-bar')
   const activeExperienceContent = useMemo(
     () =>
@@ -176,6 +174,22 @@ function HomePage() {
           <SignatureCollectionSection />
         </div>
 
+        <section className="section-block home-menu-cta-section" aria-labelledby="home-menu-cta-title">
+          <div className="section-heading home-menu-cta-heading">
+            <p className="eyebrow">Curated on home</p>
+            <h2 id="home-menu-cta-title">Muốn xem đầy đủ menu của BrewBliss?</h2>
+            <p className="section-supporting-text">
+              Trang chủ giữ lại những phần chọn lọc để mọi thứ gọn, rõ và premium hơn. Toàn bộ coffee,
+              matcha, tea, pastry và các món còn lại hiện nằm đầy đủ trong trang Menu riêng.
+            </p>
+          </div>
+          <div className="hero-cta-row">
+            <Link to="/menu" className="brewbliss-experience-link" aria-label="Xem menu đầy đủ của BrewBliss">
+              Xem menu
+            </Link>
+          </div>
+        </section>
+
         <section className="section-block readiness-section">
           <div className="section-heading">
             <p className="eyebrow">Content-ready structure</p>
@@ -188,12 +202,6 @@ function HomePage() {
             ))}
           </ul>
         </section>
-
-        <div id="menu">
-          {visibleCategories.map((category) => (
-            <MenuCategorySection key={category.slug} category={category} />
-          ))}
-        </div>
 
         <section className="section-block extras-section">
           <div className="section-heading">
