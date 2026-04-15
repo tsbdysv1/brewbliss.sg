@@ -1,5 +1,5 @@
 import Breadcrumbs from '../components/Breadcrumbs'
-import MenuCategorySection from '../components/MenuCategorySection'
+import MenuGallerySection from '../components/MenuGallerySection'
 import SignatureCollectionSection from '../components/SignatureCollectionSection'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
@@ -8,7 +8,31 @@ import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 
 function MenuPage() {
-  const visibleCategories = menuCategories.filter((category) => category.slug !== 'featured')
+  const menuSectionOrder = [
+    'espresso-bar',
+    'vietnamese-coffee',
+    'brew-bar',
+    'hand-drip',
+    'matcha',
+    'tea',
+    'other-drinks',
+    'juice',
+  ]
+
+  const sectionTitleMap = {
+    'espresso-bar': 'Espresso Bar',
+    'vietnamese-coffee': 'Vietnamese Coffee Bar',
+    'brew-bar': 'Brew Bar',
+    'hand-drip': 'Hand Drip',
+    matcha: 'Matcha',
+    tea: 'Tea',
+    'other-drinks': 'Other Drinks',
+    juice: 'Juice',
+  }
+
+  const visibleCategories = menuSectionOrder
+    .map((slug) => menuCategories.find((category) => category.slug === slug))
+    .filter(Boolean)
 
   usePageSeo({
     title: `Menu | ${siteConfig.brandName}`,
@@ -41,7 +65,12 @@ function MenuPage() {
       </div>
 
       {visibleCategories.map((category) => (
-        <MenuCategorySection key={category.slug} category={category} />
+        <MenuGallerySection
+          key={category.slug}
+          sectionId={category.slug}
+          title={sectionTitleMap[category.slug] ?? category.name}
+          items={category.items}
+        />
       ))}
 
       <section className="section-block extras-section">
