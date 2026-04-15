@@ -776,12 +776,12 @@ h3 {
 }
 
 .signature-collection-inner {
-  width: min(1200px, calc(100% - 32px));
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .signature-collection-grid-lockup {
-  width: fit-content;
+  width: calc(100vw - (max(2cm, 24px) * 2));
   margin: 0 auto;
 }
 
@@ -825,26 +825,26 @@ h3 {
 }
 
 .signature-collection-gallery-viewport {
-  width: calc((100vw - (max(2cm, 24px) * 2) - 72px));
+  width: calc(100vw - (max(2cm, 24px) * 2));
   margin: 0 auto;
   overflow: hidden;
 }
 
 .signature-collection-gallery-bleed {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
+  margin: 0;
 }
 
 .signature-collection-gallery {
   display: grid;
+  width: 100%;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100vw - (max(2cm, 24px) * 2) - 72px) / 4);
+  grid-auto-columns: calc((100% - 72px) / 4);
   gap: 24px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0 max(2cm, 24px) 12px;
-  scroll-padding-inline: max(2cm, 24px);
+  padding: 0 0 12px;
+  scroll-padding-inline: 0;
   scroll-snap-type: none;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -895,7 +895,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.24s ease, background-color 0.24s ease, opacity 0.24s ease;
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.24s ease;
 }
 
 .signature-collection-arrow.is-disabled {
@@ -904,12 +904,12 @@ h3 {
 
 .signature-collection-arrow:hover,
 .signature-collection-arrow:focus-visible {
-  background: #2f2f2f;
+  transform: translateY(-1px);
 }
 
 .signature-collection-arrow.is-disabled:hover,
 .signature-collection-arrow.is-disabled:focus-visible {
-  background: #6f6f6f;
+  transform: none;
 }
 
 .signature-collection-arrow:active {
@@ -1223,19 +1223,17 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .signature-collection-inner {
-    width: min(1200px, calc(100% - 32px));
+  .signature-collection-grid-lockup {
+    width: calc(100vw - (max(2cm, 18px) * 2));
   }
 
   .signature-collection-gallery-viewport {
-    width: calc((100vw - (max(2cm, 18px) * 2) - 36px));
+    width: calc(100vw - (max(2cm, 18px) * 2));
   }
 
   .signature-collection-gallery {
-    grid-auto-columns: calc((100vw - (max(2cm, 18px) * 2) - 36px) / 3);
+    grid-auto-columns: calc((100% - 36px) / 3);
     gap: 18px;
-    padding-inline: max(2cm, 18px);
-    scroll-padding-inline: max(2cm, 18px);
   }
 }
 
@@ -1293,12 +1291,12 @@ h3 {
   }
 
   .signature-collection-inner {
-    width: min(100% - 20px, 1200px);
+    width: 100%;
   }
 
   .signature-collection-grid-lockup {
-    width: auto;
-    margin: 0;
+    width: calc(100vw - 40px);
+    margin: 0 auto;
   }
 
   .signature-collection-header {
@@ -1323,10 +1321,10 @@ h3 {
   }
 
   .signature-collection-gallery {
-    grid-auto-columns: calc((100vw - 40px - 14px) / 2);
+    grid-auto-columns: calc((100% - 14px) / 2);
     gap: 14px;
-    padding: 0 20px 8px;
-    scroll-padding-inline: 20px;
+    padding: 0 0 8px;
+    scroll-padding-inline: 0;
   }
 
   .signature-collection-card {
