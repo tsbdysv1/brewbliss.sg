@@ -22,6 +22,7 @@ const imageLibrary = {
   lemonHoneyMatcha: '/images/signature-collection/03.png',
   cocoMatcha: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=1200&q=80',
   fruitTea: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1200&q=80',
+  traCamBuoi: '/images/signature-collection/uploads-apr15/tra-cam-buoi.png',
   peachTea: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1200&q=80',
   melonTea: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1200&q=80',
   lycheeTea: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1200&q=80',
@@ -445,7 +446,7 @@ export const menuCategories = [
     description: 'Trà trái cây cho nhóm khách cần lựa chọn nhẹ hơn cà phê.',
     items: [
       withDetails({ slug: 'tra-vai', name: 'Trà Vải', priceValue: 60000, category: 'Tea', image: imageLibrary.lycheeTea, description: 'Trà vải thơm và sáng, hợp khách thích đồ uống nhẹ nhàng.' }, { ingredientsKey: 'fruitTea', vi: 'Trà Vải có hương thơm rõ và độ ngọt dễ chịu, phù hợp với khách muốn một món nhẹ, thanh và dễ tiếp cận.', en: 'Trà Vải has a fragrant and easy sweetness, making it a good light and approachable choice.' }),
-      withDetails({ slug: 'tra-cam-buoi', name: 'Trà Cam Bưởi', priceValue: 60000, category: 'Tea', image: imageLibrary.fruitTea, description: 'Cam bưởi mang cảm giác fresh và dễ hợp nhiều thời điểm trong ngày.' }, { ingredientsKey: 'fruitTea', vi: 'Trà Cam Bưởi tạo cảm giác sáng và sạch hơn nhờ nhóm citrus, phù hợp với những ai thích trà trái cây thiên về sự tỉnh táo.', en: 'Trà Cam Bưởi feels brighter and cleaner thanks to its citrus profile, making it a solid choice for guests who like fruit tea with a crisp edge.' }),
+      withDetails({ slug: 'tra-cam-buoi', name: 'Trà Cam Bưởi', priceValue: 60000, category: 'Tea', image: imageLibrary.traCamBuoi, description: 'Cam bưởi mang cảm giác fresh và dễ hợp nhiều thời điểm trong ngày.' }, { ingredientsKey: 'fruitTea', vi: 'Trà Cam Bưởi tạo cảm giác sáng và sạch hơn nhờ nhóm citrus, phù hợp với những ai thích trà trái cây thiên về sự tỉnh táo.', en: 'Trà Cam Bưởi feels brighter and cleaner thanks to its citrus profile, making it a solid choice for guests who like fruit tea with a crisp edge.' }),
       withDetails({ slug: 'tra-dau', name: 'Trà Dâu', priceValue: 65000, category: 'Tea', image: imageLibrary.strawberryTea, description: 'Trà dâu bắt mắt, hợp hình ảnh social và nhóm khách thích vị trái cây.' }, { ingredientsKey: 'fruitTea', vi: 'Trà Dâu thiên về màu sắc và sự vui mắt, phù hợp với nhóm khách trẻ hoặc khách thích đồ uống ngọt nhẹ và dễ chụp hình.', en: 'Trà Dâu leans into color and playfulness, making it well suited for younger guests or anyone who enjoys light, photogenic fruit tea.' }),
       withDetails({ slug: 'tra-me', name: 'Trà Me', priceValue: 60000, category: 'Tea', image: imageLibrary.tamarindTea, description: 'Trà me mang một chút cá tính riêng và tạo cảm giác vui trong menu.' }, { ingredientsKey: 'fruitTea', vi: 'Trà Me có cá tính riêng nhờ điểm chua ngọt đặc trưng, tạo cảm giác vui và khác biệt trong menu đồ uống trái cây.', en: 'Trà Me stands out through its sweet-sour tamarind character, giving the menu a more playful and distinctive fruit tea option.' }),
     ],
