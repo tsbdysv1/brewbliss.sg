@@ -34,6 +34,14 @@ function MenuPage() {
   const visibleCategories = menuSectionOrder
     .map((slug) => menuCategories.find((category) => category.slug === slug))
     .filter(Boolean)
+    .map((category) => ({
+      ...category,
+      items: category.items.map((item) => ({
+        ...item,
+        categorySlug: category.slug,
+        categoryName: category.name,
+      })),
+    }))
 
   usePageSeo({
     title: `Menu | ${siteConfig.brandName}`,
