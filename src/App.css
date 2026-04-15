@@ -765,14 +765,19 @@ h3 {
   border: 0;
   box-shadow: none;
   border-radius: 0;
-  width: calc(100% + 32px);
-  margin-left: -16px;
-  margin-right: -16px;
-  padding: clamp(18px, 3vw, 28px) max(2cm, 16px) 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: clamp(18px, 3vw, 28px) 0 0;
 }
 
 .signature-collection-page-section {
   margin-top: 0;
+}
+
+.signature-collection-inner {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
 }
 
 .signature-collection-header {
@@ -814,14 +819,20 @@ h3 {
   text-transform: lowercase;
 }
 
+.signature-collection-gallery-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
 .signature-collection-gallery {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% - 72px) / 4);
+  grid-auto-columns: calc((100vw - (max(2cm, 24px) * 2) - 72px) / 4);
   gap: 24px;
   overflow-x: auto;
-  padding-bottom: 12px;
-  scroll-padding-inline: max(2cm, 16px);
+  padding: 0 max(2cm, 24px) 12px;
+  scroll-padding-inline: max(2cm, 24px);
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -1200,16 +1211,15 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .signature-collection-section {
-    width: calc(100% + 32px);
-    margin-left: -16px;
-    margin-right: -16px;
-    padding-inline: max(2cm, 16px);
+  .signature-collection-inner {
+    width: min(1200px, calc(100% - 32px));
   }
 
   .signature-collection-gallery {
-    grid-auto-columns: calc((100% - 36px) / 3);
+    grid-auto-columns: calc((100vw - (max(2cm, 18px) * 2) - 36px) / 3);
     gap: 18px;
+    padding-inline: max(2cm, 18px);
+    scroll-padding-inline: max(2cm, 18px);
   }
 }
 
@@ -1262,11 +1272,12 @@ h3 {
   }
 
   .signature-collection-section {
-    width: calc(100% + 20px);
-    margin-left: -10px;
-    margin-right: -10px;
-    padding: 16px max(20px, 0.9rem) 0;
+    padding: 16px 0 0;
     border-radius: 0;
+  }
+
+  .signature-collection-inner {
+    width: min(100% - 20px, 1200px);
   }
 
   .signature-collection-header {
@@ -1287,9 +1298,10 @@ h3 {
   }
 
   .signature-collection-gallery {
-    grid-auto-columns: calc((100% - 14px) / 2);
+    grid-auto-columns: calc((100vw - 40px - 14px) / 2);
     gap: 14px;
-    padding-bottom: 8px;
+    padding: 0 20px 8px;
+    scroll-padding-inline: 20px;
   }
 
   .signature-collection-card {

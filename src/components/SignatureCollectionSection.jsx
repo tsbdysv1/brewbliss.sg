@@ -54,54 +54,60 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
 
   return (
     <section className={`section-block signature-collection-section ${className}`.trim()} aria-labelledby="signature-collection-title">
-      <div className="signature-collection-header">
-        <div className="signature-collection-heading-group">
-          <HeadingTag id="signature-collection-title">BrewBliss Signature Collection</HeadingTag>
+      <div className="signature-collection-inner">
+        <div className="signature-collection-header">
+          <div className="signature-collection-heading-group">
+            <HeadingTag id="signature-collection-title">BrewBliss Signature Collection</HeadingTag>
+          </div>
+
+          {showViewAll ? (
+            <Link to="/menu/signature" className="signature-view-all-button">
+              view all
+            </Link>
+          ) : null}
         </div>
-
-        {showViewAll ? (
-          <Link to="/menu/signature" className="signature-view-all-button">
-            view all
-          </Link>
-        ) : null}
       </div>
 
-      <div className="signature-collection-gallery" ref={trackRef} aria-label="BrewBliss Signature Collection slider">
-        {signatureItems.map((item) => (
-          <Link
-            key={item.slug}
-            to={`/menu/${item.slug}`}
-            className="signature-collection-card"
-            aria-label={`Xem chi tiết ${item.name}`}
+      <div className="signature-collection-gallery-bleed">
+        <div className="signature-collection-gallery" ref={trackRef} aria-label="BrewBliss Signature Collection slider">
+          {signatureItems.map((item) => (
+            <Link
+              key={item.slug}
+              to={`/menu/${item.slug}`}
+              className="signature-collection-card"
+              aria-label={`Xem chi tiết ${item.name}`}
+            >
+              <img src={item.image} alt={item.name} className="signature-collection-image" />
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <div className="signature-collection-inner">
+        <div className="signature-collection-controls" aria-label="Signature collection navigation">
+          <button
+            type="button"
+            className={`signature-collection-arrow${canScrollPrev ? '' : ' is-disabled'}`}
+            onClick={() => scrollGallery(-1)}
+            aria-label="Previous signature item"
+            aria-disabled={!canScrollPrev}
           >
-            <img src={item.image} alt={item.name} className="signature-collection-image" />
-          </Link>
-        ))}
-      </div>
-
-      <div className="signature-collection-controls" aria-label="Signature collection navigation">
-        <button
-          type="button"
-          className={`signature-collection-arrow${canScrollPrev ? '' : ' is-disabled'}`}
-          onClick={() => scrollGallery(-1)}
-          aria-label="Previous signature item"
-          aria-disabled={!canScrollPrev}
-        >
-          <span className="signature-collection-arrow-icon" aria-hidden="true">
-            ‹
-          </span>
-        </button>
-        <button
-          type="button"
-          className={`signature-collection-arrow${canScrollNext ? '' : ' is-disabled'}`}
-          onClick={() => scrollGallery(1)}
-          aria-label="Next signature item"
-          aria-disabled={!canScrollNext}
-        >
-          <span className="signature-collection-arrow-icon" aria-hidden="true">
-            ›
-          </span>
-        </button>
+            <span className="signature-collection-arrow-icon" aria-hidden="true">
+              ‹
+            </span>
+          </button>
+          <button
+            type="button"
+            className={`signature-collection-arrow${canScrollNext ? '' : ' is-disabled'}`}
+            onClick={() => scrollGallery(1)}
+            aria-label="Next signature item"
+            aria-disabled={!canScrollNext}
+          >
+            <span className="signature-collection-arrow-icon" aria-hidden="true">
+              ›
+            </span>
+          </button>
+        </div>
       </div>
     </section>
   )
