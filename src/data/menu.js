@@ -18,7 +18,7 @@ const imageLibrary = {
   coldBrewMo: '/images/signature-collection/uploads-apr15/cold-brew-mo.png',
   handDrip: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80',
   matcha: '/images/signature-collection/07.png',
-  strawberryMatcha: '/images/signature-collection/08.png',
+  strawberryMatcha: '/images/signature-collection/uploads-apr15/strawberry-matcha-latte.png',
   saltedCreamMatcha: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=1200&q=80',
   lemonHoneyMatcha: '/images/signature-collection/03.png',
   cocoMatcha: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=1200&q=80',
