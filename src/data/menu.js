@@ -491,6 +491,24 @@ const SIMILAR_CATEGORY_GROUPS = [
   ['pastries'],
 ]
 
+const MENU_ITEM_SLUG_ALIASES = new Map([
+  ['salted-caramel', 'salted-caramel-full'],
+  ['cold-brew-mo', 'cold-brew-mo-full'],
+  ['lemon-honey-matcha', 'lemon-honey-matcha-full'],
+  ['pain-au-chocolat', 'pain-au-chocolat-full'],
+])
+
+const SIGNATURE_COLLECTION_ITEM_SLUGS = [
+  'salted-caramel',
+  'cold-brew-mo',
+  'lemon-honey-matcha',
+  'pain-au-chocolat',
+  'orange-espresso-tonic',
+  'cafe-dua',
+  'matcha-latte',
+  'strawberry-matcha-latte',
+]
+
 function getSimilarityScore(currentItem, candidate) {
   if (candidate.categorySlug === currentItem.categorySlug) return 3
 
@@ -512,7 +530,8 @@ export function getMenuCategoryBySlug(slug) {
 }
 
 export function getMenuItemBySlug(slug) {
-  return allMenuItems.find((item) => item.slug === slug)
+  const resolvedSlug = MENU_ITEM_SLUG_ALIASES.get(slug) ?? slug
+  return allMenuItems.find((item) => item.slug === resolvedSlug)
 }
 
 export function getMenuItemByCategoryAndSlug(categorySlug, itemSlug) {
@@ -525,6 +544,10 @@ export function getMenuItemByCategoryAndSlug(categorySlug, itemSlug) {
 
 export function getMenuItemHref(item) {
   return `/menu/${item.categorySlug}/${item.slug}`
+}
+
+export function getSignatureCollectionItems() {
+  return SIGNATURE_COLLECTION_ITEM_SLUGS.map((slug) => getMenuItemBySlug(slug)).filter(Boolean)
 }
 
 export function getRelatedMenuItems(currentItem, limit = 4) {

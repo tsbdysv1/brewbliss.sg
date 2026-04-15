@@ -2,7 +2,7 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import MenuCatalogSection from '../components/MenuCatalogSection'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
-import { menuCategories } from '../data/menu'
+import { getSignatureCollectionItems, menuCategories } from '../data/menu'
 import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 
@@ -43,6 +43,8 @@ function MenuPage() {
       })),
     }))
 
+  const signatureItems = getSignatureCollectionItems()
+
   usePageSeo({
     title: `Menu | ${siteConfig.brandName}`,
     description:
@@ -67,6 +69,12 @@ function MenuPage() {
             items={category.items}
           />
         ))}
+
+        <MenuCatalogSection
+          sectionId="signature-collection"
+          title="BrewBliss Signature Collection"
+          items={signatureItems}
+        />
       </main>
 
       <SiteFooter />

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getMenuItemBySlug, getMenuItemHref } from '../data/menu'
-import { signatureCollectionSlugs } from '../data/signatureCollection'
+import { getMenuItemHref, getSignatureCollectionItems } from '../data/menu'
 
 function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', className = '' }) {
   const trackRef = useRef(null)
@@ -10,10 +9,7 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
   const [canScrollPrev, setCanScrollPrev] = useState(false)
   const [canScrollNext, setCanScrollNext] = useState(true)
 
-  const signatureItems = useMemo(
-    () => signatureCollectionSlugs.map((slug) => getMenuItemBySlug(slug)).filter(Boolean),
-    [],
-  )
+  const signatureItems = useMemo(() => getSignatureCollectionItems(), [])
 
   useEffect(() => {
     if (!trackRef.current) return undefined
@@ -92,7 +88,7 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
           </div>
 
             {showViewAll ? (
-              <Link to="/menu/signature" className="signature-view-all-button">
+              <Link to="/menu#signature-collection" className="signature-view-all-button">
                 view all
               </Link>
             ) : null}
