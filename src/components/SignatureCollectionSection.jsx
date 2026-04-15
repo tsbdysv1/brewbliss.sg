@@ -89,7 +89,7 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
 
             {showViewAll ? (
               <Link to="/menu#signature-collection" className="signature-view-all-button">
-                view all
+                Xem thêm
               </Link>
             ) : null}
           </div>

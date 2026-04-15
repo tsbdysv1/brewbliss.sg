@@ -362,6 +362,9 @@ div {
 
 .brewbliss-experience-copy {
   align-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   max-width: 620px;
   margin-left: 38px;
   transform: translateY(-52px);
@@ -380,23 +383,25 @@ div {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
+  align-self: flex-end;
+  min-height: 42px;
   margin-top: 22px;
-  padding: 0 16px;
-  border: 1px solid rgba(59, 42, 36, 0.16);
-  background: rgba(255, 255, 255, 0.42);
-  color: #3b2a24;
-  font-size: 0.92rem;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(31, 31, 31, 0.14);
+  background: #ffffff;
+  color: #1f1f1f;
+  font-size: 0.98rem;
   font-weight: 600;
-  letter-spacing: 0.01em;
-  border-radius: 6px;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  line-height: 1;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
 
 .brewbliss-experience-link:hover,
 .brewbliss-experience-link:focus-visible {
-  background: rgba(255, 255, 255, 0.68);
-  border-color: rgba(59, 42, 36, 0.3);
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(31, 31, 31, 0.22);
+  color: #1f1f1f;
   transform: translateY(-1px);
   outline: none;
 }
@@ -1581,6 +1586,13 @@ h3 {
     font-size: 0.92rem;
   }
 
+  .brewbliss-experience-link {
+    align-self: flex-start;
+    min-height: 38px;
+    padding: 0 15px;
+    font-size: 0.92rem;
+  }
+
   .signature-collection-gallery-viewport {
     width: calc(100vw - 40px);
   }
@@ -1648,6 +1660,7 @@ h3 {
   }
 
   .brewbliss-experience-link {
+    align-self: flex-start;
     min-height: 38px;
     margin-top: 18px;
     padding: 0 14px;
