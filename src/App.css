@@ -15,24 +15,6 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 520px) {
-  .signature-collection-card-overlay {
-    padding: 0 0 0.6cm 0.22cm;
-  }
-
-  .signature-collection-card-copy h3 {
-    font-size: 0.98rem;
-  }
-
-  .signature-collection-card-copy p {
-    font-size: 0.82rem;
-  }
-
-  .menu-catalog-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -934,6 +916,7 @@ h3 {
 .signature-collection-card-copy {
   max-width: calc(100% - 0.8cm);
   color: #111111;
+  background: transparent;
   text-shadow: 0 1px 4px rgba(255, 255, 255, 0.18);
 }
 
@@ -944,6 +927,7 @@ h3 {
   line-height: 1.18;
   letter-spacing: -0.02em;
   color: #111111;
+  background: transparent;
 }
 
 .signature-collection-card-copy p {
@@ -952,6 +936,7 @@ h3 {
   font-weight: 500;
   line-height: 1.2;
   color: #111111;
+  background: transparent;
 }
 
 .signature-collection-card:hover .signature-collection-image,
