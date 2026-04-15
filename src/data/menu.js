@@ -37,7 +37,7 @@ const imageLibrary = {
   coconutCoffee: '/images/signature-collection/uploads-apr15/cafe-dua.png',
   saltedCoffee: '/images/signature-collection/uploads-apr15/cafe-muoi.png',
   chocoLatte: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=1200&q=80',
-  hojichaLatte: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=1200&q=80',
+  hojichaLatte: '/images/signature-collection/uploads-apr15/hojicha-latte.png',
   pineappleJuice: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=1200&q=80',
   orangeJuice: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=1200&q=80',
   carrotJuice: 'https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?auto=format&fit=crop&w=1200&q=80',
