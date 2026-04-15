@@ -34,7 +34,7 @@ const imageLibrary = {
   vietnameseBlack: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1fcef?auto=format&fit=crop&w=1200&q=80',
   vietnameseMilk: 'https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=1200&q=80',
   bacXiu: 'https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=1200&q=80',
-  coconutCoffee: '/images/signature-collection/06.png',
+  coconutCoffee: '/images/signature-collection/uploads-apr15/cafe-dua.png',
   saltedCoffee: '/images/signature-collection/uploads-apr15/cafe-muoi.png',
   chocoLatte: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=1200&q=80',
   hojichaLatte: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=1200&q=80',
