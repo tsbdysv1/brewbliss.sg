@@ -17,7 +17,7 @@
 
 @media (max-width: 520px) {
   .signature-collection-card-overlay {
-    padding: 0 0 0.96cm 0.56cm;
+    padding: 0 0 0.6cm 0.22cm;
   }
 
   .signature-collection-card-copy h3 {
@@ -926,15 +926,15 @@ h3 {
   inset: 0;
   display: flex;
   align-items: flex-end;
-  padding: 0 0 1.6cm 1cm;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 44%, rgba(0, 0, 0, 0.18) 74%, rgba(0, 0, 0, 0.38) 100%);
+  padding: 0 0 1.1cm 0.5cm;
+  background: transparent;
   pointer-events: none;
 }
 
 .signature-collection-card-copy {
-  max-width: calc(100% - 1.2cm);
-  color: #ffffff;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.24);
+  max-width: calc(100% - 0.8cm);
+  color: #111111;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.18);
 }
 
 .signature-collection-card-copy h3 {
@@ -943,6 +943,7 @@ h3 {
   font-weight: 600;
   line-height: 1.18;
   letter-spacing: -0.02em;
+  color: #111111;
 }
 
 .signature-collection-card-copy p {
@@ -950,7 +951,7 @@ h3 {
   font-size: clamp(0.88rem, 1.05vw, 0.98rem);
   font-weight: 500;
   line-height: 1.2;
-  color: rgba(255, 255, 255, 0.92);
+  color: #111111;
 }
 
 .signature-collection-card:hover .signature-collection-image,
@@ -1646,7 +1647,7 @@ h3 {
   }
 
   .signature-collection-card-overlay {
-    padding: 0 0 1.2cm 0.74cm;
+    padding: 0 0 0.82cm 0.38cm;
   }
 
   .signature-collection-card-copy h3 {
