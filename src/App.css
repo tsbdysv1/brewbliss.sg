@@ -965,15 +965,11 @@ h3 {
 
 .menu-catalog-section {
   scroll-margin-top: 148px;
-  transition: background-color 0.55s ease, box-shadow 0.55s ease, opacity 0.55s ease;
+  transition: color 0.35s ease;
 }
 
 .menu-catalog-section + .menu-catalog-section {
   margin-top: clamp(56px, 8vw, 92px);
-}
-
-.menu-catalog-section.is-highlighted {
-  background: linear-gradient(180deg, rgba(233, 226, 218, 0.72), rgba(233, 226, 218, 0));
 }
 
 .menu-catalog-section.is-active-target .menu-catalog-section-heading h2 {
