@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getMenuItemBySlug } from '../data/menu'
 import { signatureCollectionSlugs } from '../data/signatureCollection'
@@ -6,18 +6,42 @@ import { signatureCollectionSlugs } from '../data/signatureCollection'
 function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', className = '' }) {
   const trackRef = useRef(null)
   const HeadingTag = headingLevel
+  const [canScrollPrev, setCanScrollPrev] = useState(false)
+  const [canScrollNext, setCanScrollNext] = useState(true)
 
   const signatureItems = useMemo(
     () => signatureCollectionSlugs.map((slug) => getMenuItemBySlug(slug)).filter(Boolean),
     [],
   )
 
+  useEffect(() => {
+    if (!trackRef.current) return undefined
+
+    const gallery = trackRef.current
+
+    const updateScrollState = () => {
+      const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth
+      setCanScrollPrev(gallery.scrollLeft > 4)
+      setCanScrollNext(gallery.scrollLeft < maxScrollLeft - 4)
+    }
+
+    updateScrollState()
+    gallery.addEventListener('scroll', updateScrollState, { passive: true })
+    window.addEventListener('resize', updateScrollState)
+
+    return () => {
+      gallery.removeEventListener('scroll', updateScrollState)
+      window.removeEventListener('resize', updateScrollState)
+    }
+  }, [signatureItems.length])
+
   const scrollGallery = (direction) => {
     if (!trackRef.current) return
 
     const gallery = trackRef.current
     const firstCard = gallery.querySelector('.signature-collection-card')
-    const gap = 24
+    const computedStyle = window.getComputedStyle(gallery)
+    const gap = Number.parseFloat(computedStyle.columnGap || computedStyle.gap || '24') || 24
     const step = firstCard ? firstCard.getBoundingClientRect().width + gap : gallery.clientWidth * 0.72
 
     gallery.scrollBy({
@@ -58,22 +82,24 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
       <div className="signature-collection-controls" aria-label="Signature collection navigation">
         <button
           type="button"
-          className="signature-collection-arrow"
+          className={`signature-collection-arrow${canScrollPrev ? '' : ' is-disabled'}`}
           onClick={() => scrollGallery(-1)}
           aria-label="Previous signature item"
+          aria-disabled={!canScrollPrev}
         >
           <span className="signature-collection-arrow-icon" aria-hidden="true">
-            ◀
+            ‹
           </span>
         </button>
         <button
           type="button"
-          className="signature-collection-arrow"
+          className={`signature-collection-arrow${canScrollNext ? '' : ' is-disabled'}`}
           onClick={() => scrollGallery(1)}
           aria-label="Next signature item"
+          aria-disabled={!canScrollNext}
         >
           <span className="signature-collection-arrow-icon" aria-hidden="true">
-            ▶
+            ›
           </span>
         </button>
       </div>

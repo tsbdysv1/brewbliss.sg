@@ -762,8 +762,13 @@ h3 {
 
 .signature-collection-section {
   background: #ffffff;
+  border: 0;
+  box-shadow: none;
   border-radius: 0;
-  padding: clamp(18px, 3vw, 28px) 0 0;
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: clamp(18px, 3vw, 28px) max(2cm, 16px) 0;
 }
 
 .signature-collection-page-section {
@@ -816,6 +821,7 @@ h3 {
   gap: 24px;
   overflow-x: auto;
   padding-bottom: 12px;
+  scroll-padding-inline: max(2cm, 16px);
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -830,7 +836,7 @@ h3 {
   overflow: hidden;
   border-radius: 0;
   background: #ffffff;
-  border: 1px solid rgba(31, 31, 31, 0.06);
+  border: 0;
   box-shadow: none;
   scroll-snap-align: start;
 }
@@ -860,28 +866,38 @@ h3 {
   height: 46px;
   border: 0;
   border-radius: 999px;
-  background: #4a4a4a;
+  background: #393939;
   color: #ffffff;
   line-height: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.22s ease, background-color 0.22s ease;
+  transition: transform 0.24s ease, background-color 0.24s ease, opacity 0.24s ease;
+}
+
+.signature-collection-arrow.is-disabled {
+  background: #767676;
 }
 
 .signature-collection-arrow:hover,
 .signature-collection-arrow:focus-visible {
-  background: #383838;
+  background: #2f2f2f;
+}
+
+.signature-collection-arrow.is-disabled:hover,
+.signature-collection-arrow.is-disabled:focus-visible {
+  background: #6f6f6f;
 }
 
 .signature-collection-arrow:active {
-  background: #2e2e2e;
   transform: scale(0.96);
 }
 
 .signature-collection-arrow-icon {
-  font-size: 0.95rem;
-  line-height: 1;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 0.8;
+  transform: translateY(-1px);
 }
 
 .menu-card-topline {
@@ -1184,6 +1200,13 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .signature-collection-section {
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-inline: max(2cm, 16px);
+  }
+
   .signature-collection-gallery {
     grid-auto-columns: calc((100% - 36px) / 3);
     gap: 18px;
@@ -1239,7 +1262,10 @@ h3 {
   }
 
   .signature-collection-section {
-    padding: 16px 0 0;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 16px max(20px, 0.9rem) 0;
     border-radius: 0;
   }
 
