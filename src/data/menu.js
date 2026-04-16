@@ -13,7 +13,7 @@ const imageLibrary = {
   orangeEspressoTonic: '/images/signature-collection/uploads-apr15/orange-espresso-tonic.png',
   saltedCaramel: '/images/signature-collection/uploads-apr15/salted-caramel.png',
   creamyBliss: '/images/signature-collection/uploads-apr15/creamy-bliss.png',
-  coldBrew: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1200&q=80',
+  coldBrew: '/images/signature-collection/uploads-apr15/cold-brew.png',
   coldDrip: '/images/signature-collection/uploads-apr15/cold-drip.png',
   coldBrewCamBuoi: '/images/signature-collection/uploads-apr15/cold-brew-cam-buoi.png',
   coldBrewChanhVang: '/images/signature-collection/uploads-apr15/cold-brew-chanh-vang.png',
