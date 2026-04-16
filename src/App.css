@@ -1298,6 +1298,10 @@ h3 {
   gap: 14px;
 }
 
+.product-note-section.is-standalone {
+  padding-top: 2px;
+}
+
 .product-option-section h2,
 .product-note-label {
   margin: 0;

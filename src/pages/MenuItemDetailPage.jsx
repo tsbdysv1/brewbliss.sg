@@ -19,6 +19,12 @@ import { buildPhoneHref } from '../utils/commerce'
 import { useCart } from '../context/CartContext'
 import { buildCartItemId, PRODUCT_OPTION_GROUPS } from '../utils/cart'
 
+const HIDE_MILK_AND_SUGAR_SLUGS = new Set(['espresso', 'americano', 'orange-espresso-tonic'])
+const HIDE_ONLY_MILK_SLUGS = new Set(['cafe-den', 'lemon-honey-matcha-full', 'lemon-honey-matcha-summer', 'coco-matcha'])
+const HIDE_MILK_AND_SUGAR_CATEGORY_SLUGS = new Set(['brew-bar', 'hand-drip'])
+const HIDE_ONLY_MILK_CATEGORY_SLUGS = new Set(['tea', 'juice'])
+const NOTE_ONLY_CATEGORY_SLUGS = new Set(['pastries'])
+
 function MenuItemDetailPage() {
   const { categorySlug, slug } = useParams()
   const { addItem } = useCart()
@@ -30,6 +36,12 @@ function MenuItemDetailPage() {
 
   const item = categorySlug ? getMenuItemByCategoryAndSlug(categorySlug, slug) : getMenuItemBySlug(slug)
   const category = item?.categorySlug ? getMenuCategoryBySlug(item.categorySlug) : null
+  const resolvedCategorySlug = item?.categorySlug ?? categorySlug ?? null
+  const isNoteOnlyItem = resolvedCategorySlug ? NOTE_ONLY_CATEGORY_SLUGS.has(resolvedCategorySlug) : false
+  const shouldHideMilk = isNoteOnlyItem || (resolvedCategorySlug ? HIDE_MILK_AND_SUGAR_CATEGORY_SLUGS.has(resolvedCategorySlug) || HIDE_ONLY_MILK_CATEGORY_SLUGS.has(resolvedCategorySlug) : false) || HIDE_MILK_AND_SUGAR_SLUGS.has(item?.slug) || HIDE_ONLY_MILK_SLUGS.has(item?.slug)
+  const shouldHideSugar = isNoteOnlyItem || (resolvedCategorySlug ? HIDE_MILK_AND_SUGAR_CATEGORY_SLUGS.has(resolvedCategorySlug) : false) || HIDE_MILK_AND_SUGAR_SLUGS.has(item?.slug)
+  const shouldHideTemperature = isNoteOnlyItem
+  const visibleOptionSections = [!shouldHideMilk, !shouldHideSugar, !shouldHideTemperature].filter(Boolean).length
 
   usePageSeo({
     title: item ? `${item.name} | ${siteConfig.brandName}` : `Menu item | ${siteConfig.brandName}`,
@@ -56,12 +68,12 @@ function MenuItemDetailPage() {
     priceValue: item.priceValue,
     quantity: 1,
     options: {
-      milk: selectedMilk,
-      sugar: selectedSugar,
-      temperature: selectedTemperature,
+      milk: shouldHideMilk ? '' : selectedMilk,
+      sugar: shouldHideSugar ? '' : selectedSugar,
+      temperature: shouldHideTemperature ? '' : selectedTemperature,
       note: note.trim(),
     },
-  }), [item.image, item.name, item.priceValue, item.slug, note, selectedMilk, selectedSugar, selectedTemperature])
+  }), [item.image, item.name, item.priceValue, item.slug, note, selectedMilk, selectedSugar, selectedTemperature, shouldHideMilk, shouldHideSugar, shouldHideTemperature])
 
   const handleAddToCart = () => {
     addItem({
@@ -112,58 +124,64 @@ function MenuItemDetailPage() {
           ) : null}
 
           <div className="product-customization-flow" aria-label="Tuỳ chọn món uống">
-            <section className="product-option-section">
-              <h2>Lựa chọn sữa</h2>
-              <div className="product-option-divider" aria-hidden="true" />
-              <div className="product-option-button-row">
-                {PRODUCT_OPTION_GROUPS.milk.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    className={`product-option-button${selectedMilk === option ? ' is-selected' : ''}`}
-                    onClick={() => setSelectedMilk(option)}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
-            </section>
+            {!shouldHideMilk ? (
+              <section className="product-option-section">
+                <h2>Lựa chọn sữa</h2>
+                <div className="product-option-divider" aria-hidden="true" />
+                <div className="product-option-button-row">
+                  {PRODUCT_OPTION_GROUPS.milk.map((option) => (
+                    <button
+                      key={option}
+                      type="button"
+                      className={`product-option-button${selectedMilk === option ? ' is-selected' : ''}`}
+                      onClick={() => setSelectedMilk(option)}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+              </section>
+            ) : null}
 
-            <section className="product-option-section">
-              <h2>Đường</h2>
-              <div className="product-option-divider" aria-hidden="true" />
-              <div className="product-option-button-row">
-                {PRODUCT_OPTION_GROUPS.sugar.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    className={`product-option-button${selectedSugar === option ? ' is-selected' : ''}`}
-                    onClick={() => setSelectedSugar(option)}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
-            </section>
+            {!shouldHideSugar ? (
+              <section className="product-option-section">
+                <h2>Đường</h2>
+                <div className="product-option-divider" aria-hidden="true" />
+                <div className="product-option-button-row">
+                  {PRODUCT_OPTION_GROUPS.sugar.map((option) => (
+                    <button
+                      key={option}
+                      type="button"
+                      className={`product-option-button${selectedSugar === option ? ' is-selected' : ''}`}
+                      onClick={() => setSelectedSugar(option)}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+              </section>
+            ) : null}
 
-            <section className="product-option-section">
-              <h2>Lựa chọn</h2>
-              <div className="product-option-divider" aria-hidden="true" />
-              <div className="product-option-button-row">
-                {PRODUCT_OPTION_GROUPS.temperature.map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    className={`product-option-button${selectedTemperature === option ? ' is-selected' : ''}`}
-                    onClick={() => setSelectedTemperature(option)}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
-            </section>
+            {!shouldHideTemperature ? (
+              <section className="product-option-section">
+                <h2>Lựa chọn</h2>
+                <div className="product-option-divider" aria-hidden="true" />
+                <div className="product-option-button-row">
+                  {PRODUCT_OPTION_GROUPS.temperature.map((option) => (
+                    <button
+                      key={option}
+                      type="button"
+                      className={`product-option-button${selectedTemperature === option ? ' is-selected' : ''}`}
+                      onClick={() => setSelectedTemperature(option)}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+              </section>
+            ) : null}
 
-            <section className="product-note-section">
+            <section className={`product-note-section${visibleOptionSections === 0 ? ' is-standalone' : ''}`}>
               <label htmlFor="product-note" className="product-note-label">Note:</label>
               <textarea
                 id="product-note"
