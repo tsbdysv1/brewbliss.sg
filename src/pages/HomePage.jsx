@@ -137,19 +137,24 @@ function HomePage() {
           <div className="brewbliss-experience-box">
             <h2 id="brewbliss-experience-title">BrewBliss tụi mình có</h2>
 
-            <div className="brewbliss-experience-tabs" role="tablist" aria-label="BrewBliss menu categories">
-              {brewblissExperienceTabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={tab.id === activeExperienceTab}
-                  className={`brewbliss-experience-tab${tab.id === activeExperienceTab ? ' is-active' : ''}`}
-                  onClick={() => setActiveExperienceTab(tab.id)}
-                >
-                  {tab.label}
-                </button>
-              ))}
+            <div className="brewbliss-experience-tabs-wrap">
+              <div className="brewbliss-experience-tabs" role="tablist" aria-label="BrewBliss menu categories">
+                {brewblissExperienceTabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={tab.id === activeExperienceTab}
+                    className={`brewbliss-experience-tab${tab.id === activeExperienceTab ? ' is-active' : ''}`}
+                    onClick={() => setActiveExperienceTab(tab.id)}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+              <div className="brewbliss-experience-tabs-indicator" aria-hidden="true">
+                <span>→</span>
+              </div>
             </div>
 
             <div className="brewbliss-experience-content">
