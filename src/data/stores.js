@@ -11,7 +11,6 @@ export const stores = [
     mapLink: siteConfig.mapLink,
     phoneNumber: siteConfig.phoneNumber,
     hoursLabel: siteConfig.hoursLabel,
-    embedMapUrl:
-      'https://maps.google.com/maps?width=100%25&height=600&hl=vi&q=10.7738405,106.6991282&t=&z=18&ie=UTF8&iwloc=B&output=embed',
+    embedMapUrl: siteConfig.mapLink,
   },
 ]

@@ -12,8 +12,7 @@ export const siteConfig = {
   facebookLink: 'https://www.facebook.com/profile.php?id=61562411244271',
   address: '21 Nguyễn Trung Trực, Bến Thành, Quận 1, Hồ Chí Minh 71009, Vietnam',
   mapQuery: '21 Nguyễn Trung Trực, Bến Thành, Quận 1, Hồ Chí Minh 71009, Vietnam',
-  mapLink:
-    'https://www.google.com/maps/place/21+Nguy%E1%BB%85n+Trung+Tr%E1%BB%B1c,+B%E1%BA%BFn+Th%C3%A0nh,+Qu%E1%BA%ADn+1,+H%E1%BB%93+Ch%C3%AD+Minh+71009,+Vi%E1%BB%87t+Nam/@10.7738405,106.6942573,16z/data=!3m1!4b1!4m6!3m5!1s0x31752f38bb4d082b:0xc512e65f25b285ca!8m2!3d10.7738405!4d106.6991282!16s%2Fg%2F11xghrb5zx?hl=vi&entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D',
+  mapLink: 'https://maps.app.goo.gl/QCNB6kX5E6PnoWpE9',
   hoursLabel: 'Mỗi ngày · 7:00 AM – 10:00 PM',
   trustPoints: ['Ngay trung tâm quận 1', 'Menu đa dạng từ coffee đến matcha', 'Có pastry đi kèm và vibe chụp hình đẹp'],
   contentReadiness: {
