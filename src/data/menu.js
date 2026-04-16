@@ -11,7 +11,7 @@ const imageLibrary = {
   cappuccino: '/images/signature-collection/uploads-apr15/cappuccino.png',
   mocha: '/images/signature-collection/uploads-apr15/mocha.png',
   orangeEspressoTonic: '/images/signature-collection/uploads-apr15/orange-espresso-tonic.png',
-  saltedCaramel: '/images/signature-collection/01.png',
+  saltedCaramel: '/images/signature-collection/uploads-apr15/salted-caramel.png',
   creamyBliss: '/images/signature-collection/uploads-apr15/creamy-bliss.png',
   coldBrew: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1200&q=80',
   coldBrewCamBuoi: '/images/signature-collection/uploads-apr15/cold-brew-cam-buoi.png',
