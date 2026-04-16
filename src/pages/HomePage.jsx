@@ -70,7 +70,7 @@ const brewblissExperienceTabs = [
     label: 'Pastry',
     description:
       'Pastry tại BrewBliss được chọn để đi cùng đồ uống một cách tự nhiên và gọn gàng. Từ croissant đến pain au chocolat hay cinnamon roll, mỗi lựa chọn đều giữ cảm giác bơ, thơm, dễ ăn và phù hợp với nhịp ghé quán mỗi ngày.',
-    image: '/hero/hero-slide-2.jpg',
+    image: '/images/signature-collection/uploads-apr15/pastry-tab.jpg',
     imageAlt: 'BrewBliss pastry selection',
   },
 ]
