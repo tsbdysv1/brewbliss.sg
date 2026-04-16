@@ -88,6 +88,9 @@ function SiteHeader() {
 
           <Link to="/" className="brand-home-link brand-nav-link" aria-label="BrewBliss home">
             <img src="/brewbliss-wordmark.svg" alt="BrewBliss Coffee" className="brand-logo" />
+            <span className="brand-logo-text" aria-hidden="true">
+              BrewBliss
+            </span>
           </Link>
 
           <nav id="primary-navigation" className={`site-nav${isMobileMenuOpen ? ' is-open' : ''}`} aria-label="Primary navigation">
