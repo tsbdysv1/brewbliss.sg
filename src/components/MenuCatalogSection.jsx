@@ -58,7 +58,7 @@ function MenuCatalogSection({ title, items, sectionId, isHighlighted = false, is
                   <Link to={getMenuItemHref(item)} className="outline-button">
                     Xem chi tiết
                   </Link>
-                  <button type="button" className="solid-button" onClick={() => addItem(quickCartPayload)}>
+                  <button type="button" className="solid-button" onClick={() => addItem(quickCartPayload, `${item.name} đã được thêm vào cart`)}>
                     Add to cart
                   </button>
                 </div>

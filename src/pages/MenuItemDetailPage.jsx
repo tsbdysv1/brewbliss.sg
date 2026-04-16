@@ -67,7 +67,7 @@ function MenuItemDetailPage() {
     addItem({
       ...cartPayload,
       id: buildCartItemId(cartPayload),
-    })
+    }, `${item.name} đã được thêm vào cart`)
     setDidJustAdd(true)
     window.setTimeout(() => setDidJustAdd(false), 1800)
   }
@@ -177,7 +177,7 @@ function MenuItemDetailPage() {
           </div>
 
           <div className="product-detail-actions">
-            <button type="button" className="solid-button" onClick={handleAddToCart}>
+            <button type="button" className={`solid-button add-to-cart-button${didJustAdd ? ' is-success' : ''}`} onClick={handleAddToCart}>
               {didJustAdd ? 'Added to cart' : 'Add to cart'}
             </button>
             <Link to="/cart" className="outline-button inline-return-link">

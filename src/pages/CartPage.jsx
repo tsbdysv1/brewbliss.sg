@@ -8,7 +8,7 @@ import { usePageSeo } from '../hooks/usePageSeo'
 import { useCart } from '../context/CartContext'
 
 function CartPage() {
-  const { items, totalPrice, updateQuantity, removeItem, clearCart } = useCart()
+  const { items, totalPrice, itemCount, updateQuantity, removeItem, clearCart } = useCart()
 
   usePageSeo({
     title: `Cart | ${siteConfig.brandName}`,
@@ -26,7 +26,10 @@ function CartPage() {
 
       <section className="section-block cart-page-section" aria-labelledby="cart-page-title">
         <div className="cart-page-header">
-          <h1 id="cart-page-title">Cart</h1>
+          <div className="cart-page-header-topline">
+            <h1 id="cart-page-title">Cart</h1>
+            {items.length ? <span className="cart-page-count-pill">{itemCount} items</span> : null}
+          </div>
           <p className="cart-page-subtitle">Các món bạn đã chọn sẽ được giữ lại trên thiết bị này ngay cả khi tải lại trang.</p>
         </div>
 
@@ -52,7 +55,7 @@ function CartPage() {
                       <ul className="cart-option-list">
                         {item.options.milk ? <li><span>Sữa</span><strong>{item.options.milk}</strong></li> : null}
                         {item.options.sugar ? <li><span>Đường</span><strong>{item.options.sugar}</strong></li> : null}
-                        {item.options.temperature ? <li><span>Lựa chọn</span><strong>{item.options.temperature}</strong></li> : null}
+                        {item.options.temperature ? <li><span>Hot / Ice</span><strong>{item.options.temperature}</strong></li> : null}
                         {item.options.note ? <li><span>Note</span><strong>{item.options.note}</strong></li> : null}
                       </ul>
                     </div>
@@ -73,7 +76,7 @@ function CartPage() {
                     </label>
 
                     <button type="button" className="cart-remove-button" onClick={() => removeItem(item.id)}>
-                      Remove
+                      Remove item
                     </button>
                   </div>
                 </article>
@@ -81,13 +84,26 @@ function CartPage() {
             </div>
 
             <div className="cart-summary-row">
-              <button type="button" className="outline-button" onClick={clearCart}>
+              <button type="button" className="outline-button cart-clear-button" onClick={clearCart}>
                 Clear cart
               </button>
               <div className="cart-total-block">
                 <span>Total</span>
                 <strong>{formatMenuPrice(totalPrice)}</strong>
               </div>
+              <a href={siteConfig.instagramLink} target="_blank" rel="noreferrer" className="solid-button cart-checkout-button">
+                Order via Instagram
+              </a>
+            </div>
+
+            <div className="cart-mobile-sticky-bar" aria-label="Cart total summary">
+              <div className="cart-mobile-sticky-copy">
+                <span>Total</span>
+                <strong>{formatMenuPrice(totalPrice)}</strong>
+              </div>
+              <a href={siteConfig.instagramLink} target="_blank" rel="noreferrer" className="solid-button cart-mobile-checkout-button">
+                Order now
+              </a>
             </div>
           </div>
         )}

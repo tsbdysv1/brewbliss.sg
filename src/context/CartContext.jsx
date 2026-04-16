@@ -35,6 +35,7 @@ function normalizeCartItem(input) {
 export function CartProvider({ children }) {
   const [items, setItems] = useState([])
   const [hasHydrated, setHasHydrated] = useState(false)
+  const [toastMessage, setToastMessage] = useState('')
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -49,7 +50,7 @@ export function CartProvider({ children }) {
     window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items))
   }, [hasHydrated, items])
 
-  const addItem = (payload) => {
+  const addItem = (payload, feedbackMessage) => {
     const normalizedItem = normalizeCartItem(payload)
 
     setItems((currentItems) => {
@@ -65,6 +66,8 @@ export function CartProvider({ children }) {
 
       return [...currentItems, normalizedItem]
     })
+
+    setToastMessage(feedbackMessage || `${normalizedItem.name} đã được thêm vào cart`)
   }
 
   const updateQuantity = (itemId, nextQuantity) => {
@@ -80,7 +83,18 @@ export function CartProvider({ children }) {
 
   const clearCart = () => {
     setItems([])
+    setToastMessage('Cart đã được làm mới')
   }
+
+  useEffect(() => {
+    if (!toastMessage) return undefined
+
+    const timeoutId = window.setTimeout(() => {
+      setToastMessage('')
+    }, 2200)
+
+    return () => window.clearTimeout(timeoutId)
+  }, [toastMessage])
 
   const value = useMemo(() => {
     const itemCount = items.reduce((sum, item) => sum + item.quantity, 0)
@@ -90,12 +104,14 @@ export function CartProvider({ children }) {
       items,
       itemCount,
       totalPrice,
+      toastMessage,
+      setToastMessage,
       addItem,
       updateQuantity,
       removeItem,
       clearCart,
     }
-  }, [items])
+  }, [items, toastMessage])
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
