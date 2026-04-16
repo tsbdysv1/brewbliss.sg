@@ -43,7 +43,7 @@ const brewblissExperienceTabs = [
     label: 'Hand Drip',
     description:
       'Hand Drip tại BrewBliss tập trung vào trải nghiệm chậm và chỉn chu. Mỗi ly được pha với nhịp vừa đủ để hương thơm, độ ngọt và hậu vị hiện ra rõ ràng, tạo nên một khoảng dừng nhẹ nhàng đúng với tinh thần mà quán muốn mang lại.',
-    image: '/hero/hero-slide-3.jpg',
+    image: '/images/signature-collection/uploads-apr15/hand-drip-tab.jpg',
     imageAlt: 'BrewBliss hand drip style coffee setting',
   },
   {
