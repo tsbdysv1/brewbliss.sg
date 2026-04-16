@@ -1584,7 +1584,7 @@ h3 {
 
   .menu-catalog-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px 16px;
+    gap: 20px 14px;
   }
 
   .menu-catalog-section-heading {
@@ -1607,16 +1607,11 @@ h3 {
     border-radius: 20px;
   }
 
-  .signature-view-all-button {
-    min-height: 38px;
-    padding: 0 15px;
-    font-size: 0.92rem;
-  }
-
+  .signature-view-all-button,
   .brewbliss-experience-link {
     align-self: flex-start;
-    min-height: 38px;
-    padding: 0 15px;
+    min-height: 42px;
+    padding: 0 16px;
     font-size: 0.92rem;
   }
 
@@ -1644,11 +1639,6 @@ h3 {
     font-size: clamp(0.82rem, 2.2vw, 0.92rem);
   }
 
-  .menu-catalog-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px 14px;
-  }
-
   .menu-catalog-section {
     scroll-margin-top: 132px;
   }
@@ -1661,8 +1651,9 @@ h3 {
     margin-top: 44px;
   }
 
-  .menu-catalog-section-heading {
-    margin-bottom: 18px;
+  .menu-catalog-card-topline {
+    align-items: flex-start;
+    gap: 8px;
   }
 
   .menu-catalog-card-topline h3,
@@ -1676,6 +1667,7 @@ h3 {
   }
 
   .brewbliss-experience-tab {
+    min-height: 44px;
     padding: 12px 10px;
     font-size: 0.9rem;
   }
@@ -1697,14 +1689,11 @@ h3 {
     font-size: 1.08rem;
     line-height: 1.72;
     text-align: left;
+    text-wrap: pretty;
   }
 
   .brewbliss-experience-link {
-    align-self: flex-start;
-    min-height: 38px;
     margin-top: 18px;
-    padding: 0 14px;
-    font-size: 0.9rem;
   }
 
   .brewbliss-experience-media {
@@ -1765,7 +1754,7 @@ h3 {
 
   .site-nav {
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     padding-bottom: 18px;
   }
 
@@ -1775,10 +1764,209 @@ h3 {
     justify-content: center;
   }
 
+  .nav-link {
+    min-height: 44px;
+    padding-inline: 12px;
+  }
+
   .solid-button,
   .outline-button,
   .breadcrumb-link,
   .inline-return-link {
     width: 100%;
+    min-height: 46px;
+  }
+
+  .contact-action-grid,
+  .extras-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-action-grid {
+    min-width: 0;
+  }
+
+  .contact-action-card,
+  .contact-card,
+  .hero-card,
+  .info-card,
+  .menu-card,
+  .detail-panel,
+  .product-detail-media,
+  .product-detail-main {
+    min-width: 0;
+  }
+
+  .footer-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .page-shell {
+    width: min(100% - 16px, 1200px);
+    padding-bottom: 40px;
+  }
+
+  .hero-section,
+  .section-block {
+    padding: 18px 16px;
+    border-radius: 20px;
+  }
+
+  .site-header-inner {
+    padding-inline: 16px;
+  }
+
+  .site-header-spacer {
+    height: 90px;
+  }
+
+  .hero-slider-section {
+    margin-top: -16px;
+    margin-bottom: 16px;
+  }
+
+  .hero-slider-arrow {
+    font-size: 2.4rem;
+  }
+
+  .hero-slider-dots {
+    bottom: 14px;
+    gap: 8px;
+  }
+
+  .hero-slider-dot {
+    width: 9px;
+    min-width: 9px;
+    max-width: 9px;
+    height: 9px;
+    min-height: 9px;
+    max-height: 9px;
+  }
+
+  .hero-slider-dot.is-active {
+    width: 16px;
+    min-width: 16px;
+    max-width: 16px;
+  }
+
+  .signature-collection-grid-lockup,
+  .signature-collection-gallery-viewport {
+    width: calc(100vw - 32px);
+  }
+
+  .signature-collection-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .signature-collection-heading-group h1,
+  .signature-collection-heading-group h2,
+  .menu-catalog-section-heading h2 {
+    font-size: clamp(1.2rem, 6.6vw, 1.7rem);
+    line-height: 1.06;
+  }
+
+  .signature-view-all-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .signature-collection-gallery {
+    grid-auto-columns: 82%;
+    gap: 12px;
+  }
+
+  .menu-catalog-grid,
+  .related-products-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .menu-catalog-card-body {
+    padding-top: 12px;
+  }
+
+  .menu-catalog-card-topline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .menu-catalog-card-topline h3,
+  .menu-catalog-card-topline strong {
+    font-size: 1rem;
+  }
+
+  .brewbliss-experience-box {
+    padding: 14px 16px 20px;
+  }
+
+  .brewbliss-experience-box h2 {
+    padding-bottom: 12px;
+  }
+
+  .brewbliss-experience-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .brewbliss-experience-content {
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .brewbliss-experience-copy p,
+  .section-supporting-text,
+  .hero-text,
+  .menu-card p,
+  .contact-card p,
+  .info-card p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .editorial-product-detail-main h1 {
+    font-size: clamp(1.65rem, 9.5vw, 2.15rem);
+    line-height: 1.04;
+  }
+
+  .product-detail-description {
+    line-height: 1.68;
+  }
+
+  .editorial-detail-panel {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .breadcrumb-list,
+  .hero-cta-row,
+  .contact-actions,
+  .product-detail-actions,
+  .product-detail-meta,
+  .quick-actions {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.88rem;
+    letter-spacing: 0.14em;
+  }
+
+  .brand-logo,
+  .hero-logo-preview {
+    width: 200px;
+    max-width: 76vw;
+  }
+
+  .contact-action-card {
+    min-height: 104px;
+    padding: 18px 16px;
+  }
+
+  .store-map-frame {
+    min-height: 360px;
   }
 }
