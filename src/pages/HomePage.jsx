@@ -16,7 +16,7 @@ const brewblissExperienceTabs = [
     label: 'Espresso Bar',
     description:
       'Espresso Bar của BrewBliss được xây để giữ trọn sự gọn gàng và chính xác trong từng shot. Từ espresso nguyên bản đến latte, cappuccino hay các ly signature, mọi thứ đều hướng tới cảm giác cân bằng, hiện đại và dễ quay lại mỗi ngày.',
-    image: '/hero/hero-slide-2.jpg',
+    image: '/images/signature-collection/uploads-apr15/espresso-bar-tab.jpg',
     imageAlt: 'BrewBliss espresso-based drink',
   },
   {
