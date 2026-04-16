@@ -39,7 +39,7 @@ const imageLibrary = {
   saltedCoffee: '/images/signature-collection/uploads-apr15/cafe-muoi.png',
   chocoLatte: '/images/signature-collection/uploads-apr15/chocolatte.png',
   hojichaLatte: '/images/signature-collection/uploads-apr15/hojicha-latte.png',
-  pineappleJuice: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=1200&q=80',
+  pineappleJuice: '/images/signature-collection/uploads-apr15/thom.png',
   orangeJuice: '/images/signature-collection/uploads-apr15/cam.png',
   carrotJuice: '/images/signature-collection/uploads-apr15/ca-rot.png',
   mixedJuice: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=1200&q=80',
