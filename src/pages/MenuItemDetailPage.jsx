@@ -21,8 +21,20 @@ import { buildCartItemId, PRODUCT_OPTION_GROUPS } from '../utils/cart'
 
 const HIDE_MILK_AND_SUGAR_SLUGS = new Set(['espresso', 'americano', 'orange-espresso-tonic'])
 const HIDE_ONLY_MILK_SLUGS = new Set(['cafe-den', 'lemon-honey-matcha-full', 'lemon-honey-matcha-summer', 'coco-matcha'])
+const ICED_ONLY_SLUGS = new Set([
+  'orange-espresso-tonic',
+  'creamy-bliss',
+  'cafe-dua',
+  'cafe-muoi',
+  'strawberry-matcha-latte',
+  'salted-cream-matcha',
+  'lemon-honey-matcha-full',
+  'lemon-honey-matcha-summer',
+  'coco-matcha',
+])
 const HIDE_MILK_AND_SUGAR_CATEGORY_SLUGS = new Set(['brew-bar', 'hand-drip'])
 const HIDE_ONLY_MILK_CATEGORY_SLUGS = new Set(['tea', 'juice'])
+const ICED_ONLY_CATEGORY_SLUGS = new Set(['brew-bar', 'tea', 'juice'])
 const NOTE_ONLY_CATEGORY_SLUGS = new Set(['pastries'])
 
 function MenuItemDetailPage() {
@@ -38,6 +50,8 @@ function MenuItemDetailPage() {
   const category = item?.categorySlug ? getMenuCategoryBySlug(item.categorySlug) : null
   const resolvedCategorySlug = item?.categorySlug ?? categorySlug ?? null
   const isNoteOnlyItem = resolvedCategorySlug ? NOTE_ONLY_CATEGORY_SLUGS.has(resolvedCategorySlug) : false
+  const isIcedOnlyItem = !isNoteOnlyItem && ((resolvedCategorySlug ? ICED_ONLY_CATEGORY_SLUGS.has(resolvedCategorySlug) : false) || ICED_ONLY_SLUGS.has(item?.slug))
+  const availableTemperatureOptions = isIcedOnlyItem ? PRODUCT_OPTION_GROUPS.temperature.filter((option) => option !== 'Nóng') : PRODUCT_OPTION_GROUPS.temperature
   const shouldHideMilk = isNoteOnlyItem || (resolvedCategorySlug ? HIDE_MILK_AND_SUGAR_CATEGORY_SLUGS.has(resolvedCategorySlug) || HIDE_ONLY_MILK_CATEGORY_SLUGS.has(resolvedCategorySlug) : false) || HIDE_MILK_AND_SUGAR_SLUGS.has(item?.slug) || HIDE_ONLY_MILK_SLUGS.has(item?.slug)
   const shouldHideSugar = isNoteOnlyItem || (resolvedCategorySlug ? HIDE_MILK_AND_SUGAR_CATEGORY_SLUGS.has(resolvedCategorySlug) : false) || HIDE_MILK_AND_SUGAR_SLUGS.has(item?.slug)
   const shouldHideTemperature = isNoteOnlyItem
@@ -167,7 +181,7 @@ function MenuItemDetailPage() {
                 <h2>Lựa chọn</h2>
                 <div className="product-option-divider" aria-hidden="true" />
                 <div className="product-option-button-row">
-                  {PRODUCT_OPTION_GROUPS.temperature.map((option) => (
+                  {availableTemperatureOptions.map((option) => (
                     <button
                       key={option}
                       type="button"
