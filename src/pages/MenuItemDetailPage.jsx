@@ -59,7 +59,6 @@ function MenuItemDetailPage() {
         </div>
 
         <div className="product-detail-main editorial-product-detail-main">
-          <p className="eyebrow">{category?.name ?? item.categoryName ?? item.category}</p>
           <h1>{item.name}</h1>
 
           <div className="product-detail-price-row">
@@ -80,35 +79,43 @@ function MenuItemDetailPage() {
             </div>
           ) : null}
 
-          <div className="product-detail-meta editorial-product-detail-meta">
-            <div className="detail-pill">
-              <span>Category</span>
-              <strong>{category?.name ?? item.categoryName ?? item.category}</strong>
-            </div>
-            <div className="detail-pill">
-              <span>Serving style</span>
-              <strong>{item.categorySlug === 'pastries' ? 'Bakery / pastry' : 'Best served crafted to order'}</strong>
-            </div>
-          </div>
-
-          <div className="detail-content-grid editorial-detail-content-grid">
-            <article className="detail-panel editorial-detail-panel">
-              <p className="eyebrow">Ingredients</p>
-              <h2>Main ingredients</h2>
-              <ul className="detail-list compact-detail-list">
-                {item.ingredients.vi.map((entry) => (
-                  <li key={`vi-${entry}`}>{entry}</li>
-                ))}
-              </ul>
-            </article>
-
-            <article className="detail-panel editorial-detail-panel">
-              <p className="eyebrow">Flavor notes</p>
-              <h2>About this item</h2>
-              <div className="prose-block editorial-prose-block">
-                <p>{item.details.vi}</p>
+          <div className="product-customization-flow" aria-label="Tuỳ chọn món uống">
+            <section className="product-option-section">
+              <h2>Lựa chọn sữa</h2>
+              <div className="product-option-divider" aria-hidden="true" />
+              <div className="product-option-button-row">
+                <button type="button" className="product-option-button">Sữa thanh trùng</button>
+                <button type="button" className="product-option-button">Sữa yến mạch</button>
               </div>
-            </article>
+            </section>
+
+            <section className="product-option-section">
+              <h2>Đường</h2>
+              <div className="product-option-divider" aria-hidden="true" />
+              <div className="product-option-button-row">
+                <button type="button" className="product-option-button">Có đường</button>
+                <button type="button" className="product-option-button">Không đường</button>
+              </div>
+            </section>
+
+            <section className="product-option-section">
+              <h2>Lựa chọn</h2>
+              <div className="product-option-divider" aria-hidden="true" />
+              <div className="product-option-button-row">
+                <button type="button" className="product-option-button">Đá</button>
+                <button type="button" className="product-option-button">Nóng</button>
+              </div>
+            </section>
+
+            <section className="product-note-section">
+              <label htmlFor="product-note" className="product-note-label">Note:</label>
+              <textarea
+                id="product-note"
+                className="product-note-input"
+                placeholder="Note:"
+                rows="4"
+              />
+            </section>
           </div>
 
           <div className="product-detail-actions">
