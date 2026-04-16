@@ -771,6 +771,23 @@ h3 {
   padding: 32px 28px;
 }
 
+.product-detail-shell .section-block.product-detail-layout {
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 32px 0;
+  background: transparent;
+}
+
+.product-detail-shell .product-detail-media,
+.product-detail-shell .product-detail-main {
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+}
+
 .section-heading,
 .breadcrumb-row {
   margin-bottom: 22px;
@@ -2114,6 +2131,10 @@ h3 {
   .product-detail-media,
   .product-detail-main {
     min-width: 0;
+  }
+
+  .product-detail-shell .section-block.product-detail-layout {
+    padding: 24px 0;
   }
 
   .product-option-button {
