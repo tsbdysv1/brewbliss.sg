@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
@@ -17,6 +17,10 @@ function CartPage() {
     pathname: '/cart',
     image: siteConfig.seo.defaultImage,
   })
+
+  if (!siteConfig.features.cartEnabled) {
+    return <Navigate to="/menu" replace />
+  }
 
   return (
     <div className="page-shell cart-page-shell">

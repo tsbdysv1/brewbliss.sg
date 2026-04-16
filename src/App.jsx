@@ -9,6 +9,7 @@ import NotFoundPage from './pages/NotFoundPage'
 import StoresPage from './pages/StoresPage'
 import CartPage from './pages/CartPage'
 import CartToast from './components/CartToast'
+import { siteConfig } from './data/site'
 
 function App() {
   return (
@@ -22,11 +23,11 @@ function App() {
         <Route path="/menu/:slug" element={<MenuItemDetailPage />} />
         <Route path="/store" element={<Navigate to="/cua-hang" replace />} />
         <Route path="/cua-hang" element={<StoresPage />} />
-        <Route path="/cart" element={<CartPage />} />
+        {siteConfig.features.cartEnabled ? <Route path="/cart" element={<CartPage />} /> : null}
         <Route path="/khong-tim-thay" element={<NotFoundPage />} />
         <Route path="*" element={<Navigate to="/khong-tim-thay" replace />} />
       </Routes>
-      <CartToast />
+      {siteConfig.features.cartEnabled ? <CartToast /> : null}
     </>
   )
 }

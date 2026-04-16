@@ -1,4 +1,7 @@
 export const siteConfig = {
+  features: {
+    cartEnabled: false,
+  },
   brandName: 'BrewBliss Coffee',
   siteUrl: 'https://brewbliss.sg',
   headline: 'Brew your coffee, brew your happiness',

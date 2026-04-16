@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
+import { siteConfig } from '../data/site'
 
 const jobLink =
   'https://docs.google.com/forms/d/e/1FAIpQLSeP0qQAY2vHN0EOHvJGURmU0P6iyGL_Br_WDzLRnuULztB2Mw/viewform?usp=sharing&ouid=111336892926772158014'
@@ -111,17 +112,19 @@ function SiteHeader() {
             <a href={jobLink} target="_blank" rel="noreferrer" className="nav-link">
               JOB
             </a>
-            <Link to="/cart" className="nav-link nav-cart-link" aria-label={`Cart${itemCount ? `, ${itemCount} item${itemCount > 1 ? 's' : ''}` : ''}`}>
-              <span className="cart-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="9" cy="20" r="1.4" />
-                  <circle cx="18" cy="20" r="1.4" />
-                  <path d="M3 4h2.2l1.8 9.2a1 1 0 0 0 1 .8h8.7a1 1 0 0 0 1-.76L20 7H7.1" />
-                </svg>
-              </span>
-              <span className="cart-link-label">CART</span>
-              {itemCount ? <span className="cart-count-badge">{itemCount}</span> : null}
-            </Link>
+            {siteConfig.features.cartEnabled ? (
+              <Link to="/cart" className="nav-link nav-cart-link" aria-label={`Cart${itemCount ? `, ${itemCount} item${itemCount > 1 ? 's' : ''}` : ''}`}>
+                <span className="cart-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="9" cy="20" r="1.4" />
+                    <circle cx="18" cy="20" r="1.4" />
+                    <path d="M3 4h2.2l1.8 9.2a1 1 0 0 0 1 .8h8.7a1 1 0 0 0 1-.76L20 7H7.1" />
+                  </svg>
+                </span>
+                <span className="cart-link-label">CART</span>
+                {itemCount ? <span className="cart-count-badge">{itemCount}</span> : null}
+              </Link>
+            ) : null}
           </nav>
         </div>
         <button

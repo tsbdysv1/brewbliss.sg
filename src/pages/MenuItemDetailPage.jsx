@@ -177,12 +177,16 @@ function MenuItemDetailPage() {
           </div>
 
           <div className="product-detail-actions">
-            <button type="button" className={`solid-button add-to-cart-button${didJustAdd ? ' is-success' : ''}`} onClick={handleAddToCart}>
-              {didJustAdd ? 'Added to cart' : 'Add to cart'}
-            </button>
-            <Link to="/cart" className="outline-button inline-return-link">
-              View cart
-            </Link>
+            {siteConfig.features.cartEnabled ? (
+              <>
+                <button type="button" className={`solid-button add-to-cart-button${didJustAdd ? ' is-success' : ''}`} onClick={handleAddToCart}>
+                  {didJustAdd ? 'Added to cart' : 'Add to cart'}
+                </button>
+                <Link to="/cart" className="outline-button inline-return-link">
+                  View cart
+                </Link>
+              </>
+            ) : null}
             <Link to="/menu" className="outline-button inline-return-link">
               ← Back to menu
             </Link>

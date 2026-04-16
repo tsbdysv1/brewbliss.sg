@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { formatMenuPrice, getMenuItemHref } from '../data/menu'
 import { useCart } from '../context/CartContext'
+import { siteConfig } from '../data/site'
 import { buildCartItemId, PRODUCT_OPTION_GROUPS } from '../utils/cart'
 
 function MenuCatalogSection({ title, items, sectionId, isHighlighted = false, isActive = false }) {
@@ -58,9 +59,11 @@ function MenuCatalogSection({ title, items, sectionId, isHighlighted = false, is
                   <Link to={getMenuItemHref(item)} className="outline-button">
                     Xem chi tiết
                   </Link>
-                  <button type="button" className="solid-button" onClick={() => addItem(quickCartPayload, `${item.name} đã được thêm vào cart`)}>
-                    Add to cart
-                  </button>
+                  {siteConfig.features.cartEnabled ? (
+                    <button type="button" className="solid-button" onClick={() => addItem(quickCartPayload, `${item.name} đã được thêm vào cart`)}>
+                      Add to cart
+                    </button>
+                  ) : null}
                 </div>
               </div>
             </article>
