@@ -20,7 +20,7 @@ const imageLibrary = {
   fruitColdBrew: '/images/signature-collection/02.png',
   coldBrewMo: '/images/signature-collection/uploads-apr15/cold-brew-mo.png',
   handDrip: '/images/signature-collection/uploads-apr15/ca-phe-thu-cong.png',
-  matcha: '/images/signature-collection/07.png',
+  matcha: '/images/signature-collection/uploads-apr15/matcha-latte.png',
   strawberryMatcha: '/images/signature-collection/uploads-apr15/strawberry-matcha-latte.png',
   saltedCreamMatcha: '/images/signature-collection/uploads-apr15/salted-cream-matcha.png',
   lemonHoneyMatcha: '/images/signature-collection/uploads-apr15/lemon-honey-matcha.png',
