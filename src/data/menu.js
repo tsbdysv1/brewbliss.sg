@@ -14,6 +14,7 @@ const imageLibrary = {
   saltedCaramel: '/images/signature-collection/uploads-apr15/salted-caramel.png',
   creamyBliss: '/images/signature-collection/uploads-apr15/creamy-bliss.png',
   coldBrew: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1200&q=80',
+  coldDrip: '/images/signature-collection/uploads-apr15/cold-drip.png',
   coldBrewCamBuoi: '/images/signature-collection/uploads-apr15/cold-brew-cam-buoi.png',
   coldBrewChanhVang: '/images/signature-collection/uploads-apr15/cold-brew-chanh-vang.png',
   fruitColdBrew: '/images/signature-collection/02.png',
@@ -406,7 +407,7 @@ export const menuCategories = [
       withDetails({ slug: 'cold-brew-cam-buoi', name: 'Cold Brew Cam Bưởi', priceValue: 65000, category: 'Brew Bar', image: imageLibrary.coldBrewCamBuoi, description: 'Sự kết hợp trái cây giúp cold brew bớt khô và dễ hợp gu đại chúng hơn.' }, { ingredientsKey: 'fruitColdBrew', vi: 'Cam bưởi giúp nền cold brew sáng hơn, tạo cảm giác fresh và dễ tiếp cận hơn so với cold brew nguyên bản.', en: 'Orange and grapefruit notes brighten the cold brew base, making it feel fresher and more approachable than a classic cold brew.' }),
       withDetails({ slug: 'cold-brew-chanh-vang', name: 'Cold Brew Chanh Vàng', priceValue: 65000, category: 'Brew Bar', image: imageLibrary.coldBrewChanhVang, description: 'Chanh vàng tạo cảm giác sáng và gọn, hợp nhóm khách thích vị clean.' }, { ingredientsKey: 'fruitColdBrew', vi: 'Chanh vàng làm profile trở nên sắc và clean hơn, phù hợp với khách thích đồ uống lạnh thiên về sự gọn gàng và tỉnh táo.', en: 'Lemon gives this drink a brighter and cleaner edge, making it a good fit for guests who enjoy crisp and refreshing cold beverages.' }),
       withDetails({ slug: 'cold-brew-mo-full', name: 'Cold Brew Mơ', priceValue: 65000, category: 'Brew Bar', image: imageLibrary.coldBrewMo, description: 'Cold brew mơ vừa đủ khác biệt để trở thành món đáng nhớ trong menu.' }, { ingredientsKey: 'fruitColdBrew', vi: 'Cold Brew Mơ tạo cảm giác nhẹ, chua ngọt và khác biệt vừa đủ để nổi bật nhưng vẫn dễ uống với phần lớn khách.', en: 'Cold Brew Mơ feels light, sweet-tart, and distinctive enough to stand out while still staying approachable for a wide range of guests.' }),
-      withDetails({ slug: 'cold-drip', name: 'Cold Drip', priceValue: 65000, category: 'Brew Bar', image: imageLibrary.coldBrew, description: 'Cold drip tạo cảm giác craft hơn và phù hợp nhóm khách thích trải nghiệm.' }, { ingredientsKey: 'coldBrew', vi: 'Cold Drip có cảm giác thủ công và trải nghiệm hơn, phù hợp với khách thích tìm sự khác nhau giữa các phương pháp pha lạnh.', en: 'Cold Drip feels more craft-driven and experience-focused, making it suitable for guests interested in the differences between cold coffee brewing styles.' }),
+      withDetails({ slug: 'cold-drip', name: 'Cold Drip', priceValue: 65000, category: 'Brew Bar', image: imageLibrary.coldDrip, description: 'Cold drip tạo cảm giác craft hơn và phù hợp nhóm khách thích trải nghiệm.' }, { ingredientsKey: 'coldBrew', vi: 'Cold Drip có cảm giác thủ công và trải nghiệm hơn, phù hợp với khách thích tìm sự khác nhau giữa các phương pháp pha lạnh.', en: 'Cold Drip feels more craft-driven and experience-focused, making it suitable for guests interested in the differences between cold coffee brewing styles.' }),
     ],
   },
   {
