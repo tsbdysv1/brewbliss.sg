@@ -42,7 +42,7 @@ const imageLibrary = {
   pineappleJuice: '/images/signature-collection/uploads-apr15/thom.png',
   orangeJuice: '/images/signature-collection/uploads-apr15/cam.png',
   carrotJuice: '/images/signature-collection/uploads-apr15/ca-rot.png',
-  mixedJuice: 'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=1200&q=80',
+  mixedJuice: '/images/signature-collection/uploads-apr15/juice-mix.png',
 }
 
 const INGREDIENT_LIBRARY = {
