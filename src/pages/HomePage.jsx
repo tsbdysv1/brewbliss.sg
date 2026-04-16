@@ -66,12 +66,12 @@ const brewblissExperienceTabs = [
   },
   {
     id: 'other-drinks',
-    menuSectionId: 'other-drinks',
-    label: 'Other Drinks',
+    menuSectionId: 'pastries',
+    label: 'Pastry',
     description:
-      'Ngoài cà phê và trà, BrewBliss còn có những lựa chọn giúp menu trở nên đầy đặn và dễ chiều nhiều gu hơn. Đó có thể là các món đá xay, tonic, chocolate hay đồ uống theo mùa — tất cả đều giữ cùng một tinh thần gọn, đẹp và dễ nhớ.',
+      'Pastry tại BrewBliss được chọn để đi cùng đồ uống một cách tự nhiên và gọn gàng. Từ croissant đến pain au chocolat hay cinnamon roll, mỗi lựa chọn đều giữ cảm giác bơ, thơm, dễ ăn và phù hợp với nhịp ghé quán mỗi ngày.',
     image: '/hero/hero-slide-2.jpg',
-    imageAlt: 'BrewBliss other drinks selection',
+    imageAlt: 'BrewBliss pastry selection',
   },
 ]
 
