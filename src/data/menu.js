@@ -5,7 +5,7 @@ const imageLibrary = {
   lavaCroissant: '/images/signature-collection/uploads-apr15/croissant-shared.png',
   painAuChocolat: '/images/signature-collection/uploads-apr15/pain-au-chocolat.png',
   cinnamonRoll: '/images/signature-collection/uploads-apr15/cinnamon-roll.png',
-  espresso: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1fcef?auto=format&fit=crop&w=1200&q=80',
+  espresso: '/images/signature-collection/uploads-apr15/espresso.png',
   americano: '/images/signature-collection/uploads-apr15/americano.png',
   latte: '/images/signature-collection/uploads-apr15/latte.png',
   cappuccino: '/images/signature-collection/uploads-apr15/cappuccino.png',
