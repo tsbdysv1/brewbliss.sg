@@ -55,16 +55,13 @@ function MenuCatalogSection({ title, items, sectionId, isHighlighted = false, is
                   <h3>{item.name}</h3>
                   <strong>{formatMenuPrice(item.priceValue)}</strong>
                 </div>
-                <div className="menu-catalog-card-actions">
-                  <Link to={getMenuItemHref(item)} className="outline-button">
-                    Xem chi tiết
-                  </Link>
-                  {siteConfig.features.cartEnabled ? (
+                {siteConfig.features.cartEnabled ? (
+                  <div className="menu-catalog-card-actions">
                     <button type="button" className="solid-button" onClick={() => addItem(quickCartPayload, `${item.name} đã được thêm vào cart`)}>
                       Add to cart
                     </button>
-                  ) : null}
-                </div>
+                  </div>
+                ) : null}
               </div>
             </article>
           )
