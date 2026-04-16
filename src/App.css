@@ -1912,10 +1912,9 @@ h3 {
   }
 
   .brewbliss-experience-media {
-    width: calc(100% - 0.6cm);
-    max-width: 320px;
+    width: min(calc(100% - 0.6cm), 360px);
     justify-self: center;
-    margin-right: 0;
+    margin: 0 auto 0.3cm;
   }
 
   .brewbliss-experience-media img {
@@ -2104,8 +2103,13 @@ h3 {
     font-size: 0.9rem;
   }
 
+  .brewbliss-experience-media {
+    width: min(calc(100% - 0.6cm), 380px);
+    margin: 0 auto 0.3cm;
+  }
+
   .brewbliss-experience-content {
-    gap: 16px;
+    gap: 12px;
     margin-top: 18px;
   }
 
