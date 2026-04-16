@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import { formatMenuPrice, getMenuItemHref } from '../data/menu'
+import { useCart } from '../context/CartContext'
+import { buildCartItemId, PRODUCT_OPTION_GROUPS } from '../utils/cart'
 
 function MenuCatalogSection({ title, items, sectionId, isHighlighted = false, isActive = false }) {
+  const { addItem } = useCart()
   if (!items?.length) return null
 
   return (
@@ -15,24 +18,54 @@ function MenuCatalogSection({ title, items, sectionId, isHighlighted = false, is
       </div>
 
       <div className="menu-catalog-grid">
-        {items.map((item) => (
-          <Link
-            key={item.slug}
-            to={getMenuItemHref(item)}
-            className="menu-catalog-card"
-            aria-label={`Xem chi tiết ${item.name}`}
-          >
-            <div className="menu-catalog-image-wrap">
-              <img src={item.image} alt={item.name} className="menu-catalog-image" />
-            </div>
-            <div className="menu-catalog-card-body">
-              <div className="menu-catalog-card-topline">
-                <h3>{item.name}</h3>
-                <strong>{formatMenuPrice(item.priceValue)}</strong>
+        {items.map((item) => {
+          const quickCartPayload = {
+            id: buildCartItemId({
+              slug: item.slug,
+              options: {
+                milk: PRODUCT_OPTION_GROUPS.milk[0],
+                sugar: PRODUCT_OPTION_GROUPS.sugar[0],
+                temperature: PRODUCT_OPTION_GROUPS.temperature[0],
+                note: '',
+              },
+            }),
+            slug: item.slug,
+            name: item.name,
+            image: item.image,
+            priceValue: item.priceValue,
+            quantity: 1,
+            options: {
+              milk: PRODUCT_OPTION_GROUPS.milk[0],
+              sugar: PRODUCT_OPTION_GROUPS.sugar[0],
+              temperature: PRODUCT_OPTION_GROUPS.temperature[0],
+              note: '',
+            },
+          }
+
+          return (
+            <article key={item.slug} className="menu-catalog-card">
+              <Link to={getMenuItemHref(item)} aria-label={`Xem chi tiết ${item.name}`}>
+                <div className="menu-catalog-image-wrap">
+                  <img src={item.image} alt={item.name} className="menu-catalog-image" />
+                </div>
+              </Link>
+              <div className="menu-catalog-card-body">
+                <div className="menu-catalog-card-topline">
+                  <h3>{item.name}</h3>
+                  <strong>{formatMenuPrice(item.priceValue)}</strong>
+                </div>
+                <div className="menu-catalog-card-actions">
+                  <Link to={getMenuItemHref(item)} className="outline-button">
+                    Xem chi tiết
+                  </Link>
+                  <button type="button" className="solid-button" onClick={() => addItem(quickCartPayload)}>
+                    Add to cart
+                  </button>
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </article>
+          )
+        })}
       </div>
     </section>
   )

@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { useMemo, useState } from 'react'
 import Breadcrumbs from '../components/Breadcrumbs'
 import RelatedMenuItems from '../components/RelatedMenuItems'
 import SiteFooter from '../components/SiteFooter'
@@ -15,9 +16,17 @@ import {
 import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 import { buildPhoneHref } from '../utils/commerce'
+import { useCart } from '../context/CartContext'
+import { buildCartItemId, PRODUCT_OPTION_GROUPS } from '../utils/cart'
 
 function MenuItemDetailPage() {
   const { categorySlug, slug } = useParams()
+  const { addItem } = useCart()
+  const [selectedMilk, setSelectedMilk] = useState(PRODUCT_OPTION_GROUPS.milk[0])
+  const [selectedSugar, setSelectedSugar] = useState(PRODUCT_OPTION_GROUPS.sugar[0])
+  const [selectedTemperature, setSelectedTemperature] = useState(PRODUCT_OPTION_GROUPS.temperature[0])
+  const [note, setNote] = useState('')
+  const [didJustAdd, setDidJustAdd] = useState(false)
 
   const item = categorySlug ? getMenuItemByCategoryAndSlug(categorySlug, slug) : getMenuItemBySlug(slug)
   const category = item?.categorySlug ? getMenuCategoryBySlug(item.categorySlug) : null
@@ -39,6 +48,29 @@ function MenuItemDetailPage() {
   }
 
   const relatedItems = getRelatedMenuItems(item, 4)
+
+  const cartPayload = useMemo(() => ({
+    slug: item.slug,
+    name: item.name,
+    image: item.image,
+    priceValue: item.priceValue,
+    quantity: 1,
+    options: {
+      milk: selectedMilk,
+      sugar: selectedSugar,
+      temperature: selectedTemperature,
+      note: note.trim(),
+    },
+  }), [item.image, item.name, item.priceValue, item.slug, note, selectedMilk, selectedSugar, selectedTemperature])
+
+  const handleAddToCart = () => {
+    addItem({
+      ...cartPayload,
+      id: buildCartItemId(cartPayload),
+    })
+    setDidJustAdd(true)
+    window.setTimeout(() => setDidJustAdd(false), 1800)
+  }
 
   return (
     <div className="page-shell product-detail-shell">
@@ -84,8 +116,16 @@ function MenuItemDetailPage() {
               <h2>Lựa chọn sữa</h2>
               <div className="product-option-divider" aria-hidden="true" />
               <div className="product-option-button-row">
-                <button type="button" className="product-option-button">Sữa thanh trùng</button>
-                <button type="button" className="product-option-button">Sữa yến mạch</button>
+                {PRODUCT_OPTION_GROUPS.milk.map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    className={`product-option-button${selectedMilk === option ? ' is-selected' : ''}`}
+                    onClick={() => setSelectedMilk(option)}
+                  >
+                    {option}
+                  </button>
+                ))}
               </div>
             </section>
 
@@ -93,8 +133,16 @@ function MenuItemDetailPage() {
               <h2>Đường</h2>
               <div className="product-option-divider" aria-hidden="true" />
               <div className="product-option-button-row">
-                <button type="button" className="product-option-button">Có đường</button>
-                <button type="button" className="product-option-button">Không đường</button>
+                {PRODUCT_OPTION_GROUPS.sugar.map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    className={`product-option-button${selectedSugar === option ? ' is-selected' : ''}`}
+                    onClick={() => setSelectedSugar(option)}
+                  >
+                    {option}
+                  </button>
+                ))}
               </div>
             </section>
 
@@ -102,8 +150,16 @@ function MenuItemDetailPage() {
               <h2>Lựa chọn</h2>
               <div className="product-option-divider" aria-hidden="true" />
               <div className="product-option-button-row">
-                <button type="button" className="product-option-button">Đá</button>
-                <button type="button" className="product-option-button">Nóng</button>
+                {PRODUCT_OPTION_GROUPS.temperature.map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    className={`product-option-button${selectedTemperature === option ? ' is-selected' : ''}`}
+                    onClick={() => setSelectedTemperature(option)}
+                  >
+                    {option}
+                  </button>
+                ))}
               </div>
             </section>
 
@@ -114,15 +170,23 @@ function MenuItemDetailPage() {
                 className="product-note-input"
                 placeholder="Note:"
                 rows="4"
+                value={note}
+                onChange={(event) => setNote(event.target.value)}
               />
             </section>
           </div>
 
           <div className="product-detail-actions">
+            <button type="button" className="solid-button" onClick={handleAddToCart}>
+              {didJustAdd ? 'Added to cart' : 'Add to cart'}
+            </button>
+            <Link to="/cart" className="outline-button inline-return-link">
+              View cart
+            </Link>
             <Link to="/menu" className="outline-button inline-return-link">
               ← Back to menu
             </Link>
-            <a href={buildPhoneHref(siteConfig.phoneNumber)} className="solid-button">
+            <a href={buildPhoneHref(siteConfig.phoneNumber)} className="outline-button">
               Contact store
             </a>
             <a href={siteConfig.instagramLink} target="_blank" rel="noreferrer" className="outline-button">

@@ -7,6 +7,7 @@ import MenuPage from './pages/MenuPage'
 import SignatureMenuPage from './pages/SignatureMenuPage'
 import NotFoundPage from './pages/NotFoundPage'
 import StoresPage from './pages/StoresPage'
+import CartPage from './pages/CartPage'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/menu/:slug" element={<MenuItemDetailPage />} />
       <Route path="/store" element={<Navigate to="/cua-hang" replace />} />
       <Route path="/cua-hang" element={<StoresPage />} />
+      <Route path="/cart" element={<CartPage />} />
       <Route path="/khong-tim-thay" element={<NotFoundPage />} />
       <Route path="*" element={<Navigate to="/khong-tim-thay" replace />} />
     </Routes>
