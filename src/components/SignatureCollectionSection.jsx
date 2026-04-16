@@ -88,7 +88,7 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
           </div>
 
             {showViewAll ? (
-              <Link to="/menu#signature-collection" className="signature-view-all-button">
+              <Link to="/menu#signature-collection" className="signature-view-all-button signature-view-all-button-header">
                 Xem thêm
               </Link>
             ) : null}
@@ -120,28 +120,36 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
 
         <div className="signature-collection-inner">
           <div className="signature-collection-controls" aria-label="Signature collection navigation">
-          <button
-            type="button"
-            className={`signature-collection-arrow${canScrollPrev ? '' : ' is-disabled'}`}
-            onClick={() => scrollGallery(-1)}
-            aria-label="Previous signature item"
-            aria-disabled={!canScrollPrev}
-          >
-            <span className="signature-collection-arrow-icon" aria-hidden="true">
-              ‹
-            </span>
-          </button>
-            <button
-              type="button"
-              className={`signature-collection-arrow${canScrollNext ? '' : ' is-disabled'}`}
-              onClick={() => scrollGallery(1)}
-              aria-label="Next signature item"
-              aria-disabled={!canScrollNext}
-            >
-              <span className="signature-collection-arrow-icon" aria-hidden="true">
-                ›
-              </span>
-            </button>
+            <div className="signature-collection-arrow-group">
+              <button
+                type="button"
+                className={`signature-collection-arrow${canScrollPrev ? '' : ' is-disabled'}`}
+                onClick={() => scrollGallery(-1)}
+                aria-label="Previous signature item"
+                aria-disabled={!canScrollPrev}
+              >
+                <span className="signature-collection-arrow-icon" aria-hidden="true">
+                  ‹
+                </span>
+              </button>
+              <button
+                type="button"
+                className={`signature-collection-arrow${canScrollNext ? '' : ' is-disabled'}`}
+                onClick={() => scrollGallery(1)}
+                aria-label="Next signature item"
+                aria-disabled={!canScrollNext}
+              >
+                <span className="signature-collection-arrow-icon" aria-hidden="true">
+                  ›
+                </span>
+              </button>
+            </div>
+
+            {showViewAll ? (
+              <Link to="/menu#signature-collection" className="signature-view-all-button signature-view-all-button-controls">
+                Xem thêm
+              </Link>
+            ) : null}
           </div>
         </div>
       </div>
