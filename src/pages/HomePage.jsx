@@ -24,7 +24,7 @@ const brewblissExperienceTabs = [
     menuSectionId: 'vietnamese-coffee',
     label: 'Vietnamese Coffee Bar',
     description:
-      'Cà phê Việt Nam tại BrewBliss không chỉ là một thức uống, mà là một phần của văn hoá và cảm xúc. Từ những hạt cà phê được chọn lọc kỹ lưỡng, rang xay đậm đà, chúng tôi mang đến hương vị đặc trưng – mạnh mẽ nhưng vẫn tinh tế, quen thuộc nhưng luôn có chiều sâu.',
+      'Cuộc sống hối hả bộn bề, có những hôm chỉ muốn quay về với những cảm xúc quen thuộc nhất — một ly cà phê sữa đá truyền thống sẽ làm bạn cảm thấy tốt hơn.\nTừ 100% hạt Robusta đậm vị, chút ngọt, chút đắng, thêm một chút chua nhẹ phá cách — giống như cách mình bắt đầu một buổi sáng hay ngồi lặng yên giữa Sài Gòn.\nKhông cần cầu kỳ, chỉ cần đúng vị — và đôi khi, đó là thứ làm mình thấy đủ. 🇻🇳',
     image: '/images/signature-collection/uploads-apr15/vietnamese-coffee-bar.jpg',
     imageAlt: 'BrewBliss Vietnamese coffee experience',
   },
