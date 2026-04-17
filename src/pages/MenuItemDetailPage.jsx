@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Breadcrumbs from '../components/Breadcrumbs'
 import RelatedMenuItems from '../components/RelatedMenuItems'
 import SiteFooter from '../components/SiteFooter'
@@ -13,6 +13,7 @@ import {
   getMenuItemHref,
   getRelatedMenuItems,
 } from '../data/menu'
+import { getSeasonalBeans } from '../data/beans'
 import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 import { buildPhoneHref } from '../utils/commerce'
@@ -36,6 +37,7 @@ const HIDE_MILK_AND_SUGAR_CATEGORY_SLUGS = new Set(['brew-bar', 'hand-drip'])
 const HIDE_ONLY_MILK_CATEGORY_SLUGS = new Set(['tea', 'juice'])
 const ICED_ONLY_CATEGORY_SLUGS = new Set(['brew-bar', 'tea', 'juice'])
 const NOTE_ONLY_CATEGORY_SLUGS = new Set(['pastries'])
+const HAND_DRIP_CATEGORY_SLUGS = new Set(['hand-drip'])
 
 function MenuItemDetailPage() {
   const { categorySlug, slug } = useParams()
@@ -43,6 +45,8 @@ function MenuItemDetailPage() {
   const [selectedMilk, setSelectedMilk] = useState(PRODUCT_OPTION_GROUPS.milk[0])
   const [selectedSugar, setSelectedSugar] = useState(PRODUCT_OPTION_GROUPS.sugar[0])
   const [selectedTemperature, setSelectedTemperature] = useState(PRODUCT_OPTION_GROUPS.temperature[0])
+  const seasonalBeans = getSeasonalBeans()
+  const [selectedBean, setSelectedBean] = useState(() => seasonalBeans[0]?.name ?? '')
   const [note, setNote] = useState('')
   const [didJustAdd, setDidJustAdd] = useState(false)
 
@@ -55,7 +59,18 @@ function MenuItemDetailPage() {
   const shouldHideMilk = isNoteOnlyItem || (resolvedCategorySlug ? HIDE_MILK_AND_SUGAR_CATEGORY_SLUGS.has(resolvedCategorySlug) || HIDE_ONLY_MILK_CATEGORY_SLUGS.has(resolvedCategorySlug) : false) || HIDE_MILK_AND_SUGAR_SLUGS.has(item?.slug) || HIDE_ONLY_MILK_SLUGS.has(item?.slug)
   const shouldHideSugar = isNoteOnlyItem || (resolvedCategorySlug ? HIDE_MILK_AND_SUGAR_CATEGORY_SLUGS.has(resolvedCategorySlug) : false) || HIDE_MILK_AND_SUGAR_SLUGS.has(item?.slug)
   const shouldHideTemperature = isNoteOnlyItem
-  const visibleOptionSections = [!shouldHideMilk, !shouldHideSugar, !shouldHideTemperature].filter(Boolean).length
+  const isHandDripItem = resolvedCategorySlug ? HAND_DRIP_CATEGORY_SLUGS.has(resolvedCategorySlug) : false
+  const shouldShowBeanSection = isHandDripItem && seasonalBeans.length > 0
+  const visibleOptionSections = [shouldShowBeanSection, !shouldHideMilk, !shouldHideSugar, !shouldHideTemperature].filter(Boolean).length
+
+  useEffect(() => {
+    if (!shouldShowBeanSection) return
+
+    const hasValidSelectedBean = seasonalBeans.some((bean) => bean.name === selectedBean)
+    if (!hasValidSelectedBean) {
+      setSelectedBean(seasonalBeans[0]?.name ?? '')
+    }
+  }, [seasonalBeans, selectedBean, shouldShowBeanSection])
 
   usePageSeo({
     title: item ? `${item.name} | ${siteConfig.brandName}` : `Menu item | ${siteConfig.brandName}`,
@@ -82,12 +97,13 @@ function MenuItemDetailPage() {
     priceValue: item.priceValue,
     quantity: 1,
     options: {
+      bean: shouldShowBeanSection ? selectedBean : '',
       milk: shouldHideMilk ? '' : selectedMilk,
       sugar: shouldHideSugar ? '' : selectedSugar,
       temperature: shouldHideTemperature ? '' : selectedTemperature,
       note: note.trim(),
     },
-  }), [item.image, item.name, item.priceValue, item.slug, note, selectedMilk, selectedSugar, selectedTemperature, shouldHideMilk, shouldHideSugar, shouldHideTemperature])
+  }), [item.image, item.name, item.priceValue, item.slug, note, selectedBean, selectedMilk, selectedSugar, selectedTemperature, shouldHideMilk, shouldHideSugar, shouldHideTemperature, shouldShowBeanSection])
 
   const handleAddToCart = () => {
     addItem({
@@ -138,6 +154,25 @@ function MenuItemDetailPage() {
           ) : null}
 
           <div className="product-customization-flow" aria-label="Tuỳ chọn món uống">
+            {shouldShowBeanSection ? (
+              <section className="product-option-section">
+                <h2>Lựa chọn hạt</h2>
+                <div className="product-option-divider" aria-hidden="true" />
+                <div className="product-option-button-row">
+                  {seasonalBeans.map((bean) => (
+                    <button
+                      key={bean.slug}
+                      type="button"
+                      className={`product-option-button${selectedBean === bean.name ? ' is-selected' : ''}`}
+                      onClick={() => setSelectedBean(bean.name)}
+                    >
+                      {bean.name}
+                    </button>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+
             {!shouldHideMilk ? (
               <section className="product-option-section">
                 <h2>Lựa chọn sữa</h2>

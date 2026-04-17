@@ -142,8 +142,18 @@ export const beanCollectionSections = beanSectionDefinitions.map((section) => ({
   items: section.itemSlugs.map((slug) => beanBySlug.get(slug)).filter(Boolean),
 }))
 
+const beanSectionBySlug = new Map(beanCollectionSections.map((section) => [section.slug, section]))
+
 export function getBeanBySlug(slug) {
   return beanBySlug.get(slug) ?? null
+}
+
+export function getBeansBySectionSlug(sectionSlug) {
+  return beanSectionBySlug.get(sectionSlug)?.items ?? []
+}
+
+export function getSeasonalBeans() {
+  return getBeansBySectionSlug('seasonal-beans')
 }
 
 export function getBeanHref(bean) {

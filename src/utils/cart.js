@@ -5,5 +5,5 @@ export const PRODUCT_OPTION_GROUPS = {
 }
 
 export function buildCartItemId({ slug, options }) {
-  return [slug, options.milk || '-', options.sugar || '-', options.temperature || '-', options.note?.trim() || '-'].join('::')
+  return [slug, options.bean || '-', options.milk || '-', options.sugar || '-', options.temperature || '-', options.note?.trim() || '-'].join('::')
 }

@@ -57,6 +57,7 @@ function CartPage() {
                       </div>
 
                       <ul className="cart-option-list">
+                        {item.options.bean ? <li><span>Hạt</span><strong>{item.options.bean}</strong></li> : null}
                         {item.options.milk ? <li><span>Sữa</span><strong>{item.options.milk}</strong></li> : null}
                         {item.options.sugar ? <li><span>Đường</span><strong>{item.options.sugar}</strong></li> : null}
                         {item.options.temperature ? <li><span>Hot / Ice</span><strong>{item.options.temperature}</strong></li> : null}
