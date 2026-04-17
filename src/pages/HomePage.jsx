@@ -33,7 +33,7 @@ const brewblissExperienceTabs = [
     menuSectionId: 'brew-bar',
     label: 'Brew Bar',
     description:
-      'Brew Bar là nơi những món uống mượt, nhẹ và có chiều sâu được thể hiện rõ nhất. Từ cold brew đến các công thức ủ riêng, BrewBliss giữ tinh thần clean, sáng vị và phù hợp cho những ai thích cà phê theo hướng thư thả, tinh gọn hơn.',
+      'Nếu hôm nay bạn muốn thử một điều gì đó “khác đi một chút”…\nKhông quá mạnh mẽ như espresso, không quá quen thuộc như cà phê đen đá — Brew Bar là nơi những hương vị được kể theo cách chậm hơn, sâu hơn.\nMỗi ly cà phê là một hành trình nhỏ — nhẹ nhàng, tinh tế và đầy bất ngờ.\nDành cho những lúc bạn muốn trải nghiệm, không chỉ đơn giản là uống cà phê.',
     image: '/hero/hero-slide-4.png',
     imageAlt: 'BrewBliss brew bar beans and coffee',
   },
