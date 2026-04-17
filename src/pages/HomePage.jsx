@@ -51,7 +51,7 @@ const brewblissExperienceTabs = [
     menuSectionId: 'matcha',
     label: 'Matcha',
     description:
-      'Matcha là một mảng rất riêng của BrewBliss: mềm, xanh, tinh tế và đủ nổi bật giữa menu cà phê. Từ matcha latte đến các biến tấu theo mùa, quán giữ cảm giác mượt, thanh và dễ uống nhưng vẫn có điểm nhấn rõ ràng.',
+      'Tỉnh táo nhưng không làm tim đập nhanh như cà phê — một sự kích thích nhẹ nhàng và chậm rãi.\nMatcha luôn mang lại cảm giác dịu lại, không quá gắt, không quá ồn ào.\nMột chút béo, một chút thơm, một chút "zen" giữa thành phố đông đúc.',
     image: '/images/signature-collection/uploads-apr15/matcha-tab.jpg',
     imageAlt: 'BrewBliss matcha and warm cafe atmosphere',
   },
