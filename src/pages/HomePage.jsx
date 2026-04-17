@@ -15,7 +15,7 @@ const brewblissExperienceTabs = [
     menuSectionId: 'espresso-bar',
     label: 'Espresso Bar',
     description:
-      'Espresso Bar của BrewBliss được xây để giữ trọn sự gọn gàng và chính xác trong từng shot. Từ espresso nguyên bản đến latte, cappuccino hay các ly signature, mọi thứ đều hướng tới cảm giác cân bằng, hiện đại và dễ quay lại mỗi ngày.',
+      'Ngày mới tràn đầy năng lượng, muốn làm gì đó thật “chất”, thật hiện đại — tại sao không bắt đầu bằng một shot espresso tại BrewBliss.\n“Cà phê pha máy” tụi mình sử dụng 100% hạt Arabica, mang hậu vị chua thanh, ngọt nhẹ và thoảng hương trái cây. Từ espresso nguyên bản đến những biến tấu mượt mà như latte hay cappuccino, mỗi ly đều gọn gàng, tinh tế — như chính nhịp sống bạn đang theo đuổi.\nMột lựa chọn nhỏ, nhưng đủ để khởi đầu ngày mới theo cách rất riêng của bạn.',
     image: '/images/signature-collection/uploads-apr15/espresso-bar-tab.jpg',
     imageAlt: 'BrewBliss espresso-based drink',
   },
