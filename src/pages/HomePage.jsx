@@ -61,8 +61,8 @@ const brewblissExperienceTabs = [
     label: 'Tea',
     description:
       'Tea được xây như một lựa chọn nhẹ nhàng hơn nhưng vẫn có cá tính riêng. Trà trái cây, trà thanh vị hay các món theo mùa đều hướng tới cảm giác tươi, cân bằng và phù hợp cho cả những buổi hẹn nhanh lẫn lúc cần ngồi lâu một chút.',
-    image: '/hero/hero-slide-1.jpg',
-    imageAlt: 'BrewBliss tea and storefront ambiance',
+    image: '/images/signature-collection/uploads-apr15/tab-tea.jpg',
+    imageAlt: 'BrewBliss tea — strawberry tea on BrewBliss coaster',
   },
   {
     id: 'other-drinks',
