@@ -359,7 +359,7 @@ div {
   grid-template-columns: minmax(0, 1.12fr) minmax(220px, 280px);
   gap: clamp(28px, 4vw, 56px);
   align-items: end;
-  margin-top: 34px;
+  margin-top: 44px;
   min-height: 240px;
   background: #eaeaea;
 }
@@ -371,7 +371,7 @@ div {
   align-items: stretch;
   max-width: 620px;
   margin-left: 38px;
-  transform: translateY(-52px);
+  transform: translateY(-18px);
 }
 
 .brewbliss-experience-copy p {
