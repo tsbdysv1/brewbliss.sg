@@ -2596,17 +2596,21 @@ h3 {
   .menu-catalog-grid,
   .related-products-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 36px;
+  }
+
+  .menu-catalog-card {
+    padding-bottom: 4px;
   }
 
   .menu-catalog-card-body {
-    padding-top: 12px;
+    padding-top: 8px;
   }
 
   .menu-catalog-card-topline {
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 2px;
   }
 
   .menu-catalog-card-topline h3,
