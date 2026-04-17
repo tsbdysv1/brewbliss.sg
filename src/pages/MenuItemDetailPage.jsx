@@ -143,16 +143,25 @@ function MenuItemDetailPage() {
                 <h2>Lựa chọn sữa</h2>
                 <div className="product-option-divider" aria-hidden="true" />
                 <div className="product-option-button-row">
-                  {PRODUCT_OPTION_GROUPS.milk.map((option) => (
-                    <button
-                      key={option}
-                      type="button"
-                      className={`product-option-button${selectedMilk === option ? ' is-selected' : ''}`}
-                      onClick={() => setSelectedMilk(option)}
-                    >
-                      {option}
-                    </button>
-                  ))}
+                  {PRODUCT_OPTION_GROUPS.milk.map((option) => {
+                    const isOatMilkOption = option === 'Sữa yến mạch'
+
+                    return (
+                      <button
+                        key={option}
+                        type="button"
+                        className={`product-option-button${selectedMilk === option ? ' is-selected' : ''}${isOatMilkOption ? ' has-subprice' : ''}`}
+                        onClick={() => setSelectedMilk(option)}
+                      >
+                        {isOatMilkOption ? (
+                          <>
+                            <span className="product-option-button-text">Sữa yến mạch</span>
+                            <span className="product-option-button-subprice">+10,000đ</span>
+                          </>
+                        ) : option}
+                      </button>
+                    )
+                  })}
                 </div>
               </section>
             ) : null}

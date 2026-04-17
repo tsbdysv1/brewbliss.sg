@@ -1138,14 +1138,30 @@ h3 {
 
 .menu-catalog-section-heading {
   margin-bottom: 22px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
 }
 
 .menu-catalog-section-heading h2 {
   margin: 0;
+  flex: 1 1 auto;
   font-size: clamp(2rem, 3.4vw, 3.15rem);
   line-height: 1;
   letter-spacing: -0.045em;
   color: #1f1f1f;
+}
+
+.menu-catalog-section-note {
+  margin: 0;
+  flex: 0 0 auto;
+  padding-top: 4px;
+  font-size: 1.02rem;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #1f1f1f;
+  white-space: nowrap;
 }
 
 .menu-catalog-grid {
@@ -1336,6 +1352,30 @@ h3 {
   line-height: 1;
   cursor: pointer;
   transition: border-color 0.22s ease, background-color 0.22s ease, transform 0.22s ease;
+}
+
+.product-option-button.has-subprice {
+  min-height: 58px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.product-option-button-text {
+  display: block;
+  line-height: 1.1;
+}
+
+.product-option-button-subprice {
+  display: block;
+  font-size: 0.74rem;
+  line-height: 1;
+  font-weight: 500;
+  color: rgba(31, 31, 31, 0.7);
 }
 
 .product-option-button:hover,
@@ -2246,6 +2286,8 @@ h3 {
 
   .menu-catalog-section-heading {
     margin-bottom: 18px;
+    align-items: baseline;
+    gap: 10px;
   }
 
   .editorial-product-detail-layout,
@@ -2342,6 +2384,10 @@ h3 {
 
   .menu-catalog-card-topline h3,
   .menu-catalog-card-topline strong {
+    font-size: 0.98rem;
+  }
+
+  .menu-catalog-section-note {
     font-size: 0.98rem;
   }
 
@@ -2576,6 +2622,12 @@ h3 {
     line-height: 1.06;
   }
 
+  .menu-catalog-section-note {
+    padding-top: 0;
+    align-self: flex-start;
+    white-space: nowrap;
+  }
+
   .signature-view-all-button-header {
     width: 100%;
     justify-content: center;
@@ -2615,6 +2667,10 @@ h3 {
 
   .menu-catalog-card-topline h3,
   .menu-catalog-card-topline strong {
+    font-size: 1rem;
+  }
+
+  .menu-catalog-section-note {
     font-size: 1rem;
   }
 

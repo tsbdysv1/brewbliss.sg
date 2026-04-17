@@ -6,6 +6,7 @@ import { buildCartItemId, PRODUCT_OPTION_GROUPS } from '../utils/cart'
 
 function MenuCatalogSection({ title, items, sectionId, isHighlighted = false, isActive = false }) {
   const { addItem } = useCart()
+  const headingNote = sectionId === 'espresso-bar' ? 'extra shot +25,000đ' : null
   if (!items?.length) return null
 
   return (
@@ -16,6 +17,7 @@ function MenuCatalogSection({ title, items, sectionId, isHighlighted = false, is
     >
       <div className="menu-catalog-section-heading">
         <h2 id={`${sectionId}-title`}>{title}</h2>
+        {headingNote ? <p className="menu-catalog-section-note">{headingNote}</p> : null}
       </div>
 
       <div className="menu-catalog-grid">
