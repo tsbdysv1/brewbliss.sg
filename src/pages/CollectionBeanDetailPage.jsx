@@ -1,0 +1,120 @@
+import { Link, Navigate, useParams } from 'react-router-dom'
+import { useMemo, useState } from 'react'
+import Breadcrumbs from '../components/Breadcrumbs'
+import SiteFooter from '../components/SiteFooter'
+import SiteHeader from '../components/SiteHeader'
+import { BEAN_WEIGHT_OPTIONS, buildBeanJsonLd, formatBeanPrice, getBeanBySlug } from '../data/beans'
+import { siteConfig } from '../data/site'
+import { usePageSeo } from '../hooks/usePageSeo'
+
+function CollectionBeanDetailPage() {
+  const { slug } = useParams()
+  const bean = getBeanBySlug(slug)
+  const [selectedWeight, setSelectedWeight] = useState(BEAN_WEIGHT_OPTIONS[0].label)
+
+  const selectedWeightOption = useMemo(
+    () => BEAN_WEIGHT_OPTIONS.find((option) => option.label === selectedWeight) ?? BEAN_WEIGHT_OPTIONS[0],
+    [selectedWeight],
+  )
+
+  usePageSeo({
+    title: bean ? `${bean.name} | ${siteConfig.brandName} Beans` : `Coffee Bean | ${siteConfig.brandName}`,
+    description: bean ? bean.introduction : siteConfig.seo.description,
+    jsonLd: bean ? buildBeanJsonLd(bean, selectedWeightOption) : siteConfig.defaultJsonLd,
+    pathname: bean ? `/collection/${bean.slug}` : '/collection',
+    image: bean ? bean.image : siteConfig.seo.defaultImage,
+  })
+
+  if (!bean) {
+    return <Navigate to="/khong-tim-thay" replace />
+  }
+
+  return (
+    <div className="page-shell product-detail-shell bean-detail-shell">
+      <SiteHeader />
+
+      <Breadcrumbs
+        items={[
+          { label: 'Home', to: '/' },
+          { label: 'Collection', to: '/collection' },
+          { label: bean.name },
+        ]}
+      />
+
+      <section className="section-block product-detail-layout editorial-product-detail-layout bean-detail-layout">
+        <div className="product-detail-media editorial-product-detail-media">
+          <img src={bean.image} alt={bean.name} className="product-detail-image editorial-product-detail-image" />
+        </div>
+
+        <div className="product-detail-main editorial-product-detail-main bean-detail-main">
+          <h1>{bean.name}</h1>
+
+          <div className="product-detail-price-row">
+            <strong className="product-detail-price">{formatBeanPrice(selectedWeightOption.priceValue)}</strong>
+          </div>
+
+          <p className="product-detail-description">{bean.introduction}</p>
+
+          <div className="product-customization-flow bean-customization-flow" aria-label="Bean quantity options">
+            <section className="product-option-section">
+              <h2>Bean quantity</h2>
+              <div className="product-option-divider" aria-hidden="true" />
+              <div className="product-option-button-row bean-weight-option-row">
+                {BEAN_WEIGHT_OPTIONS.map((option) => (
+                  <button
+                    key={option.label}
+                    type="button"
+                    className={`product-option-button has-subprice${selectedWeight === option.label ? ' is-selected' : ''}`}
+                    onClick={() => setSelectedWeight(option.label)}
+                  >
+                    <span className="product-option-button-text">{option.label}</span>
+                    <span className="product-option-button-subprice">{formatBeanPrice(option.priceValue)}</span>
+                  </button>
+                ))}
+              </div>
+            </section>
+          </div>
+
+          <section className="bean-detail-info-grid" aria-label="Bean characteristics and usage">
+            <article className="bean-detail-info-card">
+              <h2>Bean characteristics</h2>
+              <ul className="bean-detail-list">
+                <li>
+                  <span>Origin</span>
+                  <strong>{bean.characteristics.origin}</strong>
+                </li>
+                <li>
+                  <span>Roast level</span>
+                  <strong>{bean.characteristics.roastLevel}</strong>
+                </li>
+                <li>
+                  <span>Flavor notes</span>
+                  <strong>{bean.characteristics.flavorNotes}</strong>
+                </li>
+                <li>
+                  <span>Process</span>
+                  <strong>{bean.characteristics.process}</strong>
+                </li>
+              </ul>
+            </article>
+
+            <article className="bean-detail-info-card">
+              <h2>Recommended usage</h2>
+              <p>{bean.recommendedUsage}</p>
+            </article>
+          </section>
+
+          <div className="product-detail-actions">
+            <Link to="/collection" className="outline-button inline-return-link">
+              ← Back to collection
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <SiteFooter />
+    </div>
+  )
+}
+
+export default CollectionBeanDetailPage

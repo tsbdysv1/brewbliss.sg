@@ -1,32 +1,16 @@
+import { Link } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
+import { beanCollectionSections, formatBeanPrice, getBeanHref } from '../data/beans'
 import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
-
-const collectionHighlights = [
-  {
-    title: 'Single origin beans',
-    description:
-      'Những lựa chọn hạt cà phê dành cho khách thích trải nghiệm profile vị rõ ràng, sạch và có chiều sâu hơn khi pha tại nhà.',
-  },
-  {
-    title: 'House blend',
-    description:
-      'Blend cân bằng theo hướng dễ uống, hợp pour over, espresso tại nhà hoặc làm quà cho người mới bắt đầu chơi cà phê.',
-  },
-  {
-    title: 'Seasonal drops',
-    description:
-      'Các đợt collection theo mùa để BrewBliss có thể kể câu chuyện riêng về sourcing, roasting và vibe thương hiệu.',
-  },
-]
 
 function CollectionPage() {
   usePageSeo({
     title: `Collection | ${siteConfig.brandName}`,
     description:
-      'Khám phá collection coffee beans của BrewBliss với house blend, single origin và các seasonal drop theo phong cách premium, tối giản và hiện đại.',
+      'Khám phá BrewBliss bean collection với core beans và seasonal beans theo layout premium, tối giản, đồng bộ với trải nghiệm menu của quán.',
     jsonLd: siteConfig.defaultJsonLd,
     pathname: '/collection',
     image: siteConfig.seo.defaultImage,
@@ -38,43 +22,45 @@ function CollectionPage() {
 
       <Breadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Collection' }]} />
 
-      <section className="section-block collection-hero-section">
+      <section className="section-block collection-hero-section bean-collection-hero-section">
         <div className="collection-hero-copy">
           <p className="eyebrow">Coffee bean collection</p>
           <h1>Collection</h1>
           <p className="section-supporting-text">
-            Một không gian riêng cho coffee beans của BrewBliss — gọn, hiện đại và đủ cao cấp để
-            phát triển thành trang bán hạt cà phê hoặc giới thiệu collection theo mùa sau này.
+            Curated coffee bean lineup của BrewBliss: premium, tối giản và đồng bộ trải nghiệm với hệ menu hiện tại.
           </p>
         </div>
       </section>
 
-      <section className="section-block">
-        <div className="section-heading">
-          <p className="eyebrow">Curated selection</p>
-          <h2>Định hướng cho collection / coffee beans của BrewBliss</h2>
-        </div>
+      <main className="collection-page-content" aria-label="BrewBliss bean collection catalog">
+        {beanCollectionSections.map((section) => (
+          <section key={section.slug} className="menu-catalog-section bean-collection-section" id={section.slug} aria-labelledby={`${section.slug}-title`}>
+            <div className="menu-catalog-section-heading bean-collection-section-heading">
+              <h2 id={`${section.slug}-title`}>{section.title}</h2>
+            </div>
 
-        <div className="category-grid">
-          {collectionHighlights.map((item) => (
-            <article key={item.title} className="info-card">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+            <p className="bean-collection-section-description">{section.description}</p>
 
-      <section className="section-block collection-note-section">
-        <div className="section-heading">
-          <p className="eyebrow">Ready for expansion</p>
-          <h2>Trang này đã sẵn sàng để mở rộng thành collection thực tế</h2>
-          <p className="section-supporting-text">
-            Khi cần, mình có thể thêm grid sản phẩm, chi tiết tasting notes, origin, roast level,
-            giá bán, CTA mua hàng hoặc inquiry form mà không phải làm lại layout.
-          </p>
-        </div>
-      </section>
+            <div className={`menu-catalog-grid bean-collection-grid bean-collection-grid-${section.columns}`}>
+              {section.items.map((bean) => (
+                <article key={bean.slug} className="menu-catalog-card bean-collection-card">
+                  <Link to={getBeanHref(bean)} aria-label={`View bean detail ${bean.name}`} className="bean-collection-card-link">
+                    <div className="menu-catalog-image-wrap">
+                      <img src={bean.image} alt={bean.name} className="menu-catalog-image" />
+                    </div>
+                    <div className="menu-catalog-card-body">
+                      <div className="menu-catalog-card-topline">
+                        <h3>{bean.name}</h3>
+                        <strong>{formatBeanPrice(bean.priceValue)}</strong>
+                      </div>
+                    </div>
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </section>
+        ))}
+      </main>
 
       <SiteFooter />
     </div>

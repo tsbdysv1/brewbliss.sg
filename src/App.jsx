@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import CollectionPage from './pages/CollectionPage'
+import CollectionBeanDetailPage from './pages/CollectionBeanDetailPage'
 import HomePage from './pages/HomePage'
 import MenuItemDetailPage from './pages/MenuItemDetailPage'
 import MenuPage from './pages/MenuPage'
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/collection" element={<CollectionPage />} />
+        <Route path="/collection/:slug" element={<CollectionBeanDetailPage />} />
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/menu/signature" element={<SignatureMenuPage />} />
         <Route path="/menu/:categorySlug/:slug" element={<MenuItemDetailPage />} />

@@ -1236,6 +1236,118 @@ h3 {
   font-weight: 600;
 }
 
+.collection-page-content {
+  margin-top: 28px;
+  display: grid;
+  gap: clamp(54px, 8vw, 92px);
+}
+
+.bean-collection-hero-section {
+  margin-top: 4px;
+}
+
+.bean-collection-section {
+  margin-top: 0;
+}
+
+.bean-collection-section + .bean-collection-section {
+  margin-top: 0;
+}
+
+.bean-collection-section-description {
+  margin: 0 0 20px;
+  max-width: 72ch;
+  color: #5c5c5c;
+  line-height: 1.72;
+}
+
+.bean-collection-grid {
+  gap: 30px 22px;
+}
+
+.bean-collection-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.bean-collection-grid-four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.bean-collection-card-link {
+  display: block;
+  color: inherit;
+}
+
+.bean-collection-card .menu-catalog-card-body {
+  padding-top: 12px;
+}
+
+.bean-detail-layout {
+  align-items: start;
+}
+
+.bean-customization-flow {
+  gap: 20px;
+}
+
+.bean-weight-option-row .product-option-button {
+  min-width: 128px;
+  padding-inline: 20px;
+}
+
+.bean-detail-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.bean-detail-info-card {
+  border: 1px solid rgba(31, 31, 31, 0.1);
+  border-radius: 24px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.6);
+  min-width: 0;
+}
+
+.bean-detail-info-card h2 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.bean-detail-info-card p {
+  margin: 12px 0 0;
+  color: #5c5c5c;
+  line-height: 1.68;
+}
+
+.bean-detail-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.bean-detail-list li {
+  display: grid;
+  gap: 2px;
+}
+
+.bean-detail-list span {
+  color: #7a7a7a;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.bean-detail-list strong {
+  color: #1f1f1f;
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
 .menu-card-topline {
   align-items: center;
   justify-content: space-between;
@@ -2284,6 +2396,28 @@ h3 {
     gap: 20px 14px;
   }
 
+  .collection-page-content {
+    gap: 44px;
+  }
+
+  .bean-collection-grid-two,
+  .bean-collection-grid-four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bean-collection-section-description {
+    margin-bottom: 16px;
+  }
+
+  .bean-detail-info-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .bean-detail-info-card {
+    border-radius: 20px;
+  }
+
   .menu-catalog-section-heading {
     margin-bottom: 18px;
     align-items: baseline;
@@ -2649,6 +2783,27 @@ h3 {
   .related-products-grid {
     grid-template-columns: 1fr;
     gap: 36px;
+  }
+
+  .bean-collection-grid-two,
+  .bean-collection-grid-four {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .collection-page-content {
+    gap: 36px;
+  }
+
+  .bean-collection-section-description {
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    line-height: 1.62;
+  }
+
+  .bean-weight-option-row .product-option-button {
+    width: 100%;
+    min-width: 0;
   }
 
   .menu-catalog-card {
