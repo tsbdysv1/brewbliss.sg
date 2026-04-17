@@ -24,7 +24,7 @@ const brewblissExperienceTabs = [
     menuSectionId: 'vietnamese-coffee',
     label: 'Vietnamese Coffee Bar',
     description:
-      'Cuộc sống hối hả bộn bề, có những hôm chỉ muốn quay về với những cảm xúc quen thuộc nhất — một ly cà phê sữa đá truyền thống sẽ làm bạn cảm thấy tốt hơn.\nTừ 100% hạt Robusta đậm vị, chút ngọt, chút đắng, thêm một chút chua nhẹ phá cách — giống như cách mình bắt đầu một buổi sáng hay ngồi lặng yên giữa Sài Gòn.\nKhông cần cầu kỳ, chỉ cần đúng vị — và đôi khi, đó là thứ làm mình thấy đủ. 🇻🇳',
+      'Giữa nhịp sống hối hả, có những hôm chỉ muốn quay về với những cảm xúc quen thuộc nhất, như một ly cà phê sữa đá trước cổng trường đại học. Với 100% hạt Robusta đậm vị, chút ngọt, chút đắng, điểm nhẹ vị chua — Cafe Việt Nam tại BrewBliss như một buổi sáng rất Sài Gòn.\nKhông cần cầu kỳ, chỉ cần đúng vị 🇻🇳',
     image: '/images/signature-collection/uploads-apr15/vietnamese-coffee-bar.jpg',
     imageAlt: 'BrewBliss Vietnamese coffee experience',
   },
