@@ -557,6 +557,14 @@ div {
     gap: 0;
   }
 
+  .site-header-inner > .site-nav::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    pointer-events: none;
+  }
+
   .site-header-inner > .site-nav .nav-link {
     min-height: 88px;
     padding: 0;
