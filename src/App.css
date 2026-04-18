@@ -1244,6 +1244,11 @@ h3 {
 
 .bean-collection-hero-section {
   margin-top: 4px;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
 }
 
 .bean-collection-section {
