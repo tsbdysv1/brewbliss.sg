@@ -13,7 +13,13 @@ function SiteFooter() {
 
         <div className="footer-column">
           <p className="footer-inline-label">Address:</p>
-          <p className="footer-text">21 Nguyễn Trung Trực, Phường Bến Thành, TP. Hồ Chí Minh</p>
+          <p className="footer-text">
+            21 Nguyễn Trung Trực,
+            <br />
+            Phường Bến Thành,
+            <br />
+            TP. Hồ Chí Minh
+          </p>
           <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="footer-link">
             Mở Google Maps
           </a>
