@@ -213,7 +213,7 @@ const beanSectionDefinitions = [
   {
     slug: 'brewbliss-beans',
     title: 'BrewBliss Beans',
-    description: 'Core selection của BrewBliss dành cho nhu cầu pha hằng ngày với profile ổn định và premium.',
+    description: '',
     itemSlugs: ['meta-rock', 'bossa-nova'],
     columns: 'two',
   },
