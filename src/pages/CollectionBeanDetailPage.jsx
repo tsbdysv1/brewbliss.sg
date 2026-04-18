@@ -76,11 +76,11 @@ function CollectionBeanDetailPage() {
                   <button
                     key={option.label}
                     type="button"
-                    className={`product-option-button has-subprice${selectedWeight === option.label ? ' is-selected' : ''}`}
+                    className={`product-option-button${bean.hideBeanQuantityPrice ? '' : ' has-subprice'}${selectedWeight === option.label ? ' is-selected' : ''}`}
                     onClick={() => setSelectedWeight(option.label)}
                   >
                     <span className="product-option-button-text">{option.label}</span>
-                    <span className="product-option-button-subprice">{formatBeanPrice(option.priceValue)}</span>
+                    {!bean.hideBeanQuantityPrice ? <span className="product-option-button-subprice">{formatBeanPrice(option.priceValue)}</span> : null}
                   </button>
                 ))}
               </div>

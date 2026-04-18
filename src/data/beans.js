@@ -66,6 +66,7 @@ const beanCatalog = [
     priceValue: 250000,
     hidePriceOnCollection: true,
     hideDetailHeadlinePrice: true,
+    hideBeanQuantityPrice: true,
     image: beanImageMap.redRose,
     sectionSlug: 'seasonal-beans',
     introduction:
@@ -85,6 +86,7 @@ const beanCatalog = [
     priceValue: 250000,
     hidePriceOnCollection: true,
     hideDetailHeadlinePrice: true,
+    hideBeanQuantityPrice: true,
     image: beanImageMap.summerPlum,
     sectionSlug: 'seasonal-beans',
     introduction:
