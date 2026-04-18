@@ -2024,60 +2024,64 @@ h3 {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  margin-top: 28px;
+  margin-top: 22px;
   border-radius: 0;
   border-left: 0;
   border-right: 0;
   box-shadow: none;
-  padding: clamp(30px, 4.6vw, 62px) clamp(20px, 5vw, 72px);
+  padding: clamp(22px, 3vw, 36px) clamp(22px, 5.4vw, 90px);
   background: #ffffff;
 }
 
 .footer-grid {
-  grid-template-columns: 1.55fr 1fr 1fr 1fr;
-  gap: clamp(20px, 2.3vw, 40px);
+  grid-template-columns: 1.45fr 1fr 1fr 1fr;
+  gap: clamp(28px, 3.8vw, 68px);
   align-items: start;
 }
 
 .footer-column {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 
 .footer-brand-column {
-  max-width: 440px;
-  padding-right: clamp(0px, 2vw, 24px);
+  max-width: 460px;
+  padding-right: clamp(0px, 1.8vw, 16px);
 }
 
 .footer-brand-title {
   margin: 0;
   color: var(--primary);
-  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
-  line-height: 1.06;
+  font-size: clamp(1.68rem, 2.9vw, 2.3rem);
+  line-height: 1.03;
   letter-spacing: -0.02em;
 }
 
 .footer-tagline {
-  margin: 10px 0 0;
+  margin: 4px 0 0;
   color: #4d3a31;
-  font-size: clamp(1rem, 1.35vw, 1.16rem);
-  line-height: 1.66;
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  line-height: 1.5;
 }
 
 .footer-inline-label {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: #7c6155;
+}
+
+.footer-title {
+  margin: 0 0 2px;
 }
 
 .footer-text,
 .footer-link,
 .muted-link {
   color: var(--muted);
-  line-height: 1.72;
+  line-height: 1.5;
 }
 
 @media (max-width: 1024px) {
@@ -2098,13 +2102,14 @@ h3 {
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-columns: 1.15fr 1fr 1fr;
+    gap: 20px;
   }
 
   .footer-brand-column {
     grid-column: 1 / -1;
     max-width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     padding-right: 0;
   }
 
@@ -3068,25 +3073,26 @@ h3 {
   }
 
   .site-footer {
-    padding: 26px 16px 34px;
-    margin-top: 20px;
+    padding: 20px 16px 24px;
+    margin-top: 16px;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 14px;
   }
 
   .footer-column {
-    gap: 8px;
+    gap: 6px;
   }
 
   .footer-brand-title {
-    font-size: clamp(1.56rem, 6.2vw, 2rem);
+    font-size: clamp(1.5rem, 5.8vw, 1.9rem);
   }
 
   .footer-tagline {
-    margin-top: 6px;
-    font-size: 0.98rem;
+    margin-top: 4px;
+    font-size: 0.94rem;
+    line-height: 1.48;
   }
 }
