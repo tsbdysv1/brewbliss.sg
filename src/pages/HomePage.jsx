@@ -4,10 +4,8 @@ import HeroSlider from '../components/HeroSlider'
 import SignatureCollectionSection from '../components/SignatureCollectionSection'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
-import { menuExtras } from '../data/menu'
-import { categories, heroSlides, siteConfig } from '../data/site'
+import { heroSlides, siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
-import { buildPhoneHref } from '../utils/commerce'
 
 const brewblissExperienceTabs = [
   {
@@ -212,89 +210,6 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="section-block home-menu-cta-section" aria-labelledby="home-menu-cta-title">
-          <div className="section-heading home-menu-cta-heading">
-            <p className="eyebrow">Curated on home</p>
-            <h2 id="home-menu-cta-title">Muốn xem đầy đủ menu của BrewBliss?</h2>
-            <p className="section-supporting-text">
-              Trang chủ giữ lại những phần chọn lọc để mọi thứ gọn, rõ và premium hơn. Toàn bộ coffee,
-              matcha, tea, pastry và các món còn lại hiện nằm đầy đủ trong trang Menu riêng.
-            </p>
-          </div>
-          <div className="hero-cta-row">
-            <Link to="/menu" className="brewbliss-experience-link" aria-label="Xem menu đầy đủ của BrewBliss">
-              Xem menu
-            </Link>
-          </div>
-        </section>
-
-        <section className="section-block readiness-section">
-          <div className="section-heading">
-            <p className="eyebrow">Content-ready structure</p>
-            <h2>{siteConfig.contentReadiness.title}</h2>
-            <p className="section-supporting-text">{siteConfig.contentReadiness.description}</p>
-          </div>
-          <ul className="readiness-checklist">
-            {siteConfig.contentReadiness.checklist.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="section-block extras-section">
-          <div className="section-heading">
-            <p className="eyebrow">Menu extras</p>
-            <h2>Những tuỳ chọn thêm dễ áp dụng ngay trên quầy</h2>
-          </div>
-          <div className="extras-grid">
-            {menuExtras.map((item) => (
-              <article key={item.label} className="info-card compact-card">
-                <h3>{item.label}</h3>
-                <p>{new Intl.NumberFormat('vi-VN').format(item.priceValue)}đ</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section-block contact-section" id="lien-he">
-          <div className="contact-card contact-card-enhanced">
-            <div>
-              <p className="eyebrow">Liên hệ & ghé quán</p>
-              <h2>Chọn cách phù hợp nhất để kết nối với BrewBliss</h2>
-              <p>
-                Nếu đang ở gần quận 1, mở bản đồ để ghé quán. Nếu cần hỏi nhanh, gọi trực tiếp.
-                Nếu muốn xem vibe và món mới, Instagram và Facebook đang là các kênh rõ ràng nhất.
-              </p>
-            </div>
-            <div className="contact-action-grid">
-              <a href={buildPhoneHref(siteConfig.phoneNumber)} className="contact-action-card primary-card">
-                <span className="contact-action-label">Gọi quán</span>
-                <strong>{siteConfig.phoneNumber}</strong>
-              </a>
-              <a
-                href={siteConfig.mapLink}
-                target="_blank"
-                rel="noreferrer"
-                className="contact-action-card"
-              >
-                <span className="contact-action-label">Chỉ đường</span>
-                <strong>Mở Google Maps</strong>
-              </a>
-              <a href={siteConfig.instagramLink} target="_blank" rel="noreferrer" className="contact-action-card">
-                <span className="contact-action-label">Instagram</span>
-                <strong>@brewbliss.sg</strong>
-              </a>
-              <a href={siteConfig.facebookLink} target="_blank" rel="noreferrer" className="contact-action-card">
-                <span className="contact-action-label">Facebook</span>
-                <strong>BrewBliss Coffee</strong>
-              </a>
-              <div className="contact-action-card muted-card">
-                <span className="contact-action-label">Zalo</span>
-                <strong>{siteConfig.zaloLabel}</strong>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       <SiteFooter />
