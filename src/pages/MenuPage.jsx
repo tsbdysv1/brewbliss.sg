@@ -8,75 +8,61 @@ import { getSignatureCollectionItems, menuCategories } from '../data/menu'
 import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 
+const menuSectionOrder = ['espresso-bar', 'vietnamese-coffee', 'brew-bar', 'hand-drip', 'matcha', 'tea', 'other-drinks', 'juice', 'pastries']
+
+const sectionTitleMap = {
+  'espresso-bar': 'Espresso Bar',
+  'vietnamese-coffee': 'Vietnamese Coffee Bar',
+  'brew-bar': 'Brew Bar',
+  'hand-drip': 'Hand Drip',
+  matcha: 'Matcha',
+  tea: 'Tea',
+  'other-drinks': 'Other Drinks',
+  juice: 'Juice',
+  pastries: 'Pastry',
+}
+
 function MenuPage() {
   const location = useLocation()
   const [highlightedSectionId, setHighlightedSectionId] = useState('')
-  const menuSectionOrder = [
-    'espresso-bar',
-    'vietnamese-coffee',
-    'brew-bar',
-    'hand-drip',
-    'matcha',
-    'tea',
-    'other-drinks',
-    'juice',
-    'pastries',
-  ]
 
-  const sectionTitleMap = {
-    'espresso-bar': 'Espresso Bar',
-    'vietnamese-coffee': 'Vietnamese Coffee Bar',
-    'brew-bar': 'Brew Bar',
-    'hand-drip': 'Hand Drip',
-    matcha: 'Matcha',
-    tea: 'Tea',
-    'other-drinks': 'Other Drinks',
-    juice: 'Juice',
-    pastries: 'Pastry',
-  }
-
-  const visibleCategories = menuSectionOrder
-    .map((slug) => menuCategories.find((category) => category.slug === slug))
-    .filter(Boolean)
-    .map((category) => ({
-      ...category,
-      items: category.items.map((item) => ({
-        ...item,
-        categorySlug: category.slug,
-        categoryName: category.name,
-      })),
-    }))
+  const visibleCategories = useMemo(
+    () =>
+      menuSectionOrder
+        .map((slug) => menuCategories.find((category) => category.slug === slug))
+        .filter(Boolean)
+        .map((category) => ({
+          ...category,
+          items: category.items.map((item) => ({
+            ...item,
+            categorySlug: category.slug,
+            categoryName: category.name,
+          })),
+        })),
+    [],
+  )
 
   const signatureItems = getSignatureCollectionItems()
 
-  const validSectionIds = useMemo(
-    () => new Set([...visibleCategories.map((category) => category.slug), 'signature-collection']),
-    [visibleCategories],
-  )
+  const validSectionIds = useMemo(() => new Set([...menuSectionOrder, 'signature-collection']), [])
 
   useEffect(() => {
     const hash = location.hash.replace('#', '')
-    if (!hash || !validSectionIds.has(hash)) return undefined
+    if (!hash || !validSectionIds.has(hash)) return
 
-    const scrollToTarget = () => {
-      const target = document.getElementById(hash)
-      if (!target) return
+    const target = document.getElementById(hash)
+    if (!target) return
 
-      const headerOffset = window.innerWidth <= 720 ? 124 : 136
-      const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset
+    const headerOffset = window.innerWidth <= 720 ? 124 : 136
+    const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset
 
-      window.scrollTo({
-        top: Math.max(targetTop, 0),
-        behavior: 'smooth',
-      })
+    window.scrollTo({
+      top: Math.max(targetTop, 0),
+      behavior: 'smooth',
+    })
 
-      setHighlightedSectionId(hash)
-      window.setTimeout(() => setHighlightedSectionId((current) => (current === hash ? '' : current)), 1800)
-    }
-
-    const frameId = window.requestAnimationFrame(scrollToTarget)
-    return () => window.cancelAnimationFrame(frameId)
-  }, [location.hash, validSectionIds])
+    setHighlightedSectionId(hash)
+  }, [location.key, location.hash, validSectionIds])
 
   usePageSeo({
     title: `Menu | ${siteConfig.brandName}`,
@@ -101,7 +87,6 @@ function MenuPage() {
             title={sectionTitleMap[category.slug] ?? category.name}
             items={category.items}
             isHighlighted={highlightedSectionId === category.slug}
-            isActive={location.hash === `#${category.slug}`}
           />
         ))}
 
@@ -110,7 +95,6 @@ function MenuPage() {
           title="BrewBliss Signature Collection"
           items={signatureItems}
           isHighlighted={highlightedSectionId === 'signature-collection'}
-          isActive={location.hash === '#signature-collection'}
         />
       </main>
 

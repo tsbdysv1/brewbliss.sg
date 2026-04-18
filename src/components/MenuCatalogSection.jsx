@@ -4,14 +4,14 @@ import { useCart } from '../context/CartContext'
 import { siteConfig } from '../data/site'
 import { buildCartItemId, PRODUCT_OPTION_GROUPS } from '../utils/cart'
 
-function MenuCatalogSection({ title, items, sectionId, isHighlighted = false, isActive = false }) {
+function MenuCatalogSection({ title, items, sectionId, isHighlighted = false }) {
   const { addItem } = useCart()
   const headingNote = sectionId === 'espresso-bar' ? 'extra shot +25,000đ' : null
   if (!items?.length) return null
 
   return (
     <section
-      className={`menu-catalog-section${isHighlighted ? ' is-highlighted' : ''}${isActive ? ' is-active-target' : ''}`}
+      className={`menu-catalog-section${isHighlighted ? ' is-active-target' : ''}`}
       id={sectionId}
       aria-labelledby={`${sectionId}-title`}
     >
