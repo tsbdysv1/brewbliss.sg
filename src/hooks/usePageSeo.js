@@ -65,6 +65,9 @@ export function usePageSeo({ title, description, jsonLd, pathname = '/', image =
     ensureLinkTag('icon').setAttribute('href', '/brewbliss-domain-logo.png')
     ensureLinkTag('apple-touch-icon').setAttribute('href', '/brewbliss-domain-logo.png')
     ensureJsonLdTag().textContent = JSON.stringify(jsonLd || siteConfig.defaultJsonLd)
-    window.scrollTo({ top: 0, behavior: 'instant' })
+
+    if (!window.location.hash) {
+      window.scrollTo({ top: 0, behavior: 'instant' })
+    }
   }, [description, image, jsonLd, pathname, title])
 }
