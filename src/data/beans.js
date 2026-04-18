@@ -1,8 +1,8 @@
 const beanImageMap = {
-  metaRock: '/images/signature-collection/uploads-apr15/meta-rock-bean-bag.png',
-  bossaNova: '/images/signature-collection/uploads-apr15/bossa-nova-bean-bag.png',
-  redRose: '/images/signature-collection/uploads-apr15/red-rose-bean-bag.png',
-  summerPlum: '/images/signature-collection/uploads-apr15/summer-plum-bean-bag.png',
+  metaRock: '/images/signature-collection/uploads-apr15/metal-rock-bean-bag.png',
+  bossaNova: '/images/signature-collection/uploads-apr15/bossa-nova-bean-bag-v2.png',
+  redRose: '/images/signature-collection/uploads-apr15/red-rose-bean-bag-v2.png',
+  summerPlum: '/images/signature-collection/uploads-apr15/summer-plum-bean-bag-v2.png',
   costaRica: '/images/signature-collection/uploads-apr15/cold-drip.png',
   andBrew: '/images/signature-collection/uploads-apr15/cafe-muoi.png',
   countryHouse: '/images/signature-collection/uploads-apr15/cafe-dua.png',
@@ -28,7 +28,7 @@ const beanWeightOptionsBySlug = {
 const beanCatalog = [
   {
     slug: 'meta-rock',
-    name: 'Meta Rock',
+    name: 'Metal Rock',
     priceValue: beanWeightOptionsBySlug['meta-rock'][0].priceValue,
     image: beanImageMap.metaRock,
     sectionSlug: 'brewbliss-beans',
