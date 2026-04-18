@@ -65,13 +65,12 @@ function CollectionBeanDetailPage() {
             </div>
           ) : null}
 
-          <p className="product-detail-description">{bean.introduction}</p>
+          {!bean.detailSections ? <p className="product-detail-description">{bean.introduction}</p> : null}
 
           {bean.detailSections ? (
             <section className="bean-detail-editorial-sections" aria-label="Detailed bean information">
               <article className="bean-detail-editorial-section">
-                <h2>Mô tả</h2>
-                <p>{bean.detailSections.description}</p>
+                <p className="bean-detail-editorial-description">{bean.detailSections.description}</p>
               </article>
 
               <article className="bean-detail-editorial-section">

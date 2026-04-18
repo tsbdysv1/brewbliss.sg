@@ -1477,6 +1477,10 @@ h3 {
   line-height: 1.74;
 }
 
+.bean-detail-editorial-description {
+  margin-top: 0;
+}
+
 .bean-detail-editorial-list {
   margin: 12px 0 0;
   display: grid;
