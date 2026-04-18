@@ -88,16 +88,33 @@ function CollectionBeanDetailPage() {
 
               <article className="bean-detail-editorial-section">
                 <h2>Recommended usage</h2>
-                <p className="bean-detail-editorial-intro">{bean.detailSections.usage.suitableFor}</p>
-                <h3 className="bean-detail-editorial-subheading">{bean.detailSections.usage.brewTitle}</h3>
-                <ul className="bean-detail-editorial-bullets">
-                  {bean.detailSections.usage.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-                <p className="bean-detail-editorial-brew-note">
-                  <strong>Cách pha:</strong> {bean.detailSections.usage.brewMethod}
-                </p>
+                {bean.detailSections.usage.suitableFor ? <p className="bean-detail-editorial-intro">{bean.detailSections.usage.suitableFor}</p> : null}
+                {bean.detailSections.usage.brewTitle ? <h3 className="bean-detail-editorial-subheading">{bean.detailSections.usage.brewTitle}</h3> : null}
+                {bean.detailSections.usage.bullets?.length ? (
+                  <ul className="bean-detail-editorial-bullets">
+                    {bean.detailSections.usage.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                {bean.detailSections.usage.recipeSteps?.length ? (
+                  <div className="bean-detail-editorial-recipe-group">
+                    <h4 className="bean-detail-editorial-miniheading">{bean.detailSections.usage.recipeTitle ?? 'Recipe'}</h4>
+                    <ul className="bean-detail-editorial-recipe-list">
+                      {bean.detailSections.usage.recipeSteps.map((step) => (
+                        <li key={step}>{step}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+                {bean.detailSections.usage.totalBrewTime ? (
+                  <p className="bean-detail-editorial-total-time">⏱ Total brew time: {bean.detailSections.usage.totalBrewTime}</p>
+                ) : null}
+                {bean.detailSections.usage.brewMethod ? (
+                  <p className="bean-detail-editorial-brew-note">
+                    <strong>{bean.detailSections.usage.brewMethodLabel ?? 'Cách pha:'}</strong> {bean.detailSections.usage.brewMethod}
+                  </p>
+                ) : null}
               </article>
             </section>
           ) : null}

@@ -105,15 +105,34 @@ const beanCatalog = [
     image: beanImageMap.redRose,
     sectionSlug: 'seasonal-beans',
     introduction:
-      'Seasonal bean có tầng hương trái đỏ và hậu vị ngọt thanh, dành cho khách muốn trải nghiệm profile sống động theo mùa.',
+      'Hương hoa hồng nổi bật, hòa quyện cùng vải thiều và trà đen thanh mát. Vị ngọt dịu của mật ong và các nốt quả mọng tươi tạo nên tổng thể tinh tế, nhẹ nhàng nhưng đầy chiều sâu — một trải nghiệm thanh thoát và đầy cảm xúc.',
     characteristics: {
-      origin: 'Single origin: Cầu Đất, Việt Nam',
-      roastLevel: 'Light-medium',
-      flavorNotes: 'Dâu đỏ, mận chín, đường nâu',
-      process: 'Anaerobic natural',
+      origin: 'Myanmar blend Kenya · Độ cao: 1500–1800 masl',
+      roastLevel: 'Medium',
+      flavorNotes: 'Rose, lychee, black tea, honey, berry, sweet finish',
+      process: 'Lactic Anaerobic + Washed',
     },
     recommendedUsage:
-      'Tối ưu cho V60: 15g hạt / 240ml nước, nhiệt 91-93°C. Khi pha lạnh có thể tăng liều lên 18g để giữ độ ngọt hương.',
+      'Phù hợp: Pour Over (recommended). Pour Over (V60): Dose 15g, tỷ lệ 1:16, nhiệt độ 94°C, độ xay ~25 clicks (Comandante C40).',
+    detailSections: {
+      description:
+        'Hương hoa hồng nổi bật, hòa quyện cùng vải thiều và trà đen thanh mát. Vị ngọt dịu của mật ong và các nốt quả mọng tươi tạo nên tổng thể tinh tế, nhẹ nhàng nhưng đầy chiều sâu — một trải nghiệm thanh thoát và đầy cảm xúc.',
+      characteristics: [
+        { label: 'ORIGIN', value: 'Myanmar blend Kenya · Độ cao: 1500–1800 masl' },
+        { label: 'VARIETAL', value: 'Catimor, Bourbon, Catuai, SL28, SL34, Ruiru11, Batian' },
+        { label: 'ROAST LEVEL', value: 'Medium' },
+        { label: 'FLAVOR NOTES', value: 'Rose, lychee, black tea, honey, berry, sweet finish' },
+        { label: 'PROCESS', value: 'Lactic Anaerobic + Washed' },
+      ],
+      usage: {
+        suitableFor: 'Phù hợp: Pour Over (recommended)',
+        brewTitle: 'Pour Over (V60)',
+        bullets: ['Dose: 15g', 'Tỷ lệ: 1:16', 'Nhiệt độ: 94°C', 'Độ xay: ~25 clicks (Comandante C40)'],
+        recipeTitle: 'Recipe',
+        recipeSteps: ['00:00 – 00:30 → 40ml (bloom)', '00:30 – 01:15 → +80ml', '01:15 – 01:45 → +60ml', '01:45 – 02:15 → +60ml'],
+        totalBrewTime: '2:30 – 2:45',
+      },
+    },
   },
   {
     slug: 'summer-plum',

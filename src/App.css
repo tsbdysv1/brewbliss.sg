@@ -1528,6 +1528,39 @@ h3 {
   line-height: 1.64;
 }
 
+.bean-detail-editorial-recipe-group {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.bean-detail-editorial-miniheading {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6a6a6a;
+  font-weight: 700;
+}
+
+.bean-detail-editorial-recipe-list {
+  margin: 0;
+  padding-left: 1.05rem;
+  display: grid;
+  gap: 5px;
+  color: #4f4f4f;
+}
+
+.bean-detail-editorial-recipe-list li {
+  line-height: 1.62;
+}
+
+.bean-detail-editorial-total-time {
+  margin-top: 10px;
+  color: #3f3f3f;
+  font-weight: 600;
+}
+
 .bean-detail-editorial-brew-note {
   margin-top: 12px;
 }
