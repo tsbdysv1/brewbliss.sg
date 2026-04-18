@@ -2,6 +2,7 @@ const beanImageMap = {
   metaRock: '/images/signature-collection/uploads-apr15/ca-phe-thu-cong.png',
   bossaNova: '/images/signature-collection/uploads-apr15/espresso.png',
   redRose: '/images/signature-collection/uploads-apr15/ca-phe-den.png',
+  summerPlum: '/images/signature-collection/uploads-apr15/cold-brew-mo.png',
   costaRica: '/images/signature-collection/uploads-apr15/cold-drip.png',
   andBrew: '/images/signature-collection/uploads-apr15/cafe-muoi.png',
   countryHouse: '/images/signature-collection/uploads-apr15/cafe-dua.png',
@@ -66,21 +67,21 @@ const beanCatalog = [
       'Tối ưu cho V60: 15g hạt / 240ml nước, nhiệt 91-93°C. Khi pha lạnh có thể tăng liều lên 18g để giữ độ ngọt hương.',
   },
   {
-    slug: 'costa-rica',
-    name: 'Costa Rica',
+    slug: 'summer-plum',
+    name: 'Summer Plum',
     priceValue: 250000,
-    image: beanImageMap.costaRica,
+    image: beanImageMap.summerPlum,
     sectionSlug: 'seasonal-beans',
     introduction:
-      'Lô seasonal mang chất vị sạch, độ acid sáng và hậu vị kéo dài, hợp với khách thích style quốc tế hiện đại.',
+      'Seasonal bean mang hương trái mận chín, vị sáng và hậu ngọt nhẹ, phù hợp cho trải nghiệm mùa hè tươi và sạch vị.',
     characteristics: {
-      origin: 'Tarrazú, Costa Rica',
-      roastLevel: 'Light',
-      flavorNotes: 'Táo xanh, floral, đường mía',
-      process: 'Washed',
+      origin: 'Seasonal lot: Đà Lạt + Ethiopia',
+      roastLevel: 'Light-medium',
+      flavorNotes: 'Mận đỏ, floral, mật mía',
+      process: 'Natural',
     },
     recommendedUsage:
-      'Ưu tiên pour over: 16g hạt / 250ml nước ở 92°C, chia 4 lần rót. Với cold brew: 70g hạt / 1 lít nước ngâm 14-16 giờ.',
+      'Gợi ý V60: 15g hạt / 240ml nước ở 91-93°C. Pha lạnh nên tăng liều lên 18g để giữ rõ tầng hương trái cây.',
   },
   {
     slug: 'and-brew',
@@ -130,8 +131,8 @@ const beanSectionDefinitions = [
     slug: 'seasonal-beans',
     title: 'Seasonal Beans',
     description: 'Các lô seasonal theo mùa với profile hương vị khác biệt để mở rộng trải nghiệm bean tại nhà.',
-    itemSlugs: ['red-rose', 'costa-rica', 'and-brew', 'country-house'],
-    columns: 'four',
+    itemSlugs: ['red-rose', 'summer-plum'],
+    columns: 'two',
   },
 ]
 
