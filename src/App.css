@@ -544,6 +544,29 @@ div {
 @media (min-width: 1025px) {
   .site-header-inner {
     grid-template-columns: minmax(260px, 1fr) auto;
+    align-items: center;
+  }
+
+  .site-nav {
+    min-height: 88px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 36px;
+  }
+
+  .nav-link {
+    min-height: 88px;
+    padding: 0;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    line-height: 1;
+  }
+
+  .brand-home-link,
+  .brand-nav-link {
+    min-height: 88px;
+    align-items: center;
   }
 }
 
