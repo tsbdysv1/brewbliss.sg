@@ -542,21 +542,22 @@ div {
 }
 
 @media (min-width: 1025px) {
-  .site-header-inner {
-    grid-template-columns: minmax(260px, 1fr) minmax(420px, 40%);
+  .site-header-bar .site-header-inner {
+    grid-template-columns: minmax(260px, 1fr) 40%;
     align-items: center;
   }
 
-  .site-nav {
+  .site-header-inner > .site-nav {
     min-height: 88px;
     width: 100%;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
     gap: 0;
   }
 
-  .nav-link {
+  .site-header-inner > .site-nav .nav-link {
     min-height: 88px;
     padding: 0;
     font-size: 1rem;
