@@ -59,9 +59,11 @@ function CollectionBeanDetailPage() {
         <div className="product-detail-main editorial-product-detail-main bean-detail-main">
           <h1>{bean.name}</h1>
 
-          <div className="product-detail-price-row">
-            <strong className="product-detail-price">{formatBeanPrice(selectedWeightOption.priceValue)}</strong>
-          </div>
+          {!bean.hideDetailHeadlinePrice ? (
+            <div className="product-detail-price-row">
+              <strong className="product-detail-price">{formatBeanPrice(selectedWeightOption.priceValue)}</strong>
+            </div>
+          ) : null}
 
           <p className="product-detail-description">{bean.introduction}</p>
 
