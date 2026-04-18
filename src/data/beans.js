@@ -147,13 +147,31 @@ const beanCatalog = [
     introduction:
       'Seasonal bean mang hương trái mận chín, vị sáng và hậu ngọt nhẹ, phù hợp cho trải nghiệm mùa hè tươi và sạch vị.',
     characteristics: {
-      origin: 'Seasonal lot: Đà Lạt + Ethiopia',
-      roastLevel: 'Light-medium',
-      flavorNotes: 'Mận đỏ, floral, mật mía',
-      process: 'Natural',
+      origin: 'Vietnam blend Colombia · Độ cao: 1500–1950 masl',
+      roastLevel: 'Light',
+      flavorNotes: 'Floral, strawberry, orange, red tea, red apple, long sweet',
+      process: 'Natural & Washed',
     },
     recommendedUsage:
-      'Gợi ý V60: 15g hạt / 240ml nước ở 91-93°C. Pha lạnh nên tăng liều lên 18g để giữ rõ tầng hương trái cây.',
+      'Phù hợp: Pour Over, Cold Brew (recommended). Pour Over (V60): Dose 15g, tỷ lệ 1:16, nhiệt độ 92°C, độ xay ~24 clicks (Comandante C40).',
+    detailSections: {
+      description: 'Seasonal bean mang hương trái mận chín, vị sáng và hậu ngọt nhẹ, phù hợp cho trải nghiệm mùa hè tươi và sạch vị.',
+      characteristics: [
+        { label: 'ORIGIN', value: 'Vietnam blend Colombia · Độ cao: 1500–1950 masl' },
+        { label: 'VARIETAL', value: 'Typica, Yellow Gesha' },
+        { label: 'ROAST LEVEL', value: 'Light' },
+        { label: 'FLAVOR NOTES', value: 'Floral, strawberry, orange, red tea, red apple, long sweet' },
+        { label: 'PROCESS', value: 'Natural & Washed' },
+      ],
+      usage: {
+        suitableFor: 'Phù hợp: Pour Over, Cold Brew (recommended)',
+        brewTitle: 'Pour Over (V60)',
+        bullets: ['Dose: 15g', 'Tỷ lệ: 1:16', 'Nhiệt độ: 92°C', 'Độ xay: ~24 clicks (Comandante C40)'],
+        recipeTitle: 'Recipe',
+        recipeSteps: ['00:00 – 00:30 → 40ml (bloom)', '00:30 – 01:15 → +80ml', '01:15 – 01:45 → +60ml', '01:45 – 02:15 → +60ml'],
+        totalBrewTime: '2:30 – 2:45',
+      },
+    },
   },
   {
     slug: 'and-brew',
