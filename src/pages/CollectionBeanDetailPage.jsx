@@ -67,25 +67,27 @@ function CollectionBeanDetailPage() {
 
           <p className="product-detail-description">{bean.introduction}</p>
 
-          <div className="product-customization-flow bean-customization-flow" aria-label="Bean quantity options">
-            <section className="product-option-section">
-              <h2>Bean quantity</h2>
-              <div className="product-option-divider" aria-hidden="true" />
-              <div className="product-option-button-row bean-weight-option-row">
-                {beanWeightOptions.map((option) => (
-                  <button
-                    key={option.label}
-                    type="button"
-                    className={`product-option-button${bean.hideBeanQuantityPrice ? '' : ' has-subprice'}${selectedWeight === option.label ? ' is-selected' : ''}`}
-                    onClick={() => setSelectedWeight(option.label)}
-                  >
-                    <span className="product-option-button-text">{option.label}</span>
-                    {!bean.hideBeanQuantityPrice ? <span className="product-option-button-subprice">{formatBeanPrice(option.priceValue)}</span> : null}
-                  </button>
-                ))}
-              </div>
-            </section>
-          </div>
+          {!bean.hideBeanQuantitySection ? (
+            <div className="product-customization-flow bean-customization-flow" aria-label="Bean quantity options">
+              <section className="product-option-section">
+                <h2>Bean quantity</h2>
+                <div className="product-option-divider" aria-hidden="true" />
+                <div className="product-option-button-row bean-weight-option-row">
+                  {beanWeightOptions.map((option) => (
+                    <button
+                      key={option.label}
+                      type="button"
+                      className={`product-option-button${bean.hideBeanQuantityPrice ? '' : ' has-subprice'}${selectedWeight === option.label ? ' is-selected' : ''}`}
+                      onClick={() => setSelectedWeight(option.label)}
+                    >
+                      <span className="product-option-button-text">{option.label}</span>
+                      {!bean.hideBeanQuantityPrice ? <span className="product-option-button-subprice">{formatBeanPrice(option.priceValue)}</span> : null}
+                    </button>
+                  ))}
+                </div>
+              </section>
+            </div>
+          ) : null}
 
           <section className="bean-detail-info-grid" aria-label="Bean characteristics and usage">
             <article className="bean-detail-info-card">
