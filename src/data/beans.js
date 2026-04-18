@@ -67,15 +67,32 @@ const beanCatalog = [
     image: beanImageMap.bossaNova,
     sectionSlug: 'brewbliss-beans',
     introduction:
-      'Blend dịu, hương thơm mềm và sáng, hướng tới trải nghiệm uống hằng ngày với profile dễ tiếp cận nhưng vẫn premium.',
+      'Vị chua thanh mở đầu nhẹ nhàng, như nốt nhạc đầu tiên của Bossa Nova — tinh tế và đầy cảm xúc. Khi lan trên vòm miệng, vị đắng ấm dần xuất hiện, cân bằng và mượt mà. Tổng thể hài hòa như một bản jazz dịu dàng, sâu lắng và cuốn hút.',
     characteristics: {
-      origin: 'Blend: Brazil + Đà Lạt Arabica',
-      roastLevel: 'Medium light',
-      flavorNotes: 'Mật ong, hạt dẻ, cam chín',
-      process: 'Natural + honey process',
+      origin: '100% Arabica – Lâm Đồng, Việt Nam',
+      roastLevel: 'Dark',
+      flavorNotes: 'Fruity, milk chocolate, caramel, sweet, long aftertaste',
+      process: 'Honey',
     },
     recommendedUsage:
-      'Phù hợp pha máy và moka pot. Espresso: 18g in / 38g out trong 26-29 giây; hand brew: 16g hạt / 250ml nước.',
+      'Phù hợp: Phin, Espresso. Espresso (recommended): 18g in → 40g out, 25–30s. Cách pha: Phân bố bột đều, nén chặt tay pha, sau đó chiết xuất theo đúng tỷ lệ để đạt độ cân bằng và hậu vị kéo dài.',
+    detailSections: {
+      description:
+        'Vị chua thanh mở đầu nhẹ nhàng, như nốt nhạc đầu tiên của Bossa Nova — tinh tế và đầy cảm xúc. Khi lan trên vòm miệng, vị đắng ấm dần xuất hiện, cân bằng và mượt mà. Tổng thể hài hòa như một bản jazz dịu dàng, sâu lắng và cuốn hút.',
+      characteristics: [
+        { label: 'ORIGIN', value: '100% Arabica – Lâm Đồng, Việt Nam' },
+        { label: 'ROAST LEVEL', value: 'Dark' },
+        { label: 'FLAVOR NOTES', value: 'Fruity, milk chocolate, caramel, sweet, long aftertaste' },
+        { label: 'PROCESS', value: 'Honey' },
+      ],
+      usage: {
+        suitableFor: 'Phù hợp: Phin, Espresso',
+        brewTitle: 'Espresso (recommended)',
+        bullets: ['Tỷ lệ: 18g in → 40g out', 'Thời gian: 25–30s'],
+        brewMethod:
+          'Phân bố bột đều, nén chặt tay pha, sau đó chiết xuất theo đúng tỷ lệ để đạt độ cân bằng và hậu vị kéo dài.',
+      },
+    },
   },
   {
     slug: 'red-rose',
