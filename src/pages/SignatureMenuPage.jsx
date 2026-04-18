@@ -21,7 +21,7 @@ function SignatureMenuPage() {
 
       <Breadcrumbs
         items={[
-          { label: 'Trang chủ', to: '/' },
+          { label: 'Home', to: '/' },
           { label: 'Menu', to: '/menu' },
           { label: 'Signature Collection' },
         ]}

@@ -14,11 +14,22 @@ export const BEAN_WEIGHT_OPTIONS = [
   { label: '1kg', priceValue: 1000000 },
 ]
 
+const beanWeightOptionsBySlug = {
+  'bossa-nova': [
+    { label: '250gr', priceValue: 170000 },
+    { label: '1kg', priceValue: 500000 },
+  ],
+  'meta-rock': [
+    { label: '250gr', priceValue: 150000 },
+    { label: '1kg', priceValue: 380000 },
+  ],
+}
+
 const beanCatalog = [
   {
     slug: 'meta-rock',
     name: 'Meta Rock',
-    priceValue: 250000,
+    priceValue: beanWeightOptionsBySlug['meta-rock'][0].priceValue,
     image: beanImageMap.metaRock,
     sectionSlug: 'brewbliss-beans',
     introduction:
@@ -35,7 +46,7 @@ const beanCatalog = [
   {
     slug: 'bossa-nova',
     name: 'Bossa Nova',
-    priceValue: 250000,
+    priceValue: beanWeightOptionsBySlug['bossa-nova'][0].priceValue,
     image: beanImageMap.bossaNova,
     sectionSlug: 'brewbliss-beans',
     introduction:
@@ -53,6 +64,7 @@ const beanCatalog = [
     slug: 'red-rose',
     name: 'Red Rose',
     priceValue: 250000,
+    hidePriceOnCollection: true,
     image: beanImageMap.redRose,
     sectionSlug: 'seasonal-beans',
     introduction:
@@ -70,6 +82,7 @@ const beanCatalog = [
     slug: 'summer-plum',
     name: 'Summer Plum',
     priceValue: 250000,
+    hidePriceOnCollection: true,
     image: beanImageMap.summerPlum,
     sectionSlug: 'seasonal-beans',
     introduction:
@@ -149,6 +162,13 @@ export function getBeanBySlug(slug) {
   return beanBySlug.get(slug) ?? null
 }
 
+export function getBeanWeightOptions(beanOrSlug) {
+  const slug = typeof beanOrSlug === 'string' ? beanOrSlug : beanOrSlug?.slug
+  const weightOptions = slug ? beanWeightOptionsBySlug[slug] : null
+
+  return weightOptions?.length ? weightOptions : BEAN_WEIGHT_OPTIONS
+}
+
 export function getBeansBySectionSlug(sectionSlug) {
   return beanSectionBySlug.get(sectionSlug)?.items ?? []
 }
@@ -165,7 +185,7 @@ export function formatBeanPrice(value) {
   return `${new Intl.NumberFormat('vi-VN').format(value)}đ`
 }
 
-export function buildBeanJsonLd(bean, selectedWeight = BEAN_WEIGHT_OPTIONS[0]) {
+export function buildBeanJsonLd(bean, selectedWeight = getBeanWeightOptions(bean)[0]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',

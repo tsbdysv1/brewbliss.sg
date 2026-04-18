@@ -41,7 +41,7 @@ function CollectionPage() {
                     <div className="menu-catalog-card-body">
                       <div className="menu-catalog-card-topline">
                         <h3>{bean.name}</h3>
-                        <strong>{formatBeanPrice(bean.priceValue)}</strong>
+                        {!bean.hidePriceOnCollection ? <strong>{formatBeanPrice(bean.priceValue)}</strong> : null}
                       </div>
                     </div>
                   </Link>

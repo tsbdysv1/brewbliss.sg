@@ -91,7 +91,7 @@ function MenuPage() {
     <div className="page-shell">
       <SiteHeader />
 
-      <Breadcrumbs items={[{ label: 'Trang chủ', to: '/' }, { label: 'Menu' }]} />
+      <Breadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Menu' }]} />
 
       <main className="menu-page-content" aria-label="BrewBliss menu catalog">
         {visibleCategories.map((category) => (

@@ -98,19 +98,19 @@ function SiteHeader() {
 
           <nav id="primary-navigation" className={`site-nav${isMobileMenuOpen ? ' is-open' : ''}`} aria-label="Primary navigation">
             <Link to="/" className="nav-link">
-              HOME
+              Home
             </Link>
             <Link to="/collection" className="nav-link">
-              COLLECTION
+              Collection
             </Link>
             <Link to="/menu" className="nav-link">
-              MENU
+              Menu
             </Link>
             <Link to="/cua-hang" className="nav-link">
-              STORE
+              Store
             </Link>
             <a href={jobLink} target="_blank" rel="noreferrer" className="nav-link">
-              JOB
+              Job
             </a>
             {siteConfig.features.cartEnabled ? (
               <Link to="/cart" className="nav-link nav-cart-link" aria-label={`Cart${itemCount ? `, ${itemCount} item${itemCount > 1 ? 's' : ''}` : ''}`}>

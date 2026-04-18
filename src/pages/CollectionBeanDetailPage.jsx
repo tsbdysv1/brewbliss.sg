@@ -1,21 +1,31 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Breadcrumbs from '../components/Breadcrumbs'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
-import { BEAN_WEIGHT_OPTIONS, buildBeanJsonLd, formatBeanPrice, getBeanBySlug } from '../data/beans'
+import { buildBeanJsonLd, formatBeanPrice, getBeanBySlug, getBeanWeightOptions } from '../data/beans'
 import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 
 function CollectionBeanDetailPage() {
   const { slug } = useParams()
   const bean = getBeanBySlug(slug)
-  const [selectedWeight, setSelectedWeight] = useState(BEAN_WEIGHT_OPTIONS[0].label)
+  const beanWeightOptions = useMemo(() => getBeanWeightOptions(bean), [bean])
+  const [selectedWeight, setSelectedWeight] = useState(() => beanWeightOptions[0]?.label ?? '')
 
   const selectedWeightOption = useMemo(
-    () => BEAN_WEIGHT_OPTIONS.find((option) => option.label === selectedWeight) ?? BEAN_WEIGHT_OPTIONS[0],
-    [selectedWeight],
+    () => beanWeightOptions.find((option) => option.label === selectedWeight) ?? beanWeightOptions[0],
+    [beanWeightOptions, selectedWeight],
   )
+
+  useEffect(() => {
+    if (!beanWeightOptions.length) return
+
+    const hasSelectedWeight = beanWeightOptions.some((option) => option.label === selectedWeight)
+    if (!hasSelectedWeight) {
+      setSelectedWeight(beanWeightOptions[0].label)
+    }
+  }, [beanWeightOptions, selectedWeight])
 
   usePageSeo({
     title: bean ? `${bean.name} | ${siteConfig.brandName} Beans` : `Coffee Bean | ${siteConfig.brandName}`,
@@ -60,7 +70,7 @@ function CollectionBeanDetailPage() {
               <h2>Bean quantity</h2>
               <div className="product-option-divider" aria-hidden="true" />
               <div className="product-option-button-row bean-weight-option-row">
-                {BEAN_WEIGHT_OPTIONS.map((option) => (
+                {beanWeightOptions.map((option) => (
                   <button
                     key={option.label}
                     type="button"
