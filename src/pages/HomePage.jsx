@@ -180,7 +180,7 @@ function HomePage() {
         <section className="intenso-story-section" aria-labelledby="intenso-story-title">
           <div className="intenso-story-grid">
             <div className="intenso-story-media" aria-hidden="true">
-              <img src="/hero/hero-slide-4.png" alt="" loading="lazy" decoding="async" />
+              <img src="/images/signature-collection/uploads-apr18/intenso-origin.jpg" alt="Intenso coffee processing at origin" loading="lazy" decoding="async" />
             </div>
 
             <div className="intenso-story-copy">
