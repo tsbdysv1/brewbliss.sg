@@ -426,6 +426,65 @@ div {
   object-fit: cover;
 }
 
+.intenso-story-section {
+  margin-top: clamp(26px, 3.4vw, 44px);
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.intenso-story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(26px, 4vw, 64px);
+  align-items: stretch;
+}
+
+.intenso-story-media {
+  overflow: hidden;
+}
+
+.intenso-story-media img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+}
+
+.intenso-story-copy {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: clamp(6px, 1vw, 14px) 0;
+}
+
+.intenso-story-copy h2 {
+  margin: 0;
+  color: #2e1f19;
+  font-size: clamp(1.6rem, 2.3vw, 2.2rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.intenso-story-body {
+  margin-top: clamp(14px, 1.8vw, 22px);
+  display: grid;
+  gap: 12px;
+}
+
+.intenso-story-body p {
+  margin: 0;
+  color: #4b3932;
+  font-size: clamp(1rem, 1.18vw, 1.08rem);
+  line-height: 1.72;
+}
+
+.intenso-story-cta {
+  margin-top: auto;
+  align-self: flex-end;
+  background: #ffffff;
+}
+
 .site-header-bar,
 .topbar {
   display: flex;
@@ -2105,7 +2164,8 @@ h3 {
   .related-grid,
   .contact-action-grid,
   .store-page-shell,
-  .editorial-hero-grid {
+  .editorial-hero-grid,
+  .intenso-story-grid {
     grid-template-columns: 1fr;
     display: grid;
   }
@@ -2746,6 +2806,38 @@ h3 {
   .footer-grid {
     gap: 20px;
   }
+
+  .intenso-story-section {
+    margin-top: 20px;
+  }
+
+  .intenso-story-grid {
+    gap: 16px;
+  }
+
+  .intenso-story-copy {
+    padding: 0;
+  }
+
+  .intenso-story-copy h2 {
+    font-size: clamp(1.35rem, 5.8vw, 1.8rem);
+  }
+
+  .intenso-story-body {
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .intenso-story-body p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .intenso-story-cta {
+    align-self: stretch;
+    min-height: 46px;
+    margin-top: 16px;
+  }
 }
 
 @media (max-width: 540px) {
@@ -2926,6 +3018,22 @@ h3 {
   .brewbliss-experience-content {
     gap: 12px;
     margin-top: 18px;
+  }
+
+  .intenso-story-section {
+    margin-top: 16px;
+  }
+
+  .intenso-story-grid {
+    gap: 12px;
+  }
+
+  .intenso-story-body {
+    gap: 9px;
+  }
+
+  .intenso-story-cta {
+    margin-top: 14px;
   }
 
   .brewbliss-experience-copy p,

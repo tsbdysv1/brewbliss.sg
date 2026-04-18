@@ -179,6 +179,39 @@ function HomePage() {
           <SignatureCollectionSection />
         </div>
 
+        <section className="intenso-story-section" aria-labelledby="intenso-story-title">
+          <div className="intenso-story-grid">
+            <div className="intenso-story-media" aria-hidden="true">
+              <img src="/hero/hero-slide-4.png" alt="" />
+            </div>
+
+            <div className="intenso-story-copy">
+              <h2 id="intenso-story-title">Vì sao BrewBliss chọn Intenso?</h2>
+
+              <div className="intenso-story-body">
+                <p>
+                  Ngay từ những ngày đầu, tụi mình đã thử rất nhiều loại cà phê để tìm ra hương vị phù hợp nhất cho
+                  BrewBliss.
+                </p>
+                <p>Không chỉ là “ngon”, tụi mình cần một dòng cà phê có thể đồng hành lâu dài.</p>
+                <p>Và Intenso là câu trả lời.</p>
+                <p>
+                  Không chỉ cung cấp cà phê chất lượng cao, Intenso còn liên tục nghiên cứu và phát triển những
+                  profile hương vị mới — phù hợp với xu hướng cà phê hiện đại.
+                </p>
+                <p>
+                  Sau nhiều lần thử, tụi mình đã tìm được những blend thật sự “chạm”.<br />
+                  Và tin rằng, bạn cũng sẽ cảm nhận được điều đó trong từng ly cà phê tại BrewBliss.
+                </p>
+              </div>
+
+              <Link to="/collection" className="brewbliss-experience-link intenso-story-cta" aria-label="Tìm hiểu thêm về Collection của BrewBliss">
+                Tìm hiểu thêm
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className="section-block home-menu-cta-section" aria-labelledby="home-menu-cta-title">
           <div className="section-heading home-menu-cta-heading">
             <p className="eyebrow">Curated on home</p>
