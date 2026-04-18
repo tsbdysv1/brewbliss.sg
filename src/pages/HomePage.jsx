@@ -204,7 +204,7 @@ function HomePage() {
               </div>
 
               <Link to="/collection" className="brewbliss-experience-link intenso-story-cta" aria-label="Tìm hiểu thêm về Collection của BrewBliss">
-                Tìm hiểu thêm
+tìm hiểu
               </Link>
             </div>
           </div>
