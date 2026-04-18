@@ -12,5 +12,6 @@ export const stores = [
     phoneNumber: siteConfig.phoneNumber,
     hoursLabel: siteConfig.hoursLabel,
     embedMapUrl: siteConfig.mapLink,
+    featuredImage: '/hero/hero-slide-1.jpg',
   },
 ]

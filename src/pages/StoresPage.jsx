@@ -10,7 +10,7 @@ function StoresPage() {
 
   usePageSeo({
     title: `Store | ${siteConfig.brandName}`,
-    description: `Tìm store của ${siteConfig.brandName} và xem địa chỉ, giờ mở cửa, bản đồ để ghé quán nhanh hơn.`,
+    description: `Tìm store của ${siteConfig.brandName} và xem địa chỉ, giờ mở cửa để ghé quán nhanh hơn.`,
     jsonLd: siteConfig.defaultJsonLd,
     pathname: '/cua-hang',
     image: siteConfig.seo.defaultImage,
@@ -20,50 +20,42 @@ function StoresPage() {
     <div className="page-shell">
       <SiteHeader />
 
-      <section className="section-block store-page-shell">
-        <div className="store-page-sidebar">
-          <p className="eyebrow sidebar-eyebrow">Store</p>
-          <h1>BrewBliss Store</h1>
-          <div className="store-list">
-            {stores.map((store) => (
-              <article key={store.slug} className="store-list-item active-store-item">
-                <div>
-                  <strong>{store.cityLabel}</strong>
-                  <p>{store.districtLabel}</p>
-                </div>
-                <span className="store-arrow">›</span>
-              </article>
-            ))}
-          </div>
+      <section className="section-block store-editorial-section" aria-labelledby="store-editorial-title">
+        <div className="store-editorial-grid">
+          <div className="store-editorial-copy">
+            <h1 id="store-editorial-title" className="store-editorial-title">
+              <span>BrewBliss</span>
+              <span>Nguyễn Trung Trực</span>
+            </h1>
 
-          <div className="store-address-summary">
-            <p className="card-label">Địa chỉ hiện tại</p>
-            <strong>{activeStore.address}</strong>
-            <p>{activeStore.hoursLabel}</p>
-            <div className="menu-card-actions">
+            <div className="store-editorial-info">
+              <p className="store-editorial-label">address:</p>
+              <p>
+                21 Nguyễn Trung Trực, Phường Bến Thành,
+                <br />
+                Thành Phố Hồ Chí Minh, Việt Nam
+              </p>
+
+              <p className="store-editorial-label">Opening Hours:</p>
+              <p>
+                7:00–22:00
+                <br />
+                Everyday.
+              </p>
+            </div>
+
+            <div className="store-editorial-actions">
               <a href={activeStore.mapLink} target="_blank" rel="noreferrer" className="solid-button">
-                Mở Google Maps
+                Mở Google map
               </a>
               <a href={buildPhoneHref(activeStore.phoneNumber)} className="outline-button">
-                Gọi quán
+                Liên hệ quán
               </a>
             </div>
           </div>
-        </div>
 
-        <div className="store-page-map-wrap">
-          <div className="store-map-card">
-            <div className="store-map-meta">
-              <strong>{activeStore.name}</strong>
-              <p>{activeStore.address}</p>
-            </div>
-            <iframe
-              title={`Bản đồ ${activeStore.name}`}
-              src={activeStore.embedMapUrl}
-              className="store-map-frame"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="store-editorial-image-wrap" aria-label={`${activeStore.name} featured image`}>
+            <img src={activeStore.featuredImage} alt={`${activeStore.name} - Nguyễn Trung Trực`} className="store-editorial-image" />
           </div>
         </div>
       </section>
