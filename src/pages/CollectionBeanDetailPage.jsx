@@ -43,7 +43,7 @@ function CollectionBeanDetailPage() {
 
       <section className="section-block product-detail-layout editorial-product-detail-layout bean-detail-layout">
         <div className="product-detail-media editorial-product-detail-media">
-          <img src={bean.image} alt={bean.name} className="product-detail-image editorial-product-detail-image" />
+          <img src={bean.image} alt={bean.name} className="product-detail-image editorial-product-detail-image" loading="eager" decoding="async" />
         </div>
 
         <div className="product-detail-main editorial-product-detail-main bean-detail-main">

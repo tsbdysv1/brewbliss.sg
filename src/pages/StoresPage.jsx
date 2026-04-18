@@ -59,7 +59,7 @@ function StoresPage() {
           </div>
 
           <div className="store-editorial-image-wrap" aria-label={`${activeStore.name} featured image`}>
-            <img src={activeStore.featuredImage} alt={`${activeStore.name} - Nguyễn Trung Trực`} className="store-editorial-image" />
+            <img src={activeStore.featuredImage} alt={`${activeStore.name} - Nguyễn Trung Trực`} className="store-editorial-image" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>

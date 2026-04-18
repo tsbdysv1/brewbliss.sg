@@ -168,7 +168,7 @@ function HomePage() {
               </div>
 
               <div className="brewbliss-experience-media">
-                <img src={activeExperienceContent.image} alt={activeExperienceContent.imageAlt} />
+                <img src={activeExperienceContent.image} alt={activeExperienceContent.imageAlt} loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -180,7 +180,7 @@ function HomePage() {
         <section className="intenso-story-section" aria-labelledby="intenso-story-title">
           <div className="intenso-story-grid">
             <div className="intenso-story-media" aria-hidden="true">
-              <img src="/hero/hero-slide-4.png" alt="" />
+              <img src="/hero/hero-slide-4.png" alt="" loading="lazy" decoding="async" />
             </div>
 
             <div className="intenso-story-copy">

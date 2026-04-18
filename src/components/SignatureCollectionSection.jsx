@@ -105,7 +105,7 @@ function SignatureCollectionSection({ showViewAll = true, headingLevel = 'h2', c
                   className="signature-collection-card"
                   aria-label={`Xem chi tiết ${item.name}`}
                 >
-                  <img src={item.image} alt={item.name} className="signature-collection-image" />
+                  <img src={item.image} alt={item.name} className="signature-collection-image" loading="lazy" decoding="async" />
                   <div className="signature-collection-card-overlay">
                     <div className="signature-collection-card-copy">
                       <h3>{item.name}</h3>

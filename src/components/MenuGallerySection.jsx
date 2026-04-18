@@ -95,7 +95,7 @@ function MenuGallerySection({ title, items, sectionId }) {
                 className="menu-gallery-card"
                 aria-label={`Xem chi tiết ${item.name}`}
               >
-                <img src={item.image} alt={item.name} className="menu-gallery-image" />
+                <img src={item.image} alt={item.name} className="menu-gallery-image" loading="lazy" decoding="async" />
                 <div className="menu-gallery-card-body">
                   <div className="menu-gallery-card-topline">
                     <h3>{item.name}</h3>

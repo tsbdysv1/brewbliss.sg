@@ -1,10 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 
+function normalizeLoopIndex(index, slideCount) {
+  if (slideCount <= 1) return 0
+  return (((index - 1) % slideCount) + slideCount) % slideCount + 1
+}
+
 function HeroSlider({ slides = [], autoPlayMs = 5000 }) {
   const safeSlides = useMemo(() => slides.filter(Boolean), [slides])
   const [activeIndex, setActiveIndex] = useState(1)
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true)
+  const [isPageVisible, setIsPageVisible] = useState(
+    () => typeof document === 'undefined' || document.visibilityState !== 'hidden',
+  )
   const resetTimeoutRef = useRef(null)
+  const syncTransitionTimeoutRef = useRef(null)
 
   const slideCount = safeSlides.length
   const visualSlides = useMemo(() => {
@@ -29,18 +38,70 @@ function HeroSlider({ slides = [], autoPlayMs = 5000 }) {
   useEffect(() => {
     if (slideCount <= 1) return undefined
 
+    const handleVisibilityChange = () => {
+      const visible = document.visibilityState !== 'hidden'
+      setIsPageVisible(visible)
+
+      if (!visible) return
+
+      setIsTransitionEnabled(false)
+      setActiveIndex((current) => normalizeLoopIndex(current, slideCount))
+
+      if (syncTransitionTimeoutRef.current) {
+        window.clearTimeout(syncTransitionTimeoutRef.current)
+      }
+
+      syncTransitionTimeoutRef.current = window.setTimeout(() => {
+        setIsTransitionEnabled(true)
+      }, 48)
+    }
+
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
+  }, [slideCount])
+
+  useEffect(() => {
+    if (slideCount <= 1 || !isPageVisible) return undefined
+
     const timer = window.setInterval(() => {
       setIsTransitionEnabled(true)
       setActiveIndex((current) => current + 1)
     }, autoPlayMs)
 
     return () => window.clearInterval(timer)
-  }, [autoPlayMs, slideCount])
+  }, [autoPlayMs, isPageVisible, slideCount])
+
+  useEffect(() => {
+    if (slideCount <= 1) return undefined
+
+    const maxLoopIndex = slideCount + 1
+    if (activeIndex >= 0 && activeIndex <= maxLoopIndex) return undefined
+
+    setIsTransitionEnabled(false)
+    setActiveIndex((current) => normalizeLoopIndex(current, slideCount))
+
+    if (syncTransitionTimeoutRef.current) {
+      window.clearTimeout(syncTransitionTimeoutRef.current)
+    }
+
+    syncTransitionTimeoutRef.current = window.setTimeout(() => {
+      setIsTransitionEnabled(true)
+    }, 24)
+
+    return undefined
+  }, [activeIndex, slideCount])
 
   useEffect(() => {
     return () => {
       if (resetTimeoutRef.current) {
         window.clearTimeout(resetTimeoutRef.current)
+      }
+
+      if (syncTransitionTimeoutRef.current) {
+        window.clearTimeout(syncTransitionTimeoutRef.current)
       }
     }
   }, [])
@@ -70,6 +131,10 @@ function HeroSlider({ slides = [], autoPlayMs = 5000 }) {
   const handleTransitionEnd = () => {
     if (slideCount <= 1) return
 
+    if (resetTimeoutRef.current) {
+      window.clearTimeout(resetTimeoutRef.current)
+    }
+
     if (activeIndex === slideCount + 1) {
       setIsTransitionEnabled(false)
       resetTimeoutRef.current = window.setTimeout(() => {
@@ -92,7 +157,15 @@ function HeroSlider({ slides = [], autoPlayMs = 5000 }) {
       >
         {visualSlides.map((slide, index) => (
           <article key={`${slide.image}-${index}`} className="hero-slide">
-            <img src={slide.image} alt={slide.alt} className="hero-slide-image" />
+            <img
+              src={slide.image}
+              alt={slide.alt}
+              className="hero-slide-image"
+              loading="eager"
+              decoding="async"
+              fetchPriority={index === 1 ? 'high' : 'auto'}
+              draggable={false}
+            />
           </article>
         ))}
       </div>

@@ -129,7 +129,7 @@ function MenuItemDetailPage() {
 
       <section className="section-block product-detail-layout editorial-product-detail-layout">
         <div className="product-detail-media editorial-product-detail-media">
-          <img src={item.image} alt={item.name} className="product-detail-image editorial-product-detail-image" />
+          <img src={item.image} alt={item.name} className="product-detail-image editorial-product-detail-image" loading="eager" decoding="async" />
         </div>
 
         <div className="product-detail-main editorial-product-detail-main">

@@ -36,7 +36,7 @@ function CollectionPage() {
                 <article key={bean.slug} className="menu-catalog-card bean-collection-card">
                   <Link to={getBeanHref(bean)} aria-label={`View bean detail ${bean.name}`} className="bean-collection-card-link">
                     <div className="menu-catalog-image-wrap">
-                      <img src={bean.image} alt={bean.name} className="menu-catalog-image" />
+                      <img src={bean.image} alt={bean.name} className="menu-catalog-image" loading="lazy" decoding="async" />
                     </div>
                     <div className="menu-catalog-card-body">
                       <div className="menu-catalog-card-topline">

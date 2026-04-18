@@ -49,7 +49,7 @@ function MenuCatalogSection({ title, items, sectionId, isHighlighted = false, is
             <article key={item.slug} className="menu-catalog-card">
               <Link to={getMenuItemHref(item)} aria-label={`Xem chi tiết ${item.name}`}>
                 <div className="menu-catalog-image-wrap">
-                  <img src={item.image} alt={item.name} className="menu-catalog-image" />
+                  <img src={item.image} alt={item.name} className="menu-catalog-image" loading="lazy" decoding="async" />
                 </div>
               </Link>
               <div className="menu-catalog-card-body">

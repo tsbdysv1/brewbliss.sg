@@ -13,7 +13,7 @@ function MenuCategorySection({ category }) {
       <div className="menu-grid">
         {category.items.map((item) => (
           <article key={item.slug} className="menu-card">
-            <img src={item.image} alt={item.name} className="menu-card-image" />
+            <img src={item.image} alt={item.name} className="menu-card-image" loading="lazy" decoding="async" />
             <div className="menu-card-content">
               <div className="menu-card-topline">
                 <h3>{item.name}</h3>
