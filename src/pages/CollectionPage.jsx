@@ -22,16 +22,6 @@ function CollectionPage() {
 
       <Breadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Collection' }]} />
 
-      <section className="section-block collection-hero-section bean-collection-hero-section">
-        <div className="collection-hero-copy">
-          <p className="eyebrow">Coffee bean collection</p>
-          <h1>Collection</h1>
-          <p className="section-supporting-text">
-            Curated coffee bean lineup của BrewBliss: premium, tối giản và đồng bộ trải nghiệm với hệ menu hiện tại.
-          </p>
-        </div>
-      </section>
-
       <main className="collection-page-content" aria-label="BrewBliss bean collection catalog">
         {beanCollectionSections.map((section) => (
           <section key={section.slug} className="menu-catalog-section bean-collection-section" id={section.slug} aria-labelledby={`${section.slug}-title`}>
