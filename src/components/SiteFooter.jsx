@@ -12,7 +12,6 @@ function SiteFooter() {
         </div>
 
         <div className="footer-column">
-          <p className="footer-title">Ghé quán</p>
           <p className="footer-inline-label">Address:</p>
           <p className="footer-text">21 Nguyễn Trung Trực, Phường Bến Thành, TP. Hồ Chí Minh</p>
           <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="footer-link">
