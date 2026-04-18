@@ -48,21 +48,35 @@ function MenuPage() {
 
   useEffect(() => {
     const hash = location.hash.replace('#', '')
-    if (!hash || !validSectionIds.has(hash)) return
+    if (!hash || !validSectionIds.has(hash)) return undefined
 
-    const target = document.getElementById(hash)
-    if (!target) return
+    let frameOne = 0
+    let frameTwo = 0
 
-    const headerOffset = window.innerWidth <= 720 ? 124 : 136
-    const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset
+    const scrollToTarget = () => {
+      const target = document.getElementById(hash)
+      if (!target) return
 
-    window.scrollTo({
-      top: Math.max(targetTop, 0),
-      behavior: 'smooth',
+      const headerOffset = window.innerWidth <= 720 ? 124 : 136
+      const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset
+
+      window.scrollTo({
+        top: Math.max(targetTop, 0),
+        behavior: 'smooth',
+      })
+
+      setHighlightedSectionId(hash)
+    }
+
+    frameOne = window.requestAnimationFrame(() => {
+      frameTwo = window.requestAnimationFrame(scrollToTarget)
     })
 
-    setHighlightedSectionId(hash)
-  }, [location.key, location.hash, validSectionIds])
+    return () => {
+      window.cancelAnimationFrame(frameOne)
+      window.cancelAnimationFrame(frameTwo)
+    }
+  }, [location.hash, validSectionIds])
 
   usePageSeo({
     title: `Menu | ${siteConfig.brandName}`,
