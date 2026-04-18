@@ -1,8 +1,8 @@
 const beanImageMap = {
   metaRock: '/images/signature-collection/uploads-apr15/meta-rock-bean-bag.png',
   bossaNova: '/images/signature-collection/uploads-apr15/bossa-nova-bean-bag.png',
-  redRose: '/images/signature-collection/uploads-apr15/ca-phe-den.png',
-  summerPlum: '/images/signature-collection/uploads-apr15/cold-brew-mo.png',
+  redRose: '/images/signature-collection/uploads-apr15/red-rose-bean-bag.png',
+  summerPlum: '/images/signature-collection/uploads-apr15/summer-plum-bean-bag.png',
   costaRica: '/images/signature-collection/uploads-apr15/cold-drip.png',
   andBrew: '/images/signature-collection/uploads-apr15/cafe-muoi.png',
   countryHouse: '/images/signature-collection/uploads-apr15/cafe-dua.png',
