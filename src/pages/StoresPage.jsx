@@ -29,19 +29,23 @@ function StoresPage() {
             </h1>
 
             <div className="store-editorial-info">
-              <p className="store-editorial-label">address:</p>
-              <p>
-                21 Nguyễn Trung Trực, Phường Bến Thành,
-                <br />
-                Thành Phố Hồ Chí Minh, Việt Nam
-              </p>
+              <div className="store-editorial-info-group">
+                <p className="store-editorial-label">ADDRESS:</p>
+                <p className="store-editorial-info-text">
+                  21 Nguyễn Trung Trực, Phường Bến Thành,
+                  <br />
+                  Thành Phố Hồ Chí Minh, Việt Nam
+                </p>
+              </div>
 
-              <p className="store-editorial-label">Opening Hours:</p>
-              <p>
-                7:00–22:00
-                <br />
-                Everyday.
-              </p>
+              <div className="store-editorial-info-group">
+                <p className="store-editorial-label">OPENING HOURS:</p>
+                <p className="store-editorial-info-text">
+                  7:00–22:00
+                  <br />
+                  Everyday.
+                </p>
+              </div>
             </div>
 
             <div className="store-editorial-actions">
