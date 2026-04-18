@@ -469,10 +469,7 @@ export const menuCategories = [
     name: 'Juice',
     description: 'Nước ép cho nhóm khách cần đồ uống mát và nhẹ.',
     items: [
-      withDetails({ slug: 'juice-thom', name: 'Thơm', priceValue: 55000, category: 'Juice', image: imageLibrary.pineappleJuice, description: 'Pineapple juice' }, { ingredientsKey: 'juice', vi: 'Nước ép Thơm thiên về sự tươi và gọn, phù hợp với khách muốn một lựa chọn nhẹ hơn các món cà phê hoặc trà.', en: 'Pineapple juice feels bright and refreshing, making it a good light alternative to coffee or tea-based drinks.' }),
       withDetails({ slug: 'juice-cam', name: 'Cam', priceValue: 55000, category: 'Juice', image: imageLibrary.orangeJuice, description: 'Orange juice' }, { ingredientsKey: 'juice', vi: 'Nước ép Cam là lựa chọn quen thuộc và dễ tiếp cận nhất trong nhóm juice, phù hợp với nhiều thời điểm trong ngày.', en: 'Orange juice is the most familiar and accessible option in the juice lineup, suitable for many different moments of the day.' }),
-      withDetails({ slug: 'juice-ca-rot', name: 'Cà Rốt', priceValue: 55000, category: 'Juice', image: imageLibrary.carrotJuice, description: 'Carrot juice' }, { ingredientsKey: 'juice', vi: 'Nước ép Cà Rốt giúp menu có thêm lựa chọn thiên về sự nhẹ và lành hơn, dành cho khách muốn tránh caffeine.', en: 'Carrot juice gives the menu a lighter and calmer option for guests who want to avoid caffeine.' }),
-      withDetails({ slug: 'juice-mix', name: 'Mix', priceValue: 60000, category: 'Juice', image: imageLibrary.mixedJuice, description: 'Pick two juice' }, { ingredientsKey: 'juice', vi: 'Juice Mix tạo cảm giác linh hoạt và dễ tùy biến, phù hợp với khách muốn vị trái cây đa tầng hơn thay vì chỉ một loại nguyên liệu.', en: 'Juice Mix feels more flexible and layered, making it suitable for guests who want a fruit combination rather than a single-note juice.' }),
     ],
   },
 ]
