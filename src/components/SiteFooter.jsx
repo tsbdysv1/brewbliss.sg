@@ -4,20 +4,17 @@ import { buildPhoneHref } from '../utils/commerce'
 
 function SiteFooter() {
   return (
-    <footer className="site-footer section-block">
+    <footer className="site-footer section-block" aria-label="BrewBliss footer">
       <div className="footer-grid">
-        <div className="footer-column">
-          <img src="/brewbliss-wordmark.svg" alt="BrewBliss Coffee" className="footer-wordmark" />
-          <p className="footer-text">
-            BrewBliss là điểm hẹn cà phê, matcha, trà và pastry giữa trung tâm Sài Gòn — ấm áp,
-            hiện đại và dễ ghé lại.
-          </p>
+        <div className="footer-column footer-brand-column">
+          <h2 className="footer-brand-title">BrewBliss Coffee</h2>
+          <p className="footer-tagline">Brew your coffee, Brew your happiness</p>
         </div>
 
         <div className="footer-column">
           <p className="footer-title">Ghé quán</p>
-          <p className="footer-text">{siteConfig.address}</p>
-          <p className="footer-text">{siteConfig.hoursLabel}</p>
+          <p className="footer-inline-label">Address:</p>
+          <p className="footer-text">21 Nguyễn Trung Trực, Phường Bến Thành, TP. Hồ Chí Minh</p>
           <a href={siteConfig.mapLink} target="_blank" rel="noreferrer" className="footer-link">
             Mở Google Maps
           </a>

@@ -2021,29 +2021,63 @@ h3 {
 }
 
 .site-footer {
-  margin-top: 24px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: 28px;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  box-shadow: none;
+  padding: clamp(30px, 4.6vw, 62px) clamp(20px, 5vw, 72px);
+  background: #ffffff;
 }
 
 .footer-grid {
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.55fr 1fr 1fr 1fr;
+  gap: clamp(20px, 2.3vw, 40px);
+  align-items: start;
 }
 
 .footer-column {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
-.footer-wordmark {
-  width: 220px;
-  max-width: 100%;
+.footer-brand-column {
+  max-width: 440px;
+  padding-right: clamp(0px, 2vw, 24px);
+}
+
+.footer-brand-title {
+  margin: 0;
+  color: var(--primary);
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.footer-tagline {
+  margin: 10px 0 0;
+  color: #4d3a31;
+  font-size: clamp(1rem, 1.35vw, 1.16rem);
+  line-height: 1.66;
+}
+
+.footer-inline-label {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: #7c6155;
 }
 
 .footer-text,
 .footer-link,
 .muted-link {
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.72;
 }
 
 @media (max-width: 1024px) {
@@ -2056,11 +2090,22 @@ h3 {
   .detail-content-grid,
   .related-grid,
   .contact-action-grid,
-  .footer-grid,
   .store-page-shell,
   .editorial-hero-grid {
     grid-template-columns: 1fr;
     display: grid;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+  }
+
+  .footer-brand-column {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    margin-bottom: 10px;
+    padding-right: 0;
   }
 
   .site-header-inner {
@@ -3020,5 +3065,28 @@ h3 {
     height: auto;
     aspect-ratio: 5 / 4;
     min-height: clamp(320px, 72vw, 460px);
+  }
+
+  .site-footer {
+    padding: 26px 16px 34px;
+    margin-top: 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-column {
+    gap: 8px;
+  }
+
+  .footer-brand-title {
+    font-size: clamp(1.56rem, 6.2vw, 2rem);
+  }
+
+  .footer-tagline {
+    margin-top: 6px;
+    font-size: 0.98rem;
   }
 }
