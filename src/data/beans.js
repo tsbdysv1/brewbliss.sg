@@ -42,6 +42,23 @@ const beanCatalog = [
     },
     recommendedUsage:
       'Gợi ý pha 15g hạt / 240ml nước (tỉ lệ 1:16) cho pour over; espresso dùng 18g in, 36g out trong khoảng 27-30 giây.',
+    detailSections: {
+      description:
+        'Hương vị dark chocolate lan tỏa mạnh mẽ, ngọt dịu và tròn vị. Điểm xuyết chút thảo mộc nhẹ cùng hương rang ấm áp ở hậu vị, tạo nên một trải nghiệm đậm đà, sâu và kéo dài.',
+      characteristics: [
+        { label: 'ORIGIN', value: '100% Robusta – Lâm Đồng, Việt Nam' },
+        { label: 'ROAST LEVEL', value: 'Dark' },
+        { label: 'FLAVOR NOTES', value: 'Dark chocolate, woody, roasted nuts, full body' },
+        { label: 'PROCESS', value: 'Honey' },
+      ],
+      usage: {
+        suitableFor: 'Phù hợp: Phin, Espresso',
+        brewTitle: 'Phin (Vietnamese style)',
+        bullets: ['Tỷ lệ: 20g coffee / 80ml nước', 'Nhiệt độ: 94°C', 'Thời gian: 5–7 phút'],
+        brewMethod:
+          'Ủ 20g cà phê với 40ml nước trong 1 phút, khuấy nhẹ để bột thấm đều. Nén nhẹ, sau đó rót tiếp 20ml nước. Sau 2 phút, thêm 20ml nước còn lại, đậy nắp và chờ chiết xuất hoàn tất.',
+      },
+    },
   },
   {
     slug: 'bossa-nova',

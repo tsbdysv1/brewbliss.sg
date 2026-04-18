@@ -67,6 +67,41 @@ function CollectionBeanDetailPage() {
 
           <p className="product-detail-description">{bean.introduction}</p>
 
+          {bean.detailSections ? (
+            <section className="bean-detail-editorial-sections" aria-label="Detailed bean information">
+              <article className="bean-detail-editorial-section">
+                <h2>Mô tả</h2>
+                <p>{bean.detailSections.description}</p>
+              </article>
+
+              <article className="bean-detail-editorial-section">
+                <h2>Bean characteristics</h2>
+                <dl className="bean-detail-editorial-list">
+                  {bean.detailSections.characteristics.map((item) => (
+                    <div key={item.label} className="bean-detail-editorial-item">
+                      <dt className="bean-detail-editorial-label">{item.label}</dt>
+                      <dd className="bean-detail-editorial-value">{item.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </article>
+
+              <article className="bean-detail-editorial-section">
+                <h2>Recommended usage</h2>
+                <p className="bean-detail-editorial-intro">{bean.detailSections.usage.suitableFor}</p>
+                <h3 className="bean-detail-editorial-subheading">{bean.detailSections.usage.brewTitle}</h3>
+                <ul className="bean-detail-editorial-bullets">
+                  {bean.detailSections.usage.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+                <p className="bean-detail-editorial-brew-note">
+                  <strong>Cách pha:</strong> {bean.detailSections.usage.brewMethod}
+                </p>
+              </article>
+            </section>
+          ) : null}
+
           {!bean.hideBeanQuantitySection ? (
             <div className="product-customization-flow bean-customization-flow" aria-label="Bean quantity options">
               <section className="product-option-section">
@@ -89,34 +124,36 @@ function CollectionBeanDetailPage() {
             </div>
           ) : null}
 
-          <section className="bean-detail-info-grid" aria-label="Bean characteristics and usage">
-            <article className="bean-detail-info-card">
-              <h2>Bean characteristics</h2>
-              <ul className="bean-detail-list">
-                <li>
-                  <span>Origin</span>
-                  <strong>{bean.characteristics.origin}</strong>
-                </li>
-                <li>
-                  <span>Roast level</span>
-                  <strong>{bean.characteristics.roastLevel}</strong>
-                </li>
-                <li>
-                  <span>Flavor notes</span>
-                  <strong>{bean.characteristics.flavorNotes}</strong>
-                </li>
-                <li>
-                  <span>Process</span>
-                  <strong>{bean.characteristics.process}</strong>
-                </li>
-              </ul>
-            </article>
+          {!bean.detailSections ? (
+            <section className="bean-detail-info-grid" aria-label="Bean characteristics and usage">
+              <article className="bean-detail-info-card">
+                <h2>Bean characteristics</h2>
+                <ul className="bean-detail-list">
+                  <li>
+                    <span>Origin</span>
+                    <strong>{bean.characteristics.origin}</strong>
+                  </li>
+                  <li>
+                    <span>Roast level</span>
+                    <strong>{bean.characteristics.roastLevel}</strong>
+                  </li>
+                  <li>
+                    <span>Flavor notes</span>
+                    <strong>{bean.characteristics.flavorNotes}</strong>
+                  </li>
+                  <li>
+                    <span>Process</span>
+                    <strong>{bean.characteristics.process}</strong>
+                  </li>
+                </ul>
+              </article>
 
-            <article className="bean-detail-info-card">
-              <h2>Recommended usage</h2>
-              <p>{bean.recommendedUsage}</p>
-            </article>
-          </section>
+              <article className="bean-detail-info-card">
+                <h2>Recommended usage</h2>
+                <p>{bean.recommendedUsage}</p>
+              </article>
+            </section>
+          ) : null}
 
           <div className="product-detail-actions">
             <Link to="/collection" className="outline-button inline-return-link">
