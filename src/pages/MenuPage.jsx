@@ -8,9 +8,10 @@ import { getSignatureCollectionItems, menuCategories } from '../data/menu'
 import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 
-const menuSectionOrder = ['espresso-bar', 'vietnamese-coffee', 'brew-bar', 'hand-drip', 'matcha', 'tea', 'other-drinks', 'juice', 'pastries']
+const menuSectionOrder = ['seasonal-drinks', 'espresso-bar', 'vietnamese-coffee', 'brew-bar', 'hand-drip', 'matcha', 'tea', 'other-drinks', 'juice', 'pastries']
 
 const sectionTitleMap = {
+  'seasonal-drinks': 'Seasonal Drinks',
   'espresso-bar': 'Espresso Bar',
   'vietnamese-coffee': 'Vietnamese Coffee Bar',
   'brew-bar': 'Brew Bar',

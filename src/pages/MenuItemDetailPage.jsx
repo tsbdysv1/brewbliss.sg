@@ -32,6 +32,8 @@ const ICED_ONLY_SLUGS = new Set([
   'lemon-honey-matcha-full',
   'lemon-honey-matcha-summer',
   'coco-matcha',
+  'cafe-sua-tuoi-suong-sao',
+  'tra-sua-suong-sao',
 ])
 const HIDE_MILK_AND_SUGAR_CATEGORY_SLUGS = new Set(['brew-bar', 'hand-drip'])
 const HIDE_ONLY_MILK_CATEGORY_SLUGS = new Set(['tea', 'juice'])

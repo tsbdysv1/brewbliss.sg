@@ -43,6 +43,8 @@ const imageLibrary = {
   orangeJuice: '/images/signature-collection/uploads-apr15/cam.png',
   carrotJuice: '/images/signature-collection/uploads-apr15/ca-rot.png',
   mixedJuice: '/images/signature-collection/uploads-apr15/juice-mix.png',
+  cafeSuaTuoiSuongSao: '/images/signature-collection/uploads-apr15/ca-phe-sua.png',
+  traSuaSuongSao: '/images/signature-collection/uploads-apr15/hojicha-latte.png',
 }
 
 const INGREDIENT_LIBRARY = {
@@ -126,6 +128,14 @@ const INGREDIENT_LIBRARY = {
     vi: ['Chocolate hoặc cacao', 'Sữa tươi'],
     en: ['Chocolate or cocoa', 'Fresh milk'],
   },
+  seasonalCoffeeGrassJelly: {
+    vi: ['Cà phê phin Việt Nam', 'Sữa tươi', 'Sương sáo', 'Đá'],
+    en: ['Vietnamese phin coffee', 'Fresh milk', 'Grass jelly', 'Ice'],
+  },
+  seasonalMilkTeaGrassJelly: {
+    vi: ['Trà đen', 'Sữa', 'Sương sáo', 'Đá'],
+    en: ['Black tea', 'Milk', 'Grass jelly', 'Ice'],
+  },
   juice: {
     vi: ['Trái cây tươi hoặc nước ép trái cây', 'Đá'],
     en: ['Fresh fruit or fruit juice', 'Ice'],
@@ -166,6 +176,45 @@ function withDetails(item, detailConfig) {
 }
 
 export const menuCategories = [
+  {
+    slug: 'seasonal-drinks',
+    name: 'Seasonal Drinks',
+    description: 'Các món theo mùa mát, mềm và dễ uống với sương sáo.',
+    items: [
+      withDetails(
+        {
+          slug: 'cafe-sua-tuoi-suong-sao',
+          name: 'Cafe Sữa Tươi Sương Sáo',
+          priceValue: 65000,
+          category: 'Seasonal Drinks',
+          image: imageLibrary.cafeSuaTuoiSuongSao,
+          description: 'Vietnamese phin coffee, fresh milk, grass jelly',
+          badges: ['Seasonal'],
+        },
+        {
+          ingredientsKey: 'seasonalCoffeeGrassJelly',
+          vi: 'Cafe Sữa Tươi Sương Sáo kết hợp nền cà phê phin Việt Nam với sữa tươi và sương sáo, tạo cảm giác mát, mềm và vừa đủ đậm vị cà phê.',
+          en: 'Cafe Sữa Tươi Sương Sáo combines Vietnamese phin coffee with fresh milk and grass jelly for a cool, smooth drink that still keeps a clear coffee character.',
+        },
+      ),
+      withDetails(
+        {
+          slug: 'tra-sua-suong-sao',
+          name: 'Trà Sữa Sương Sáo',
+          priceValue: 65000,
+          category: 'Seasonal Drinks',
+          image: imageLibrary.traSuaSuongSao,
+          description: 'Black tea, milk, grass jelly',
+          badges: ['Seasonal'],
+        },
+        {
+          ingredientsKey: 'seasonalMilkTeaGrassJelly',
+          vi: 'Trà Sữa Sương Sáo dùng nền trà đen cùng sữa và sương sáo để tạo một ly trà sữa gọn, mát và dễ uống theo đúng tinh thần seasonal của BrewBliss.',
+          en: 'Trà Sữa Sương Sáo uses black tea, milk, and grass jelly for a clean, cool milk tea that fits BrewBliss seasonal minimalism.',
+        },
+      ),
+    ],
+  },
   {
     slug: 'featured',
     name: 'Món nổi bật',
