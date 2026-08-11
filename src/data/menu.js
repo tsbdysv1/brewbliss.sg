@@ -432,7 +432,7 @@ export const menuCategories = [
       withDetails({ slug: 'mocha', name: 'Mocha', priceValue: 80000, category: 'Espresso Bar', image: imageLibrary.mocha, description: 'Two espresso shots, milk, cocoa powder' }, { ingredientsKey: 'mocha', vi: 'Mocha là điểm giao giữa cà phê và chocolate, dành cho khách thích đồ uống ngọt vừa và mềm hơn các món espresso truyền thống.', en: 'Mocha sits between coffee and chocolate, making it ideal for guests who enjoy a sweeter and softer espresso-style drink.' }),
       withDetails({ slug: 'orange-espresso-tonic', name: 'Cinnamon Pear Espresso Tonic', priceValue: 75000, category: 'Espresso Bar', image: imageLibrary.orangeEspressoTonic, description: 'Two espresso shots, tonic, orange juice' }, { ingredientsKey: 'orangeEspressoTonic', vi: 'Cinnamon Pear Espresso Tonic thiên về sự tươi, sáng và giàu độ tương phản giữa cà phê, lê quế và tonic. Đây là món rất hợp với hình ảnh quán hiện đại và nhóm khách thích đồ uống “specialty-feel”.', en: 'Cinnamon Pear Espresso Tonic is bright, sparkling, and contrast-driven, combining coffee, cinnamon pear notes, and tonic into a more modern specialty-style drink.' }),
       withDetails({ slug: 'salted-caramel-full', name: 'Salted Caramel', priceValue: 80000, category: 'Espresso Bar', image: imageLibrary.saltedCaramel, description: 'Two espresso shots, salted caramel sauce, milk' }, { ingredientsKey: 'saltedCaramel', vi: 'Salted Caramel có profile ngọt êm nhưng không quá đơn điệu nhờ điểm mặn nhẹ ở cuối. Món này thường hợp với khách mới thử quán hoặc muốn một ly dễ uống nhưng vẫn có dấu ấn.', en: 'Salted Caramel has a soft sweet profile with a gentle salty finish, making it a strong choice for first-time guests who want something approachable yet memorable.' }),
-      withDetails({ slug: 'creamy-bliss', name: 'Creamy Bliss', priceValue: 65000, category: 'Espresso Bar', image: imageLibrary.creamyBliss, description: '2 espresso shots, condensed milk, cream' }, { ingredientsKey: 'creamyBliss', vi: 'Creamy Bliss gợi cảm giác mềm, mượt và thư giãn. Đây là kiểu món thiên về texture và độ dễ chịu hơn là độ gắt của cà phê.', en: 'Creamy Bliss leans into softness, texture, and comfort. It is a more mellow drink built around creaminess rather than sharp coffee intensity.' }),
+      withDetails({ slug: 'creamy-bliss', name: 'Creamy Bliss', priceValue: 70000, category: 'Espresso Bar', image: imageLibrary.creamyBliss, description: '2 espresso shots, condensed milk, cream' }, { ingredientsKey: 'creamyBliss', vi: 'Creamy Bliss gợi cảm giác mềm, mượt và thư giãn. Đây là kiểu món thiên về texture và độ dễ chịu hơn là độ gắt của cà phê.', en: 'Creamy Bliss leans into softness, texture, and comfort. It is a more mellow drink built around creaminess rather than sharp coffee intensity.' }),
     ],
   },
   {
@@ -528,10 +528,15 @@ export const menuExtras = [
   { label: 'Oat milk', priceValue: 10000 },
 ]
 
+const HIDDEN_MENU_ITEM_SLUGS = new Set(['cold-drip', 'coco-matcha', 'hojicha-latte'])
 const HIDDEN_MENU_CATEGORY_SLUGS = new Set(['seasonal-drinks', 'juice'])
 
 export const visibleMenuCategories = menuCategories
   .filter((category) => category.slug !== 'featured' && !HIDDEN_MENU_CATEGORY_SLUGS.has(category.slug))
+  .map((category) => ({
+    ...category,
+    items: category.items.filter((item) => !HIDDEN_MENU_ITEM_SLUGS.has(item.slug)),
+  }))
 
 const categoryBySlug = new Map(visibleMenuCategories.map((category) => [category.slug, category]))
 
