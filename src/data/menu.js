@@ -529,7 +529,7 @@ export const menuExtras = [
 ]
 
 const HIDDEN_MENU_ITEM_SLUGS = new Set(['cold-drip', 'coco-matcha', 'hojicha-latte'])
-const HIDDEN_MENU_CATEGORY_SLUGS = new Set(['seasonal-drinks', 'juice'])
+const HIDDEN_MENU_CATEGORY_SLUGS = new Set(['seasonal-drinks'])
 
 export const visibleMenuCategories = menuCategories
   .filter((category) => category.slug !== 'featured' && !HIDDEN_MENU_CATEGORY_SLUGS.has(category.slug))
