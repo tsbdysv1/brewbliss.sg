@@ -224,7 +224,7 @@ export const menuCategories = [
         {
           slug: 'salted-caramel',
           name: 'Salted Caramel',
-          priceValue: 75000,
+          priceValue: 80000,
           category: 'Espresso Bar',
           image: imageLibrary.saltedCaramel,
           description: 'Món cà phê sữa ngọt dịu, hợp với khách thích vị êm và dễ uống.',
@@ -240,7 +240,7 @@ export const menuCategories = [
         {
           slug: 'cold-brew-mo',
           name: 'Cold Brew Mơ',
-          priceValue: 65000,
+          priceValue: 70000,
           category: 'Summer Specials',
           image: imageLibrary.coldBrewMo,
           description: 'Cold brew trái cây có cảm giác mát, nhẹ và rất hợp những ngày nóng ở Sài Gòn.',
@@ -256,7 +256,7 @@ export const menuCategories = [
         {
           slug: 'lemon-honey-matcha',
           name: 'Lemon Honey Matcha',
-          priceValue: 65000,
+          priceValue: 70000,
           category: 'Matcha',
           image: imageLibrary.lemonHoneyMatcha,
           description: 'Matcha sáng vị, có thêm chanh mật ong giúp tổng thể tươi và dễ nhớ.',
@@ -340,7 +340,7 @@ export const menuCategories = [
         {
           slug: 'lemon-honey-matcha-summer',
           name: 'Lemon Honey Matcha',
-          priceValue: 65000,
+          priceValue: 70000,
           category: 'Summer Specials',
           image: imageLibrary.lemonHoneyMatcha,
         description: 'Phiên bản matcha có độ tươi và nhẹ, phù hợp thời tiết Sài Gòn.',
@@ -377,7 +377,7 @@ export const menuCategories = [
         {
           slug: 'lava-croissant',
           name: 'Lava Croissant',
-          priceValue: 65000,
+          priceValue: 70000,
           category: 'Pastries',
           image: imageLibrary.lavaCroissant,
         description: 'Một lựa chọn pastry đậm đà hơn cho khách thích bánh có điểm nhấn.',
@@ -407,7 +407,7 @@ export const menuCategories = [
         {
           slug: 'cinnamon-roll',
           name: 'Cinnamon Roll',
-          priceValue: 60000,
+          priceValue: 65000,
           category: 'Pastries',
           image: imageLibrary.cinnamonRoll,
         description: 'Món bánh dễ tạo cảm giác ấm áp, hợp vibe quán cafe hiện đại.',
@@ -429,9 +429,9 @@ export const menuCategories = [
       withDetails({ slug: 'americano', name: 'Americano', priceValue: 55000, category: 'Espresso Bar', image: imageLibrary.americano, description: 'Two espresso shots, water' }, { ingredientsKey: 'americano', vi: 'Americano giữ được phần lõi của espresso nhưng dễ tiếp cận hơn nhờ kết cấu loãng và nhẹ hơn. Đây là lựa chọn phù hợp cho người thích cà phê đen theo hướng clean.', en: 'Americano keeps the core character of espresso while feeling lighter and easier to drink. It is a good choice for guests who like black coffee with a cleaner profile.' }),
       withDetails({ slug: 'latte', name: 'Latte', priceValue: 65000, category: 'Espresso Bar', image: imageLibrary.latte, description: 'Two espresso shots, milk' }, { ingredientsKey: 'latte', vi: 'Latte là món cân bằng và dễ uống nhất trong nhóm espresso-based drinks. Sữa làm mềm vị cà phê, tạo ra một trải nghiệm nhẹ nhàng, mượt và quen thuộc.', en: 'Latte is one of the most balanced and approachable espresso-based drinks. Milk softens the coffee, creating a smooth and familiar drinking experience.' }),
       withDetails({ slug: 'cappuccino', name: 'Cappuccino', priceValue: 65000, category: 'Espresso Bar', image: imageLibrary.cappuccino, description: 'Two espresso shots, milk' }, { ingredientsKey: 'cappuccino', vi: 'Cappuccino giữ vị espresso rõ hơn latte nhờ lớp foam dày và kết cấu gọn hơn. Đây là lựa chọn phù hợp cho khách muốn sự cân bằng nhưng vẫn thích nét cà phê nổi bật hơn.', en: 'Cappuccino keeps espresso more pronounced than a latte thanks to its thicker foam and tighter structure. It suits guests who want balance with a slightly stronger coffee presence.' }),
-      withDetails({ slug: 'mocha', name: 'Mocha', priceValue: 70000, category: 'Espresso Bar', image: imageLibrary.mocha, description: 'Two espresso shots, milk, cocoa powder' }, { ingredientsKey: 'mocha', vi: 'Mocha là điểm giao giữa cà phê và chocolate, dành cho khách thích đồ uống ngọt vừa và mềm hơn các món espresso truyền thống.', en: 'Mocha sits between coffee and chocolate, making it ideal for guests who enjoy a sweeter and softer espresso-style drink.' }),
-      withDetails({ slug: 'orange-espresso-tonic', name: 'Orange Espresso Tonic', priceValue: 65000, category: 'Espresso Bar', image: imageLibrary.orangeEspressoTonic, description: 'Two espresso shots, tonic, orange juice' }, { ingredientsKey: 'orangeEspressoTonic', vi: 'Orange Espresso Tonic thiên về sự tươi, sáng và giàu độ tương phản giữa cà phê, citrus và tonic. Đây là món rất hợp với hình ảnh quán hiện đại và nhóm khách thích đồ uống “specialty-feel”.', en: 'Orange Espresso Tonic is bright, sparkling, and contrast-driven, combining coffee, citrus, and tonic into a more modern specialty-style drink.' }),
-      withDetails({ slug: 'salted-caramel-full', name: 'Salted Caramel', priceValue: 75000, category: 'Espresso Bar', image: imageLibrary.saltedCaramel, description: 'Two espresso shots, salted caramel sauce, milk' }, { ingredientsKey: 'saltedCaramel', vi: 'Salted Caramel có profile ngọt êm nhưng không quá đơn điệu nhờ điểm mặn nhẹ ở cuối. Món này thường hợp với khách mới thử quán hoặc muốn một ly dễ uống nhưng vẫn có dấu ấn.', en: 'Salted Caramel has a soft sweet profile with a gentle salty finish, making it a strong choice for first-time guests who want something approachable yet memorable.' }),
+      withDetails({ slug: 'mocha', name: 'Mocha', priceValue: 80000, category: 'Espresso Bar', image: imageLibrary.mocha, description: 'Two espresso shots, milk, cocoa powder' }, { ingredientsKey: 'mocha', vi: 'Mocha là điểm giao giữa cà phê và chocolate, dành cho khách thích đồ uống ngọt vừa và mềm hơn các món espresso truyền thống.', en: 'Mocha sits between coffee and chocolate, making it ideal for guests who enjoy a sweeter and softer espresso-style drink.' }),
+      withDetails({ slug: 'orange-espresso-tonic', name: 'Cinnamon Pear Espresso Tonic', priceValue: 75000, category: 'Espresso Bar', image: imageLibrary.orangeEspressoTonic, description: 'Two espresso shots, tonic, orange juice' }, { ingredientsKey: 'orangeEspressoTonic', vi: 'Cinnamon Pear Espresso Tonic thiên về sự tươi, sáng và giàu độ tương phản giữa cà phê, lê quế và tonic. Đây là món rất hợp với hình ảnh quán hiện đại và nhóm khách thích đồ uống “specialty-feel”.', en: 'Cinnamon Pear Espresso Tonic is bright, sparkling, and contrast-driven, combining coffee, cinnamon pear notes, and tonic into a more modern specialty-style drink.' }),
+      withDetails({ slug: 'salted-caramel-full', name: 'Salted Caramel', priceValue: 80000, category: 'Espresso Bar', image: imageLibrary.saltedCaramel, description: 'Two espresso shots, salted caramel sauce, milk' }, { ingredientsKey: 'saltedCaramel', vi: 'Salted Caramel có profile ngọt êm nhưng không quá đơn điệu nhờ điểm mặn nhẹ ở cuối. Món này thường hợp với khách mới thử quán hoặc muốn một ly dễ uống nhưng vẫn có dấu ấn.', en: 'Salted Caramel has a soft sweet profile with a gentle salty finish, making it a strong choice for first-time guests who want something approachable yet memorable.' }),
       withDetails({ slug: 'creamy-bliss', name: 'Creamy Bliss', priceValue: 65000, category: 'Espresso Bar', image: imageLibrary.creamyBliss, description: '2 espresso shots, condensed milk, cream' }, { ingredientsKey: 'creamyBliss', vi: 'Creamy Bliss gợi cảm giác mềm, mượt và thư giãn. Đây là kiểu món thiên về texture và độ dễ chịu hơn là độ gắt của cà phê.', en: 'Creamy Bliss leans into softness, texture, and comfort. It is a more mellow drink built around creaminess rather than sharp coffee intensity.' }),
     ],
   },
@@ -442,8 +442,8 @@ export const menuCategories = [
     items: [
       withDetails({ slug: 'cafe-den', name: 'Cafe Đen', priceValue: 50000, category: 'Vietnamese Coffee', image: imageLibrary.vietnameseBlack, description: 'Vietnamese phin coffee, sugar' }, { ingredientsKey: 'vietnameseBlack', vi: 'Cafe Đen là lựa chọn rõ vị, mạnh và quen thuộc nhất trong nhóm cà phê Việt. Món này phù hợp với khách thích profile đậm và ít bị làm mềm bởi sữa.', en: 'Cafe Đen is the clearest and boldest choice in the Vietnamese coffee lineup. It works well for guests who prefer a stronger coffee profile without milk.' }),
       withDetails({ slug: 'cafe-sua', name: 'Cafe Sữa', priceValue: 55000, category: 'Vietnamese Coffee', image: imageLibrary.vietnameseMilk, description: 'Vietnamese phin coffee, condensed milk' }, { ingredientsKey: 'vietnameseMilk', vi: 'Cafe Sữa là lựa chọn rất dễ tiếp cận, vừa giữ được hương cà phê Việt vừa có độ ngọt và mềm hơn nhờ nền sữa.', en: 'Cafe Sữa is an easy crowd-pleaser that keeps the character of Vietnamese coffee while feeling softer and sweeter thanks to the milk base.' }),
-      withDetails({ slug: 'bac-xiu', name: 'Bạc Xỉu', priceValue: 60000, category: 'Vietnamese Coffee', image: imageLibrary.bacXiu, description: 'Vietnamese phin coffee, condensed milk, milk' }, { ingredientsKey: 'bacXiu', vi: 'Bạc Xỉu phù hợp với khách thích hương cà phê nhẹ nhưng vẫn muốn trải nghiệm gần với đồ uống sữa ngọt và dễ uống.', en: 'Bạc Xỉu suits guests who want only a light coffee note and prefer a sweeter, milk-forward drink.' }),
-      withDetails({ slug: 'cafe-dua', name: 'Cafe Dừa', priceValue: 65000, category: 'Vietnamese Coffee', image: imageLibrary.coconutCoffee, description: 'Vietnamese phin coffee, coconut milk, milk' }, { ingredientsKey: 'coconutCoffee', vi: 'Cafe Dừa là món có tính gợi nhớ cao nhờ kết hợp cà phê với nền dừa béo nhẹ. Đây là lựa chọn hợp với khách muốn thứ gì đó “Việt nhưng fun hơn một chút”.', en: 'Cafe Dừa is memorable because it combines coffee with a light creamy coconut base. It is a great option for guests who want something recognizably Vietnamese with a playful twist.' }),
+      withDetails({ slug: 'bac-xiu', name: 'Bạc Xỉu', priceValue: 65000, category: 'Vietnamese Coffee', image: imageLibrary.bacXiu, description: 'Vietnamese phin coffee, condensed milk, milk' }, { ingredientsKey: 'bacXiu', vi: 'Bạc Xỉu phù hợp với khách thích hương cà phê nhẹ nhưng vẫn muốn trải nghiệm gần với đồ uống sữa ngọt và dễ uống.', en: 'Bạc Xỉu suits guests who want only a light coffee note and prefer a sweeter, milk-forward drink.' }),
+      withDetails({ slug: 'cafe-dua', name: 'Cafe Dừa', priceValue: 70000, category: 'Vietnamese Coffee', image: imageLibrary.coconutCoffee, description: 'Vietnamese phin coffee, coconut milk, milk' }, { ingredientsKey: 'coconutCoffee', vi: 'Cafe Dừa là món có tính gợi nhớ cao nhờ kết hợp cà phê với nền dừa béo nhẹ. Đây là lựa chọn hợp với khách muốn thứ gì đó “Việt nhưng fun hơn một chút”.', en: 'Cafe Dừa is memorable because it combines coffee with a light creamy coconut base. It is a great option for guests who want something recognizably Vietnamese with a playful twist.' }),
       withDetails({ slug: 'cafe-muoi', name: 'Cafe Muối', priceValue: 60000, category: 'Vietnamese Coffee', image: imageLibrary.saltedCoffee, description: 'Vietnamese phin coffee, salted foam' }, { ingredientsKey: 'saltedCoffee', vi: 'Cafe Muối giữ nền cà phê Việt quen thuộc nhưng thêm lớp cream mặn nhẹ tạo chiều sâu hơn ở hậu vị. Đây là món phù hợp cho khách thích sự khác biệt nhưng vẫn gần gũi.', en: 'Cafe Muối keeps the familiar base of Vietnamese coffee but adds a lightly salted cream layer for more depth in the finish. It is ideal for guests who want something distinctive yet familiar.' }),
     ],
   },
@@ -452,10 +452,10 @@ export const menuCategories = [
     name: 'Brew bar',
     description: 'Cold brew và cold drip cho khách thích vị cà phê gọn, mát và có chiều sâu.',
     items: [
-      withDetails({ slug: 'cold-brew', name: 'Cold Brew', priceValue: 50000, category: 'Brew Bar', image: imageLibrary.coldBrew, description: 'Traditional cold brew' }, { ingredientsKey: 'coldBrew', vi: 'Cold Brew nguyên bản mang cảm giác mượt, sạch và ít gắt hơn cà phê đá pha nhanh. Món này hợp với khách muốn vị cà phê lạnh rõ nhưng vẫn dễ uống lâu.', en: 'Cold Brew feels smooth, clean, and less sharp than a quickly brewed iced coffee. It works well for guests who want a clearer cold coffee profile that remains easy to sip over time.' }),
+      withDetails({ slug: 'cold-brew', name: 'Cold Brew', priceValue: 55000, category: 'Brew Bar', image: imageLibrary.coldBrew, description: 'Traditional cold brew' }, { ingredientsKey: 'coldBrew', vi: 'Cold Brew nguyên bản mang cảm giác mượt, sạch và ít gắt hơn cà phê đá pha nhanh. Món này hợp với khách muốn vị cà phê lạnh rõ nhưng vẫn dễ uống lâu.', en: 'Cold Brew feels smooth, clean, and less sharp than a quickly brewed iced coffee. It works well for guests who want a clearer cold coffee profile that remains easy to sip over time.' }),
       withDetails({ slug: 'cold-brew-cam-buoi', name: 'Cold Brew Cam Bưởi', priceValue: 65000, category: 'Brew Bar', image: imageLibrary.coldBrewCamBuoi, description: 'Cold brew, pomelo jam, Vietnamese orange juice' }, { ingredientsKey: 'fruitColdBrew', vi: 'Cam bưởi giúp nền cold brew sáng hơn, tạo cảm giác fresh và dễ tiếp cận hơn so với cold brew nguyên bản.', en: 'Orange and grapefruit notes brighten the cold brew base, making it feel fresher and more approachable than a classic cold brew.' }),
-      withDetails({ slug: 'cold-brew-chanh-vang', name: 'Cold Brew Chanh Vàng', priceValue: 65000, category: 'Brew Bar', image: imageLibrary.coldBrewChanhVang, description: 'Cold brew, yuzu jam' }, { ingredientsKey: 'fruitColdBrew', vi: 'Chanh vàng làm profile trở nên sắc và clean hơn, phù hợp với khách thích đồ uống lạnh thiên về sự gọn gàng và tỉnh táo.', en: 'Lemon gives this drink a brighter and cleaner edge, making it a good fit for guests who enjoy crisp and refreshing cold beverages.' }),
-      withDetails({ slug: 'cold-brew-mo-full', name: 'Cold Brew Mơ', priceValue: 65000, category: 'Brew Bar', image: imageLibrary.coldBrewMo, description: 'Cold brew, Hanoi apricot juice' }, { ingredientsKey: 'fruitColdBrew', vi: 'Cold Brew Mơ tạo cảm giác nhẹ, chua ngọt và khác biệt vừa đủ để nổi bật nhưng vẫn dễ uống với phần lớn khách.', en: 'Cold Brew Mơ feels light, sweet-tart, and distinctive enough to stand out while still staying approachable for a wide range of guests.' }),
+      withDetails({ slug: 'cold-brew-chanh-vang', name: 'Cold Brew Chanh Vàng', priceValue: 70000, category: 'Brew Bar', image: imageLibrary.coldBrewChanhVang, description: 'Cold brew, yuzu jam' }, { ingredientsKey: 'fruitColdBrew', vi: 'Chanh vàng làm profile trở nên sắc và clean hơn, phù hợp với khách thích đồ uống lạnh thiên về sự gọn gàng và tỉnh táo.', en: 'Lemon gives this drink a brighter and cleaner edge, making it a good fit for guests who enjoy crisp and refreshing cold beverages.' }),
+      withDetails({ slug: 'cold-brew-mo-full', name: 'Cold Brew Mơ', priceValue: 70000, category: 'Brew Bar', image: imageLibrary.coldBrewMo, description: 'Cold brew, Hanoi apricot juice' }, { ingredientsKey: 'fruitColdBrew', vi: 'Cold Brew Mơ tạo cảm giác nhẹ, chua ngọt và khác biệt vừa đủ để nổi bật nhưng vẫn dễ uống với phần lớn khách.', en: 'Cold Brew Mơ feels light, sweet-tart, and distinctive enough to stand out while still staying approachable for a wide range of guests.' }),
       withDetails({ slug: 'cold-drip', name: 'Cold Drip', priceValue: 65000, category: 'Brew Bar', image: imageLibrary.coldDrip, description: 'Cold drip tạo cảm giác craft hơn và phù hợp nhóm khách thích trải nghiệm.' }, { ingredientsKey: 'coldBrew', vi: 'Cold Drip có cảm giác thủ công và trải nghiệm hơn, phù hợp với khách thích tìm sự khác nhau giữa các phương pháp pha lạnh.', en: 'Cold Drip feels more craft-driven and experience-focused, making it suitable for guests interested in the differences between cold coffee brewing styles.' }),
     ],
   },
@@ -468,7 +468,7 @@ export const menuCategories = [
         {
           slug: 'ca-phe-thu-cong',
           name: 'Cà Phê Thủ Công',
-          priceValue: 75000,
+          priceValue: 80000,
           category: 'Hand Drip',
           image: imageLibrary.handDrip,
           description: 'Pour-over V60, seasonally selected beans. Chỉ phục vụ tại quán.',
@@ -486,10 +486,10 @@ export const menuCategories = [
     name: 'Matcha',
     description: 'Nhóm matcha khá mạnh và hợp với hình ảnh trẻ, sáng, dễ chụp.',
     items: [
-      withDetails({ slug: 'matcha-latte', name: 'Matcha Latte', priceValue: 70000, category: 'Matcha', image: imageLibrary.matcha, description: 'Matcha, milk' }, { ingredientsKey: 'matcha', vi: 'Matcha Latte là lựa chọn cơ bản nhưng hiệu quả trong nhóm matcha: vị trà xanh rõ, mềm hơn nhờ sữa và phù hợp với khách thích đồ uống ít cà phê.', en: 'Matcha Latte is a core matcha drink with clear tea character softened by milk, making it ideal for guests who prefer non-coffee beverages.' }),
-      withDetails({ slug: 'strawberry-matcha-latte', name: 'Strawberry Matcha Latte', priceValue: 70000, category: 'Matcha', image: imageLibrary.strawberryMatcha, description: 'Matcha, milk, strawberry jam' }, { ingredientsKey: 'fruitMatcha', vi: 'Strawberry Matcha Latte nổi bật ở màu sắc và layer, phù hợp với khách thích đồ uống bắt mắt, tươi và có chút playful.', en: 'Strawberry Matcha Latte stands out through color and layering, making it a playful and visually attractive option for guests.' }),
-      withDetails({ slug: 'salted-cream-matcha', name: 'Salted Cream Matcha', priceValue: 70000, category: 'Matcha', image: imageLibrary.saltedCreamMatcha, description: 'Matcha, milk, salted caramel foam' }, { ingredientsKey: 'fruitMatcha', vi: 'Salted Cream Matcha thêm độ dày và chiều sâu cho matcha truyền thống nhờ lớp cream mặn nhẹ ở trên, tạo cảm giác hiện đại và premium hơn.', en: 'Salted Cream Matcha adds body and depth to a classic matcha base through a lightly salted cream top, giving it a more modern and premium feel.' }),
-      withDetails({ slug: 'lemon-honey-matcha-full', name: 'Lemon Honey Matcha', priceValue: 65000, category: 'Matcha', image: imageLibrary.lemonHoneyMatcha, description: 'Matcha, honey, lemon juice' }, { ingredientsKey: 'fruitMatcha', vi: 'Lemon Honey Matcha làm profile matcha trở nên sáng và linh hoạt hơn, hợp với khách muốn một lựa chọn fresh hơn latte truyền thống.', en: 'Lemon Honey Matcha brightens the matcha profile and makes it feel more flexible and refreshing than a traditional latte version.' }),
+      withDetails({ slug: 'matcha-latte', name: 'Matcha Latte', priceValue: 75000, category: 'Matcha', image: imageLibrary.matcha, description: 'Matcha, milk' }, { ingredientsKey: 'matcha', vi: 'Matcha Latte là lựa chọn cơ bản nhưng hiệu quả trong nhóm matcha: vị trà xanh rõ, mềm hơn nhờ sữa và phù hợp với khách thích đồ uống ít cà phê.', en: 'Matcha Latte is a core matcha drink with clear tea character softened by milk, making it ideal for guests who prefer non-coffee beverages.' }),
+      withDetails({ slug: 'strawberry-matcha-latte', name: 'Strawberry Matcha Latte', priceValue: 75000, category: 'Matcha', image: imageLibrary.strawberryMatcha, description: 'Matcha, milk, strawberry jam' }, { ingredientsKey: 'fruitMatcha', vi: 'Strawberry Matcha Latte nổi bật ở màu sắc và layer, phù hợp với khách thích đồ uống bắt mắt, tươi và có chút playful.', en: 'Strawberry Matcha Latte stands out through color and layering, making it a playful and visually attractive option for guests.' }),
+      withDetails({ slug: 'salted-cream-matcha', name: 'Pistachio Cream Matcha', priceValue: 75000, category: 'Matcha', image: imageLibrary.saltedCreamMatcha, description: 'Matcha, milk, salted caramel foam' }, { ingredientsKey: 'fruitMatcha', vi: 'Pistachio Cream Matcha thêm độ dày và chiều sâu cho matcha truyền thống nhờ lớp pistachio cream ở trên, tạo cảm giác hiện đại và premium hơn.', en: 'Pistachio Cream Matcha adds body and depth to a classic matcha base through a pistachio cream top, giving it a more modern and premium feel.' }),
+      withDetails({ slug: 'lemon-honey-matcha-full', name: 'Lemon Honey Matcha', priceValue: 70000, category: 'Matcha', image: imageLibrary.lemonHoneyMatcha, description: 'Matcha, honey, lemon juice' }, { ingredientsKey: 'fruitMatcha', vi: 'Lemon Honey Matcha làm profile matcha trở nên sáng và linh hoạt hơn, hợp với khách muốn một lựa chọn fresh hơn latte truyền thống.', en: 'Lemon Honey Matcha brightens the matcha profile and makes it feel more flexible and refreshing than a traditional latte version.' }),
       withDetails({ slug: 'coco-matcha', name: 'Coco Matcha', priceValue: 65000, category: 'Matcha', image: imageLibrary.cocoMatcha, description: 'Matcha, coconut juice' }, { ingredientsKey: 'fruitMatcha', vi: 'Coco Matcha mang cảm giác nhiệt đới và mềm hơn, hợp với khách thích matcha nhưng muốn kết cấu dịu và vui hơn một chút.', en: 'Coco Matcha feels tropical and softer, making it a nice fit for guests who enjoy matcha but want a gentler and more playful texture.' }),
     ],
   },
@@ -498,10 +498,10 @@ export const menuCategories = [
     name: 'Tea',
     description: 'Trà trái cây cho nhóm khách cần lựa chọn nhẹ hơn cà phê.',
     items: [
-      withDetails({ slug: 'tra-vai', name: 'Trà Vải', priceValue: 60000, category: 'Tea', image: imageLibrary.lycheeTea, description: 'Jasmine tea, lychee' }, { ingredientsKey: 'fruitTea', vi: 'Trà Vải có hương thơm rõ và độ ngọt dễ chịu, phù hợp với khách muốn một món nhẹ, thanh và dễ tiếp cận.', en: 'Trà Vải has a fragrant and easy sweetness, making it a good light and approachable choice.' }),
-      withDetails({ slug: 'tra-cam-buoi', name: 'Trà Cam Bưởi', priceValue: 60000, category: 'Tea', image: imageLibrary.traCamBuoi, description: 'Oolong tea, pomelo, Vietnamese orange juice' }, { ingredientsKey: 'fruitTea', vi: 'Trà Cam Bưởi tạo cảm giác sáng và sạch hơn nhờ nhóm citrus, phù hợp với những ai thích trà trái cây thiên về sự tỉnh táo.', en: 'Trà Cam Bưởi feels brighter and cleaner thanks to its citrus profile, making it a solid choice for guests who like fruit tea with a crisp edge.' }),
+      withDetails({ slug: 'tra-vai', name: 'Trà Vải', priceValue: 65000, category: 'Tea', image: imageLibrary.lycheeTea, description: 'Jasmine tea, lychee' }, { ingredientsKey: 'fruitTea', vi: 'Trà Vải có hương thơm rõ và độ ngọt dễ chịu, phù hợp với khách muốn một món nhẹ, thanh và dễ tiếp cận.', en: 'Trà Vải has a fragrant and easy sweetness, making it a good light and approachable choice.' }),
+      withDetails({ slug: 'tra-cam-buoi', name: 'Trà Cam Bưởi', priceValue: 65000, category: 'Tea', image: imageLibrary.traCamBuoi, description: 'Oolong tea, pomelo, Vietnamese orange juice' }, { ingredientsKey: 'fruitTea', vi: 'Trà Cam Bưởi tạo cảm giác sáng và sạch hơn nhờ nhóm citrus, phù hợp với những ai thích trà trái cây thiên về sự tỉnh táo.', en: 'Trà Cam Bưởi feels brighter and cleaner thanks to its citrus profile, making it a solid choice for guests who like fruit tea with a crisp edge.' }),
       withDetails({ slug: 'tra-dau', name: 'Trà Dâu', priceValue: 65000, category: 'Tea', image: imageLibrary.strawberryTea, description: 'Oolong tea, strawberry' }, { ingredientsKey: 'fruitTea', vi: 'Trà Dâu thiên về màu sắc và sự vui mắt, phù hợp với nhóm khách trẻ hoặc khách thích đồ uống ngọt nhẹ và dễ chụp hình.', en: 'Trà Dâu leans into color and playfulness, making it well suited for younger guests or anyone who enjoys light, photogenic fruit tea.' }),
-      withDetails({ slug: 'tra-me', name: 'Trà Me', priceValue: 60000, category: 'Tea', image: imageLibrary.tamarindTea, description: 'Jasmine tea, tamarind, elderflower' }, { ingredientsKey: 'fruitTea', vi: 'Trà Me có cá tính riêng nhờ điểm chua ngọt đặc trưng, tạo cảm giác vui và khác biệt trong menu đồ uống trái cây.', en: 'Trà Me stands out through its sweet-sour tamarind character, giving the menu a more playful and distinctive fruit tea option.' }),
+      withDetails({ slug: 'tra-me', name: 'Trà Me', priceValue: 65000, category: 'Tea', image: imageLibrary.tamarindTea, description: 'Jasmine tea, tamarind, elderflower' }, { ingredientsKey: 'fruitTea', vi: 'Trà Me có cá tính riêng nhờ điểm chua ngọt đặc trưng, tạo cảm giác vui và khác biệt trong menu đồ uống trái cây.', en: 'Trà Me stands out through its sweet-sour tamarind character, giving the menu a more playful and distinctive fruit tea option.' }),
     ],
   },
   {
@@ -509,7 +509,7 @@ export const menuCategories = [
     name: 'Other drinks',
     description: 'Một số lựa chọn ngoài coffee và tea nhưng vẫn đúng tinh thần quán.',
     items: [
-      withDetails({ slug: 'choco-latte', name: 'Choco Latte', priceValue: 65000, category: 'Other Drinks', image: imageLibrary.chocoLatte, description: 'Cocoa powder, condensed milk, milk' }, { ingredientsKey: 'choco', vi: 'Choco Latte phù hợp với khách không uống cà phê nhưng vẫn muốn một ly nóng hoặc đá có cảm giác mềm, ngọt và dễ chịu.', en: 'Choco Latte is a friendly choice for non-coffee drinkers who still want something smooth, comforting, and easy to enjoy hot or iced.' }),
+      withDetails({ slug: 'choco-latte', name: 'Choco Latte', priceValue: 75000, category: 'Other Drinks', image: imageLibrary.chocoLatte, description: 'Cocoa powder, condensed milk, milk' }, { ingredientsKey: 'choco', vi: 'Choco Latte phù hợp với khách không uống cà phê nhưng vẫn muốn một ly nóng hoặc đá có cảm giác mềm, ngọt và dễ chịu.', en: 'Choco Latte is a friendly choice for non-coffee drinkers who still want something smooth, comforting, and easy to enjoy hot or iced.' }),
       withDetails({ slug: 'hojicha-latte', name: 'Hojicha Latte', priceValue: 70000, category: 'Other Drinks', image: imageLibrary.hojichaLatte, description: 'Hojicha, milk' }, { ingredientsKey: 'hojicha', vi: 'Hojicha Latte có chiều sâu rang và cảm giác ấm hơn matcha, phù hợp với khách muốn đồ uống không cà phê nhưng vẫn trưởng thành và dịu.', en: 'Hojicha Latte has a warmer roasted depth than matcha, making it a good non-coffee option for guests who want something mellow and more mature in profile.' }),
     ],
   },
@@ -528,11 +528,14 @@ export const menuExtras = [
   { label: 'Oat milk', priceValue: 10000 },
 ]
 
-const navigableMenuCategories = menuCategories.filter((category) => category.slug !== 'featured')
+const HIDDEN_MENU_CATEGORY_SLUGS = new Set(['seasonal-drinks', 'juice'])
 
-const categoryBySlug = new Map(navigableMenuCategories.map((category) => [category.slug, category]))
+export const visibleMenuCategories = menuCategories
+  .filter((category) => category.slug !== 'featured' && !HIDDEN_MENU_CATEGORY_SLUGS.has(category.slug))
 
-const allMenuItems = navigableMenuCategories.flatMap((category) =>
+const categoryBySlug = new Map(visibleMenuCategories.map((category) => [category.slug, category]))
+
+const allMenuItems = visibleMenuCategories.flatMap((category) =>
   category.items.map((item) => ({ ...item, categorySlug: category.slug, categoryName: category.name })),
 )
 

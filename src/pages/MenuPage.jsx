@@ -4,7 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import MenuCatalogSection from '../components/MenuCatalogSection'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
-import { getSignatureCollectionItems, menuCategories } from '../data/menu'
+import { getSignatureCollectionItems, visibleMenuCategories } from '../data/menu'
 import { siteConfig } from '../data/site'
 import { usePageSeo } from '../hooks/usePageSeo'
 
@@ -30,7 +30,7 @@ function MenuPage() {
   const visibleCategories = useMemo(
     () =>
       menuSectionOrder
-        .map((slug) => menuCategories.find((category) => category.slug === slug))
+        .map((slug) => visibleMenuCategories.find((category) => category.slug === slug))
         .filter(Boolean)
         .map((category) => ({
           ...category,
